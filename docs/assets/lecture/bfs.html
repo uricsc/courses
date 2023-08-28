@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Graphs : Breadth-First Search &#8212; URI CSC &lt;br&gt; Courses</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Analysis" href="../module/m02.html" />
+    <link rel="prev" title="Graphs : Depth-First Search" href="dfs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/URI Brandmark 282.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">URI CSC <br> Courses</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Needful Things
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../csc200cpp.html">
+   CSC 200 C++ : Computer Problem Solving for Science &amp; Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../csc200py.html">
+   CSC 200 🐍 : Computer Problem Solving for Science &amp; Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../csc212.html">
+   CSC 212: Data Structures &amp; Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tips.html">
+   Tips for Success
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../faq.html">
+   FAQs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Problem Solving
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/basics.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prob_solv.html">
+     <span class="xref myst">
+      Problem Solving
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="expressions.html">
+     Expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types2.html">
+     <span class="xref myst">
+      Data Types
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Operators
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module/main.html">
+   Main
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module/functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/controls.html">
+   Controls
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conditionals2.html">
+     <span class="xref myst">
+      Conditionals
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="iterations.html">
+     Iteration Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jumps2.html">
+     Jump Statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/collections.html">
+   Collections
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/classes.html">
+   Classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="class.html">
+     <span class="xref myst">
+      Object-Oriented Programming
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="inheritance.html">
+     Inheritance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="polymorphism.html">
+     Polymorphism
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module/files2.html">
+   <span class="xref myst">
+    File Handling
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../module/err_handling.html">
+   <span class="xref myst">
+    Exceptions &amp; Errors
+   </span>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Structures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/m03.html">
+   Linear Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dyn_arr.html">
+     Dynamic Arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ll.html">
+     Linked Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks.html">
+     Stacks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="queues.html">
+     Queues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pq.html">
+     Priority Queues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="map.html">
+     Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="set.html">
+     Sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../module/m05.html">
+   Non-Linear Structures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="heaps.html">
+     Heaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bst.html">
+     Binary Search Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_3.html">
+     2-3 Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="llrbt.html">
+     Left-Leaning Red-Black Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hash_tables.html">
+     Hash Tables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="graphs.html">
+     Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dfs.html">
+     Graphs : Depth-First Search
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Graphs : Breadth-First Search
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/m02.html">
+   Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analysis.html">
+     Analysis of Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cost.html">
+     Computational Cost
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="big_o.html">
+     Big-O
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/m04.html">
+   Searching &amp; Sorting
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="search.html">
+     Search Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rec_algo.html">
+     Recursive Algorithms (Analysis)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recur.html">
+     Recurrences
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basic.html">
+     Basic Sorts (Analysis)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="merge.html">
+     Mergesort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qs.html">
+     Quicksort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="heapsort.html">
+     Heapsort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="timsort.html">
+     Timsort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="introsort.html">
+     Introsort
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="greedy.html">
+   Greedy Algorithms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ide.html">
+   Development Environments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../misc/cpp.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../misc/py.html">
+     Python Programming Language
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.learncpp.com">
+   Learn C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">
+   C++ Syntax Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mth180.html">
+   MTH 180 Concepts
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module/opendsa.html">
+   OpenDSA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">
+     Logarithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">
+     Summations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">
+     Recurrence Relations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">
+     Mathematical Proof Techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../gradescope.html">
+   Submission Notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">
+   Official GitHub Training Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../add_rss.html">
+   Additional Resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/csc-dsa/su23"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/bfs.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/assets/lecture/bfs.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breadth-first-in-digraphs">
+   Breadth-first (in digraphs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breadth-first-search-in-graphs">
+   Breadth-first Search (in graphs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-traversal">
+     Graph traversal
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Graphs : Breadth-First Search</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breadth-first-in-digraphs">
+   Breadth-first (in digraphs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breadth-first-search-in-graphs">
+   Breadth-first Search (in graphs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph-traversal">
+     Graph traversal
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="graphs-breadth-first-search">
+<h1>Graphs : Breadth-First Search<a class="headerlink" href="#graphs-breadth-first-search" title="Permalink to this headline">#</a></h1>
+<div class="full-width docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<iframe width="100%" height="600" src="https://www.youtube.com/embed/HZ5YTanv5QE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+TL;DR</div>
+<p class="sd-card-text">Breadth-first search (BFS) is a graph traversal algorithm that visits all the vertices in a graph in level order, exploring all the vertices at a given distance from the starting vertex before moving on to vertices at a greater distance. BFS starts at a specified vertex (the starting vertex) and visits all its neighbors before visiting the neighbors of its neighbors, and so on.</p>
+<p class="sd-card-text">BFS uses a queue data structure to keep track of the vertices that have been visited but not yet processed. The starting vertex is added to the queue, and then while the queue is not empty, the algorithm removes the first vertex from the queue, visits its neighbors, and adds them to the queue if they have not already been visited.</p>
+<p class="sd-card-text">BFS can be used to perform a variety of operations on a graph, such as finding the shortest path between two vertices, checking whether the graph is connected, and identifying cycles in the graph.</p>
+<p class="sd-card-text">BFS can be implemented using an iterative approach with a queue data structure, which is more memory-efficient than the recursive approach used in DFS.</p>
+<p class="sd-card-text">Overall, BFS is an important algorithm in graph theory and is widely used in many applications, such as network analysis, data mining, and artificial intelligence.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Additional Resources</div>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="xref myst"></span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</details></div>
+<section id="breadth-first-in-digraphs">
+<h2>Breadth-first (in digraphs)<a class="headerlink" href="#breadth-first-in-digraphs" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="1c49e8e8-67c6-49cf-ac9e-27420ef32e33" name="72703370-dd55-487c-9737-20a5a35fd236" type="radio">
+</input><label class="sd-tab-label" for="1c49e8e8-67c6-49cf-ac9e-27420ef32e33">
+Shortest paths</label><div class="sd-tab-content docutils">
+<dl class="glossary simple">
+<dt id="term-Problem">Problem<a class="headerlink" href="#term-Problem" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Find directed path from <span class="math notranslate nohighlight">\(s\)</span> to each other vertex that uses the <i class="rhody">fewest edges</i></p>
+</dd>
+<dt id="term-Key-idea">Key idea<a class="headerlink" href="#term-Key-idea" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Visit vertices in increasing order of distance from <span class="math notranslate nohighlight">\(s\)</span></p>
+</dd>
+</dl>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Try writing some of the paths from  0 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> 6</div>
+<p class="sd-card-text">Click below to enter your path…</p>
+<div contenteditable>0 - 2 - 7 - 4 - 5 - 1 - 3 - 6</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<figure class="align-center">
+<img alt="../../_images/19_22.png" src="../../_images/19_22.png" />
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+directed paths from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(6\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[0 \rightarrow 2  \rightarrow 7  \rightarrow 4  \rightarrow 5  \rightarrow 1  \rightarrow 3  \rightarrow 6  \]</div>
+<div class="math notranslate nohighlight">
+\[0 \rightarrow 4  \rightarrow 5  \rightarrow 1  \rightarrow 3  \rightarrow 6   \]</div>
+<div class="math notranslate nohighlight">
+\[0 \rightarrow 2  \rightarrow 7  \rightarrow 3  \rightarrow 6 \]</div>
+<div class="math notranslate nohighlight">
+\[0 \rightarrow 2  \rightarrow 7  \rightarrow 0  \rightarrow 2  \rightarrow 7  \rightarrow 3  \rightarrow 6  \]</div>
+</div>
+</details></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+shortest path from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(6\ (length = 4)\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[0 \rightarrow 2  \rightarrow 7  \rightarrow 3  \rightarrow 6 \]</div>
+</div>
+</details></div>
+</div>
+</div>
+<dl class="glossary simple">
+<dt id="term-0">Key idea<a class="headerlink" href="#term-0" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Visit vertices in increasing order of distance from <span class="math notranslate nohighlight">\(s\)</span></p>
+</dd>
+<dt id="term-Key-data-structure">Key data structure<a class="headerlink" href="#term-Key-data-structure" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Queue of vertices to visit</p>
+</dd>
+</dl>
+<figure class="align-center">
+<img alt="../../_images/19_23.png" src="../../_images/19_23.png" />
+</figure>
+</div>
+<input id="da495e93-f45b-45a2-9822-12b7036811bf" name="72703370-dd55-487c-9737-20a5a35fd236" type="radio">
+</input><label class="sd-tab-label" for="da495e93-f45b-45a2-9822-12b7036811bf">
+BFS</label><div class="sd-tab-content docutils">
+<dl class="glossary simple">
+<dt id="term-Repeat-until-queue-is-empty">Repeat until queue is empty<a class="headerlink" href="#term-Repeat-until-queue-is-empty" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Remove vertex <span class="math notranslate nohighlight">\(v\)</span> from queue<br />
+Add to queue all unmarked vertices adjacent from <span class="math notranslate nohighlight">\(v\)</span> and mark them</p>
+</dd>
+</dl>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BFS</span><span class="w"> </span><span class="p">(</span><span class="n">from</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="o">-----------------------------------------------</span><span class="w"></span>
+<span class="n">Add</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">FIFO</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="n">s</span><span class="w"></span>
+<span class="n">Repeat</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">marked</span><span class="w"> </span><span class="n">empty</span><span class="o">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="n">recently</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">vertex</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">unmarked</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">adjacent</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="n">w</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<img alt="image" src="../../_images/19_24.png" /><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<figure class="align-center" id="id1">
+<img alt="../../_images/19_26.png" src="../../_images/19_26.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">graph g</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details><p class="sd-card-text"><em>Fig 58</em></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-center">
+<img alt="../../_images/19_25.png" src="../../_images/19_25.png" />
+</figure>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(v\)</span></p></th>
+<th class="text-align:center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(edgeTo[]\)</span></p></th>
+<th class="text-align:center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(marked[]\)</span></p></th>
+<th class="text-align:center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(distTo[]\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p class="sd-card-text">0</p></td>
+<td class="text-align:center"><p class="sd-card-text">-</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p class="sd-card-text">1</p></td>
+<td class="text-align:center"><p class="sd-card-text">0</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p class="sd-card-text">2</p></td>
+<td class="text-align:center"><p class="sd-card-text">0</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p class="sd-card-text">4</p></td>
+<td class="text-align:center"><p class="sd-card-text">2</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p class="sd-card-text">3</p></td>
+<td class="text-align:center"><p class="sd-card-text">4</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p class="sd-card-text">5</p></td>
+<td class="text-align:center"><p class="sd-card-text">3</p></td>
+<td class="text-align:center"><p class="sd-card-text">T</p></td>
+<td class="text-align:center"><p class="sd-card-text">4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="7fc4e73e-9517-4e6f-8b9e-eb9800191926" name="72703370-dd55-487c-9737-20a5a35fd236" type="radio">
+</input><label class="sd-tab-label" for="7fc4e73e-9517-4e6f-8b9e-eb9800191926">
+Properties</label><div class="sd-tab-content docutils">
+<dl class="glossary simple">
+<dt id="term-Proposition">Proposition<a class="headerlink" href="#term-Proposition" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">In the worst case, BFS takes <span class="math notranslate nohighlight">\(\Theta(E + V)\)</span> time</p>
+</dd>
+<dt id="term-Proof">Proof<a class="headerlink" href="#term-Proof" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Each vertex reachable from <span class="math notranslate nohighlight">\(s\)</span> is visited once</p>
+</dd>
+</dl>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-center" id="id2">
+<img alt="../../_images/19_28.png" src="../../_images/19_28.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">digraph g</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-center" id="id3">
+<img alt="../../_images/19_29.png" src="../../_images/19_29.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text"> </span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="5a5d6bf9-01b5-44a4-9cd1-172d83a4b439" name="72703370-dd55-487c-9737-20a5a35fd236" type="radio">
+</input><label class="sd-tab-label" for="5a5d6bf9-01b5-44a4-9cd1-172d83a4b439">
+Ex 1</label><div class="sd-tab-content docutils">
+<div class="admonition-single-sink-shortest-paths admonition">
+<p class="admonition-title">Single-sink Shortest Paths</p>
+<p class="sd-card-text">Given a digraph and a <i class="blue">target</i> vertex <span class="math notranslate nohighlight">\(t\)</span>, find shortest path from every vertex to <span class="math notranslate nohighlight">\(t\)</span></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Ex 1</i> <span class="math notranslate nohighlight">\(t = 0\)</span>  </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>from</em> <span class="math notranslate nohighlight">\(7\)</span> <div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(7 \rightarrow 6 \rightarrow 0\)</span></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>from</em> <span class="math notranslate nohighlight">\(5\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(5 \rightarrow 4 \rightarrow 2 \rightarrow 0\)</span></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>from</em> <span class="math notranslate nohighlight">\(12\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(12 \rightarrow 9 \rightarrow 11 \rightarrow 4 \rightarrow 2 \rightarrow 0\)</span></p>
+</div>
+</details></div>
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-center">
+<img alt="../../_images/19_31.png" src="../../_images/19_31.png" />
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="c16bbb8b-0296-49a0-bd69-c4aa1d87e41c" name="72703370-dd55-487c-9737-20a5a35fd236" type="radio">
+</input><label class="sd-tab-label" for="c16bbb8b-0296-49a0-bd69-c4aa1d87e41c">
+Ex 2</label><div class="sd-tab-content docutils">
+<div class="admonition-multiple-source-shortest-paths admonition">
+<p class="admonition-title">Multiple-source Shortest Paths</p>
+<p class="sd-card-text">Given a digraph and a <i class="rhody">set</i> of source vertices, find shortest path from <i class="rhody">any</i> vertex in the set to every other vertex</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Example</i> <span class="math notranslate nohighlight">\(S = { 1, 7, 10 }\)</span>  </div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>to</em> <span class="math notranslate nohighlight">\(4\)</span> <div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(7 \rightarrow 6 \rightarrow 4\)</span></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>to</em> <span class="math notranslate nohighlight">\(5\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(7 \rightarrow 6 \rightarrow 0 \rightarrow 5\)</span></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Shortest path <em>to</em> <span class="math notranslate nohighlight">\(12\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(10 \rightarrow 12\)</span></p>
+</div>
+</details></div>
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-center">
+<img alt="../../_images/19_31.png" src="../../_images/19_31.png" />
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="breadth-first-search-in-graphs">
+<h2>Breadth-first Search (in graphs)<a class="headerlink" href="#breadth-first-search-in-graphs" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="a4a47a22-53c6-4df9-bbca-2ea752269873" name="5d513ee5-e995-4986-a7d9-e2337f086a59" type="radio">
+</input><label class="sd-tab-label" for="a4a47a22-53c6-4df9-bbca-2ea752269873">
+Application: routing</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Fewest number of hops in a communication network</p>
+</div>
+</div>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="https://images.theconversation.com/files/144160/original/image-20161102-27228-1iicfpi.jpg?ixlib=rb-1.1.0&amp;q=45&amp;auto=format&amp;w=600&amp;h=390&amp;fit=crop&amp;dpr=1"><img alt="https://images.theconversation.com/files/144160/original/image-20161102-27228-1iicfpi.jpg?ixlib=rb-1.1.0&amp;q=45&amp;auto=format&amp;w=600&amp;h=390&amp;fit=crop&amp;dpr=1" src="https://images.theconversation.com/files/144160/original/image-20161102-27228-1iicfpi.jpg?ixlib=rb-1.1.0&amp;q=45&amp;auto=format&amp;w=600&amp;h=390&amp;fit=crop&amp;dpr=1" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 86 </span><span class="caption-text">ARPANET 1969 - 1977</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="db42de86-97b9-494d-a392-d5e9caa052e8" name="5d513ee5-e995-4986-a7d9-e2337f086a59" type="radio">
+</input><label class="sd-tab-label" for="db42de86-97b9-494d-a392-d5e9caa052e8">
+BFS: undirected graphs</label><div class="sd-tab-content docutils">
+<dl class="glossary simple">
+<dt id="term-1">Problem<a class="headerlink" href="#term-1" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Find path between <span class="math notranslate nohighlight">\(s\)</span> and each other vertex that uses fewest edges</p>
+</dd>
+<dt id="term-Solution">Solution<a class="headerlink" href="#term-Solution" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Treat as a digraph, replacing each undirected edge with two antiparallel edges</p>
+</dd>
+</dl>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BFS</span><span class="w"> </span><span class="p">(</span><span class="n">from</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="o">-----------------------------------------------</span><span class="w"></span>
+<span class="n">Add</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">FIFO</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="n">s</span><span class="w"></span>
+<span class="n">Repeat</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">empty</span><span class="o">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="n">recently</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="n">v</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">unmarked</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">adjacent</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="n">w</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<section id="graph-traversal">
+<h3>Graph traversal<a class="headerlink" href="#graph-traversal" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+BFS and DFS enables efficient solution to many (but not all) graph and digraph problems</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p class="sd-card-text">graph problem</p></th>
+<th class="text-align:center head"><p class="sd-card-text">BFS</p></th>
+<th class="text-align:center head"><p class="sd-card-text">DFS</p></th>
+<th class="text-align:center head"><p class="sd-card-text">time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p class="sd-card-text">s-t path</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="sd-card-text">shortest s-t path</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p class="sd-card-text">shortest directed cycle</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text">E V</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="sd-card-text">Euler cycle</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p class="sd-card-text">Hamilton cycle</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2^{1.657 V}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="sd-card-text">bipartiteness</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p class="sd-card-text">connected components</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="sd-card-text">strong conmponents</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p class="sd-card-text">planarity</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text">✔︎</p></td>
+<td class="text-align:center"><p class="sd-card-text">E + V</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="sd-card-text">graph morphism</p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text"></p></td>
+<td class="text-align:center"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2^{c\ ln^{3}\ V}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assets/lecture"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="dfs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Graphs : Depth-First Search</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../module/m02.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Professor Jonathan Schrader<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
