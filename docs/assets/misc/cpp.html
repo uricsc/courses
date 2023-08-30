@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python Programming Language" href="py.html" />
+    <link rel="next" title="Python" href="py.html" />
     <link rel="prev" title="Development Environments" href="../../ide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -518,7 +518,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="py.html">
-     Python Programming Language
+     Python
     </a>
    </li>
   </ul>
@@ -740,12 +740,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-process">
+   Installation Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-mingw">
+   Install MinGW
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -757,6 +786,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-process">
+   Installation Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-mingw">
+   Install MinGW
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -766,6 +813,102 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="c">
 <h1>C++<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h1>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">C++, pronounced as “C plus plus,” is a general-purpose programming language that builds upon the foundation of the C programming language. It was developed as an extension of C to provide object-oriented programming (OOP) features along with additional capabilities, making it suitable for a wide range of applications, including systems programming, game development, and software engineering.</p>
+<p class="sd-card-text">C++ combines both procedural and object-oriented programming paradigms, allowing developers to create modular and organized code by defining classes and objects. This approach enhances code reusability and maintainability, which aligns well with your preference for problem-solving and real-world applications.</p>
+<p class="sd-card-text">Furthermore, C++ supports features like templates and generic programming, enabling the creation of flexible and efficient data structures and algorithms. This aspect could be particularly useful when designing your entry-level problem-solving course for science and engineering students, as it would encourage them to think critically about optimizing solutions.</p>
+<p class="sd-card-text">Given your background in software development, C++ offers a powerful toolset for teaching programming concepts and practices. Its close connection to hardware and memory management also provides opportunities for students to delve into low-level aspects of computer science.</p>
+<p class="sd-card-text">When considering your preference for using the CLion development environment, it’s worth noting that CLion is an integrated development environment (IDE) specifically designed for C and C++ development. Its features, such as code analysis, refactoring tools, and debugging capabilities, can greatly assist you in effectively teaching and mentoring students in their coding journey.</p>
+<p class="sd-card-text">In terms of industry trends, C++ remains relevant and widely used, especially in fields that require high-performance computing, like game development, embedded systems, and operating systems. Its ability to strike a balance between efficiency and abstraction continues to make it a valuable language in the computer science landscape. To ensure accuracy, I recommend checking reputable sources for the most up-to-date statistics on C++’s usage and trends in the industry.</p>
+</div>
+</div>
+</div>
+<section id="installation-process">
+<h2>Installation Process<a class="headerlink" href="#installation-process" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p><strong>Install GCC/G++</strong></p>
+<div class="admonition-what-is-it admonition">
+<p class="admonition-title">What is it?</p>
+<p>GCC, which stands for the “GNU Compiler Collection,” is a suite of compilers and related tools that provide the means to compile and build software written in various programming languages. It is one of the most widely used compiler collections in the software development community and plays a crucial role in translating human-readable source code into machine-executable binaries.</p>
+<p>Initially developed by the Free Software Foundation (FSF), GCC is released under the GNU General Public License (GPL) and is open source. It supports a diverse range of programming languages, including C, C++, Fortran, Ada, and others. This versatility aligns well with your role as a Computer Science professor, as it allows you to explore multiple languages and demonstrate their unique features to your students.</p>
+<p>GCC consists of several components, including:</p>
+<ol class="simple">
+<li><p><strong>Frontends</strong>: These components are responsible for parsing the source code written in different programming languages and converting it into an intermediate representation known as “GCC intermediate representation” (GIMPLE). This representation simplifies the subsequent stages of optimization.</p></li>
+<li><p><strong>Middleend</strong>: The middleend of GCC performs optimizations on the GIMPLE representation. These optimizations aim to improve the performance and efficiency of the compiled code, making it execute faster and use resources more effectively.</p></li>
+<li><p><strong>Backends</strong>: Backends take the optimized GIMPLE representation and generate target-specific assembly code or machine code. This step is crucial for producing executable binaries that can run on specific hardware architectures.</p></li>
+<li><p><strong>Libraries</strong>: GCC also includes standard libraries for each supported language, providing commonly used functions and utilities that developers can use in their programs.</p></li>
+</ol>
+<p>You might find GCC to be a valuable tool for working with programming languages, compiler design concepts, and low-level system interactions. It offers insights into how programming languages are translated into machine code and highlights the optimization techniques used to enhance code efficiency.</p>
+</div>
+<div class="admonition-how-to-install admonition">
+<p class="admonition-title">How to install…</p>
+<p><strong>MacOS</strong></p>
+<ul class="simple">
+<li><p>Open a terminal and enter the following: <code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code>, then click <kbd>return</kbd></p></li>
+</ul>
+<p><strong>WindowsOS</strong></p>
+<ul class="simple">
+<li></li>
+<li><p>Update the Path Environment</p>
+<ul>
+<li><p>Open <kbd>System Properties</kbd> -&gt; <kbd>Advanced</kbd> -&gt; <kbd>Environment Variables</kbd></p></li>
+<li><p>Under <kbd>System Variables</kbd>, scroll down and find <kbd>Path Variable</kbd> and press <kbd>Edit</kbd></p>
+<ul>
+<li><p>Update this with the ‘bin’ location from the prior step</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><strong>Integrated Development Environment</strong></p>
+<div class="admonition-what-is-it admonition">
+<p class="admonition-title">What is it?</p>
+<p>An Integrated Development Environment (IDE) in the field of Computer Science is a software application that provides a comprehensive platform for software development. It encompasses a collection of tools, features, and functionalities that facilitate the entire software development lifecycle, from writing and editing code to testing and debugging, and finally to building and deploying applications.</p>
+<p>IDEs are designed to enhance a programmer’s efficiency and productivity by offering a centralized workspace where various development tasks can be performed seamlessly. Some common features of IDEs include:</p>
+<ol class="simple">
+<li><p><strong>Code Editor</strong>: A code editor is a fundamental component of an IDE, offering features like syntax highlighting, code completion, and code navigation to help developers write code more efficiently.</p></li>
+<li><p><strong>Debugger</strong>: IDEs include debugging tools that enable programmers to identify and rectify errors within their code by providing step-by-step execution, breakpoints, and variable inspection.</p></li>
+<li><p><strong>Compiler/Interpreter Integration</strong>: Many IDEs come with built-in compilers or interpreters that allow developers to compile and run their code without needing to switch between different applications.</p></li>
+<li><p><strong>Version Control Integration</strong>: IDEs often integrate with version control systems like Git, enabling developers to track changes, collaborate with others, and manage code history more effectively.</p></li>
+<li><p><strong>Project Management</strong>: IDEs offer tools for organizing and managing projects, including features like project templates, file organization, and project-specific settings.</p></li>
+<li><p><strong>Automated Build Tools</strong>: Some IDEs provide tools for automating the build process, making it easier to compile, package, and deploy applications.</p></li>
+<li><p><strong>Code Analysis Tools</strong>: IDEs may include static code analysis tools that help identify potential issues, coding standards violations, and other improvements to code quality.</p></li>
+<li><p><strong>Plug-ins and Extensions</strong>: IDEs often support the installation of third-party plug-ins and extensions, allowing developers to customize their development environment with additional tools and features.</p></li>
+<li><p><strong>Documentation and Help</strong>: Many IDEs provide access to documentation, tutorials, and help resources within the interface, making it easier for developers to find answers to their questions.</p></li>
+</ol>
+<p>Given your preference for the CLion development environment, you might find that it offers many of these features tailored specifically for C and C++ development. Using an IDE like CLion can significantly streamline your workflow, enhance code quality, and provide a robust environment for teaching and practicing problem-solving in computer science.</p>
+</div>
+<p><strong>CLion</strong></p>
+<div class="admonition-installation admonition">
+<p class="admonition-title">Installation</p>
+<iframe width="100%" height="800" src="https://www.youtube.com/embed/4em8Lhnu890?si=9PFreon7eCjMnEON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p><strong>Create a JetBrains Free Student Account</strong></p>
+<ul class="simple">
+<li><p>Visit the following site, complete the form, and submit</p>
+<ul>
+<li><p>NOTE: you must use your <a class="reference external" href="http://URI.edu">URI.edu</a> email for academic validation allowing access to the all JetBrains products for a full year. Failure to complete this step, will only provide 30 days of access.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Install CLion</strong></p>
+<p>You may download and install the software directly, or you may consider using a program manager which will help keep your software up-to-date.</p>
+<p>For the former, you may download and install CLion directly from: <a class="reference external" href="https://www.jetbrains.com/clion/">https://www.jetbrains.com/clion/</a></p>
+<p>For the latter, you may download and install Toolbox (<a class="reference external" href="https://www.jetbrains.com/toolbox-app/">https://www.jetbrains.com/toolbox-app/</a>)</p>
+<ul class="simple">
+<li><p>Once installed, open ToolBox and scroll to CLion, then click <kbd>install</kbd></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="install-mingw">
+<h2>Install MinGW<a class="headerlink" href="#install-mingw" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>(<em>Note: Remember/record the location you have installed to locally, you’ll need it in he step…</em>)</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -805,7 +948,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="py.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Programming Language</p>
+        <p class="prev-next-title">Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
