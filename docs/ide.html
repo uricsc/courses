@@ -116,16 +116,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="csc200cpp.html">
-   CSC 200 C++ : Computer Problem Solving for Science &amp; Engineering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="csc200py.html">
-   CSC 200 🐍 : Computer Problem Solving for Science &amp; Engineering
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="csc212.html">
    CSC 212: Data Structures &amp; Algorithms
   </a>
@@ -784,11 +774,6 @@ title="Print to PDF"
      CLion for WindowOS
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code-for-windowsos">
-     Visual Studio Code for WindowsOS
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -799,11 +784,6 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#clion-for-macos">
      CLion for MacOS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code-for-macos">
-     Visual Studio Code for MacOS
     </a>
    </li>
   </ul>
@@ -852,11 +832,6 @@ title="Print to PDF"
      CLion for WindowOS
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code-for-windowsos">
-     Visual Studio Code for WindowsOS
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -867,11 +842,6 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#clion-for-macos">
      CLion for MacOS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code-for-macos">
-     Visual Studio Code for MacOS
     </a>
    </li>
   </ul>
@@ -927,49 +897,52 @@ title="Print to PDF"
 </dl>
 </div>
 </div>
-</section>
-<section id="visual-studio-code-for-windowsos">
-<h3>Visual Studio Code for WindowsOS<a class="headerlink" href="#visual-studio-code-for-windowsos" title="Permalink to this headline">#</a></h3>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Setting up Visual Studio Code on Windows OS using the g++ compiler. Here are the steps:</strong></p>
-<dl class="simple myst">
-<dt>Install Visual Studio Code</dt><dd><p class="sd-card-text">You can download the latest version of Visual Studio Code from the official website and install it on your Windows machine.</p>
-</dd>
-<dt>Install MinGW</dt><dd><p class="sd-card-text">MinGW is a collection of GNU compilers for Windows that includes g++. You can download the installer from the official website and follow the instructions to install it on your Windows machine.</p>
-</dd>
-<dt>Add MinGW to the PATH environment variable</dt><dd><p class="sd-card-text">After installing MinGW, you need to add its bin directory to the PATH environment variable. To do this, open the System Properties dialog box, click on the Advanced tab, and then click on the Environment Variables button. In the System Variables section, scroll down and find the Path variable. Click on Edit, then click on New and add the path to the bin folder of your MinGW installation (e.g., C:\MinGW\bin). Click OK to close all the dialogs.</p>
-</dd>
-<dt>Install the C/C++ extension in Visual Studio Code</dt><dd><p class="sd-card-text">In Visual Studio Code, click on the Extensions icon on the left sidebar and search for “C/C++”. Click on the Install button to install the extension.</p>
-</dd>
-<dt>Configure the C++ extension in Visual Studio Code</dt><dd><p class="sd-card-text">After installing the C/C++ extension, you need to configure it to use the g++ compiler. To do this, open the Command Palette by pressing Ctrl+Shift+P (or F1) and search for “C/C++: Edit Configurations (JSON)”. Select this option to open the c_cpp_properties.json file. In this file, add the following lines to the “configurations” array:</p>
-</dd>
-</dl>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Win32&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;includePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;${workspaceFolder}/**&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;defines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;_DEBUG&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;UNICODE&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;_UNICODE&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;compilerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/MinGW/bin/g++.exe&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;cStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c11&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;cppStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c++17&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p class="sd-card-text">Make sure to replace the “compilerPath” value with the path to your g++ compiler.</p>
-<dl class="simple myst">
-<dt>Create a new C++ project</dt><dd><p class="sd-card-text">In Visual Studio Code, go to File -&gt; New Folder and create a new folder for your project. Open this folder in Visual Studio Code by selecting “Open Folder” from the File menu. Once the folder is open, create a new file called “main.cpp” and start writing your code.</p>
-</dd>
-<dt>Build and run your code</dt><dd><p class="sd-card-text">To build your code, open the Command Palette and search for “C/C++: Build and Debug Active File”. Select this option to compile your code and generate an executable file. To run your code, open the terminal in Visual Studio Code and navigate to the folder where your executable file was generated. Type the name of the executable file and press Enter to run it.</p>
-</dd>
-</dl>
-</div>
-</div>
+<!-- ### Visual Studio Code for WindowsOS
+
+``````` {card}
+**Setting up Visual Studio Code on Windows OS using the g++ compiler. Here are the steps:**
+
+Install Visual Studio Code  
+: You can download the latest version of Visual Studio Code from the official website and install it on your Windows machine.
+
+Install MinGW  
+: MinGW is a collection of GNU compilers for Windows that includes g++. You can download the installer from the official website and follow the instructions to install it on your Windows machine.
+
+Add MinGW to the PATH environment variable  
+: After installing MinGW, you need to add its bin directory to the PATH environment variable. To do this, open the System Properties dialog box, click on the Advanced tab, and then click on the Environment Variables button. In the System Variables section, scroll down and find the Path variable. Click on Edit, then click on New and add the path to the bin folder of your MinGW installation (e.g., C:\MinGW\bin). Click OK to close all the dialogs.
+
+Install the C/C++ extension in Visual Studio Code  
+: In Visual Studio Code, click on the Extensions icon on the left sidebar and search for "C/C++". Click on the Install button to install the extension.
+
+Configure the C++ extension in Visual Studio Code  
+: After installing the C/C++ extension, you need to configure it to use the g++ compiler. To do this, open the Command Palette by pressing Ctrl+Shift+P (or F1) and search for "C/C++: Edit Configurations (JSON)". Select this option to open the c_cpp_properties.json file. In this file, add the following lines to the "configurations" array:
+
+``` json
+{
+    "name": "Win32",
+    "includePath": [
+        "${workspaceFolder}/**"
+    ],
+    "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+    ],
+    "compilerPath": "C:/MinGW/bin/g++.exe",
+    "cStandard": "c11",
+    "cppStandard": "c++17"
+}
+```
+
+Make sure to replace the "compilerPath" value with the path to your g++ compiler.
+
+Create a new C++ project  
+: In Visual Studio Code, go to File -> New Folder and create a new folder for your project. Open this folder in Visual Studio Code by selecting "Open Folder" from the File menu. Once the folder is open, create a new file called "main.cpp" and start writing your code.
+
+Build and run your code  
+: To build your code, open the Command Palette and search for "C/C++: Build and Debug Active File". Select this option to compile your code and generate an executable file. To run your code, open the terminal in Visual Studio Code and navigate to the folder where your executable file was generated. Type the name of the executable file and press Enter to run it.
+
+``````` -->
 </section>
 </section>
 <section id="mac-os">
@@ -994,64 +967,64 @@ title="Print to PDF"
 </ul>
 </div>
 </div>
-</section>
-<section id="visual-studio-code-for-macos">
-<h3>Visual Studio Code for MacOS<a class="headerlink" href="#visual-studio-code-for-macos" title="Permalink to this headline">#</a></h3>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><strong>Setting up Visual Studio Code on macOS using the g++ compiler. Here are the steps:</strong></p>
-<dl class="simple myst">
-<dt>Install Xcode Command Line Tools</dt><dd><p class="sd-card-text">Xcode Command Line Tools include the g++ compiler. To install it, open Terminal on your macOS machine and enter the following command:</p>
-</dd>
-</dl>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select --install
-</pre></div>
-</div>
-<dl class="simple myst">
-<dt>Install Homebrew</dt><dd><p class="sd-card-text">Homebrew is a package manager for macOS that makes it easy to install and manage software packages. To install Homebrew, enter the following command in Terminal:</p>
-</dd>
-</dl>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
-<dl class="simple myst">
-<dt>Install g++ using Homebrew</dt><dd><p class="sd-card-text">After installing Homebrew, you can use it to install g++. To do this, enter the following command in Terminal:</p>
-</dd>
-</dl>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install gcc
-</pre></div>
-</div>
-<dl class="simple myst">
-<dt>Install the C/C++ extension in Visual Studio Code</dt><dd><p class="sd-card-text">In Visual Studio Code, click on the Extensions icon on the left sidebar and search for “C/C++”. Click on the Install button to install the extension.</p>
-</dd>
-<dt>Configure the C++ extension in Visual Studio Code</dt><dd><p class="sd-card-text">After installing the C/C++ extension, you need to configure it to use the g++ compiler. To do this, open the Command Palette by pressing Command+Shift+P (or F1) and search for “C/C++: Edit Configurations (JSON)”. Select this option to open the c_cpp_properties.json file. In this file, add the following lines to the “configurations” array:</p>
-</dd>
-</dl>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mac&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;includePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;${workspaceFolder}/**&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;defines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;macFrameworkPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;/System/Library/Frameworks&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;/Library/Frameworks&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;compilerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usr/local/bin/g++&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;cStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c11&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;cppStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c++17&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p class="sd-card-text">Make sure to replace the “compilerPath” value with the path to your g++ compiler, which should be “/usr/local/bin/g++” if you installed it using Homebrew.</p>
-<dl class="simple myst">
-<dt>Create a new C++ project</dt><dd><p class="sd-card-text">In Visual Studio Code, go to File -&gt; New Folder and create a new folder for your project. Open this folder in Visual Studio Code by selecting “Open Folder” from the File menu. Once the folder is open, create a new file called “main.cpp” and start writing your code.</p>
-</dd>
-<dt>Build and run your code</dt><dd><p class="sd-card-text">Open the Command Palette and search for “C/C++: Build and Debug Active File”. Select this option to compile your code and generate an executable file. To run your code, open the terminal in Visual Studio Code and navigate to the folder where your executable file was generated. Type the name of the executable file and press Enter to run it.</p>
-</dd>
-</dl>
-</div>
-</div>
+<!-- ### Visual Studio Code for MacOS
+
+``````` {card} 
+**Setting up Visual Studio Code on macOS using the g++ compiler. Here are the steps:**
+
+Install Xcode Command Line Tools
+: Xcode Command Line Tools include the g++ compiler. To install it, open Terminal on your macOS machine and enter the following command:
+
+``` bash
+xcode-select --install
+```
+
+Install Homebrew
+: Homebrew is a package manager for macOS that makes it easy to install and manage software packages. To install Homebrew, enter the following command in Terminal:
+
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install g++ using Homebrew
+: After installing Homebrew, you can use it to install g++. To do this, enter the following command in Terminal:
+
+``` bash
+brew install gcc
+```
+
+Install the C/C++ extension in Visual Studio Code
+: In Visual Studio Code, click on the Extensions icon on the left sidebar and search for "C/C++". Click on the Install button to install the extension.
+
+Configure the C++ extension in Visual Studio Code
+: After installing the C/C++ extension, you need to configure it to use the g++ compiler. To do this, open the Command Palette by pressing Command+Shift+P (or F1) and search for "C/C++: Edit Configurations (JSON)". Select this option to open the c_cpp_properties.json file. In this file, add the following lines to the "configurations" array:
+
+``` json
+{
+    "name": "Mac",
+    "includePath": [
+        "${workspaceFolder}/**"
+    ],
+    "defines": [],
+    "macFrameworkPath": [
+        "/System/Library/Frameworks",
+        "/Library/Frameworks"
+    ],
+    "compilerPath": "/usr/local/bin/g++",
+    "cStandard": "c11",
+    "cppStandard": "c++17"
+}
+```
+
+Make sure to replace the "compilerPath" value with the path to your g++ compiler, which should be "/usr/local/bin/g++" if you installed it using Homebrew.
+
+Create a new C++ project
+: In Visual Studio Code, go to File -> New Folder and create a new folder for your project. Open this folder in Visual Studio Code by selecting "Open Folder" from the File menu. Once the folder is open, create a new file called "main.cpp" and start writing your code.
+
+Build and run your code
+: Open the Command Palette and search for "C/C++: Build and Debug Active File". Select this option to compile your code and generate an executable file. To run your code, open the terminal in Visual Studio Code and navigate to the folder where your executable file was generated. Type the name of the executable file and press Enter to run it.
+
+``````` -->
 </section>
 </section>
 <section id="miscellaneous">
