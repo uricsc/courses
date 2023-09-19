@@ -1014,8 +1014,8 @@ Code sample<div class="sd-summary-down docutils">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d1b20430-ea55-41ad-b524-fb9b5104bad4" name="ab57ed89-de4e-4a4a-96c7-bec8c166dfde" type="radio">
-</input><label class="sd-tab-label" for="d1b20430-ea55-41ad-b524-fb9b5104bad4">
+<input checked="checked" id="47cbf4a5-332d-4ed3-8cc0-cc5802a09496" name="46cf72d5-6f20-4330-b74f-8896a1ad0b9b" type="radio">
+</input><label class="sd-tab-label" for="47cbf4a5-332d-4ed3-8cc0-cc5802a09496">
 Definition</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1041,8 +1041,8 @@ Definition</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="12f2cec1-ec05-4ec1-b861-20a81d84663d" name="ab57ed89-de4e-4a4a-96c7-bec8c166dfde" type="radio">
-</input><label class="sd-tab-label" for="12f2cec1-ec05-4ec1-b861-20a81d84663d">
+<input id="2cadeda1-e147-407f-bea9-fa8ab7bbd9b7" name="46cf72d5-6f20-4330-b74f-8896a1ad0b9b" type="radio">
+</input><label class="sd-tab-label" for="2cadeda1-e147-407f-bea9-fa8ab7bbd9b7">
 Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1098,8 +1098,8 @@ Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2a00e4b3-d6e1-4c9c-b46f-c6caccc724c8" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
-</input><label class="sd-tab-label" for="2a00e4b3-d6e1-4c9c-b46f-c6caccc724c8">
+<input checked="checked" id="b8eaef6a-0d7c-42bc-a3ca-01b66f3de212" name="4539dea2-9e43-4caf-8e9b-d1bcef5584f7" type="radio">
+</input><label class="sd-tab-label" for="b8eaef6a-0d7c-42bc-a3ca-01b66f3de212">
 Layout</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">Memory layout of C/C++ programs</p>
@@ -1107,8 +1107,113 @@ Layout</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/memory-layout-of-c-program/">https://www.geeksforgeeks.org/memory-layout-of-c-program/</a></p>
 </div>
 </div>
-<input id="fa539b48-85e4-49d7-8855-3693b3eb9aa6" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
-</input><label class="sd-tab-label" for="fa539b48-85e4-49d7-8855-3693b3eb9aa6">
+<input id="55f0449b-313d-4393-b60f-7b60820f8f3d" name="4539dea2-9e43-4caf-8e9b-d1bcef5584f7" type="radio">
+</input><label class="sd-tab-label" for="55f0449b-313d-4393-b60f-7b60820f8f3d">
+Allocations</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<a class="reference internal image-reference" href="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png"><img alt="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png" src="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png" style="width: 450px;" /></a>
+</figure>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="admonition-stack admonition">
+<p class="admonition-title">Stack</p>
+<ul class="simple">
+<li><p class="sd-card-text">It’s a temporary memory allocation scheme where the data members are accessible only if the method( ) that contained them is currently running.</p></li>
+<li><p class="sd-card-text">It allocates or de-allocates the memory automatically as soon as the corresponding method completes its execution.</p></li>
+<li><p class="sd-card-text">Stack memory allocation is considered safer as compared to heap memory allocation because the data stored can only be accessed by the owner thread.</p></li>
+<li><p class="sd-card-text">Memory allocation and de-allocation are faster as compared to Heap-memory allocation.</p></li>
+<li><p class="sd-card-text">Stack memory has less storage space as compared to Heap-memory.</p></li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="admonition-heap-memory-not-structure admonition">
+<p class="admonition-title">Heap (memory, not structure)</p>
+<ul class="simple">
+<li><p class="sd-card-text">This memory allocation scheme is different from the Stack-space allocation, here no automatic de-allocation feature is provided. We need to use a Garbage collector to remove the old unused objects in order to use the memory efficiently.</p></li>
+<li><p class="sd-card-text">The processing time(Accessing time) of this memory is quite slow as compared to Stack-memory.</p></li>
+<li><p class="sd-card-text">Heap memory is also not as threaded-safe as Stack-memory because data stored in Heap-memory are visible to all threads.</p></li>
+<li><p class="sd-card-text">The size of the Heap-memory is quite larger as compared to the Stack-memory.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Comparison Chart<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Parameter</p></th>
+<th class="head"><p class="sd-card-text">STACK</p></th>
+<th class="head"><p class="sd-card-text">HEAP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Basic</p></td>
+<td><p class="sd-card-text">Memory is allocated in a contiguous block.</p></td>
+<td><p class="sd-card-text">Memory is allocated in any random order.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Allocation and De-allocation</p></td>
+<td><p class="sd-card-text">Automatic by compiler instructions.</p></td>
+<td><p class="sd-card-text">Manual by the programmer.</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Cost</p></td>
+<td><p class="sd-card-text">Less</p></td>
+<td><p class="sd-card-text">More</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Implementation</p></td>
+<td><p class="sd-card-text">Easy</p></td>
+<td><p class="sd-card-text">Hard</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Access time</p></td>
+<td><p class="sd-card-text">Faster</p></td>
+<td><p class="sd-card-text">Slower</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Main Issue</p></td>
+<td><p class="sd-card-text">Shortage of memory</p></td>
+<td><p class="sd-card-text">Memory fragmentation</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Locality of reference</p></td>
+<td><p class="sd-card-text">Excellent</p></td>
+<td><p class="sd-card-text">Adequate</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Safety</p></td>
+<td><p class="sd-card-text">Thread safe, data stored can only be accessed by the owner</p></td>
+<td><p class="sd-card-text">Not Thread safe, data stored visible to all threads</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Flexibility</p></td>
+<td><p class="sd-card-text">Fixed-size</p></td>
+<td><p class="sd-card-text">Resizing is possible</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Data type structure</p></td>
+<td><p class="sd-card-text">Linear</p></td>
+<td><p class="sd-card-text">Hierarchical</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Preferred</p></td>
+<td><p class="sd-card-text">Static memory allocation is preferred in an array.</p></td>
+<td><p class="sd-card-text">Heap memory allocation is preferred in the linked list.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Size</p></td>
+<td><p class="sd-card-text">Small than heap memory.</p></td>
+<td><p class="sd-card-text">Larger than stack memory.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></div>
+<input id="fea89b0a-b9be-4d2e-8bbf-a57bb13933bf" name="4539dea2-9e43-4caf-8e9b-d1bcef5584f7" type="radio">
+</input><label class="sd-tab-label" for="fea89b0a-b9be-4d2e-8bbf-a57bb13933bf">
 Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Memory allocation is an essential aspect of data structures and algorithms as it determines how memory is allocated and used to store data. Data structures are designed to efficiently organize and store data in memory, and algorithms use these data structures to perform operations on the data.</p>
 <p class="sd-card-text">In general, there are two types of memory allocation: static and dynamic. Static memory allocation refers to memory allocation that is fixed at compile-time and cannot be changed at runtime. This is typically used for variables that have a fixed size and do not need to be resized during program execution.</p>
@@ -1117,38 +1222,13 @@ Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Another common data structure that uses dynamic memory allocation is the dynamic array. In a dynamic array, the size of the array can be dynamically resized as needed, allowing for efficient memory usage.</p>
 <p class="sd-card-text">Memory allocation is an important consideration when designing and implementing data structures and algorithms. Efficient memory usage can greatly improve the performance of an algorithm, while inefficient memory usage can lead to performance problems or even crashes. Therefore, it is important to carefully consider the memory requirements of a data structure or algorithm and optimize memory usage wherever possible.</p>
 </div>
-<input id="836756fa-41ff-45a8-bcd7-8688c9292adb" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
-</input><label class="sd-tab-label" for="836756fa-41ff-45a8-bcd7-8688c9292adb">
+<input id="7e30bf06-ec93-4b8b-b09a-1c5ec3055e94" name="4539dea2-9e43-4caf-8e9b-d1bcef5584f7" type="radio">
+</input><label class="sd-tab-label" for="7e30bf06-ec93-4b8b-b09a-1c5ec3055e94">
 Visualization</label><div class="sd-tab-content docutils">
 <iframe width="1000" height="600" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20Example%20C%2B%2B%20code%20for%20OPT%0Aint%20main%28%29%20%7B%0A%20%20float%20var1%3B%0A%20%20float%20var2%3B%0A%20%20int%20static_array%5B10%5D%3B%0A%20%20int%20*static_array_heap%20%3D%20new%20int%20%5B10%5D%3B%0A%20%20//%20...%0A%20%20//%20work%20with%20this%20array%0A%20%20//%20...%0A%20%20delete%20%5B%5D%20static_array_heap%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 </div>
-<input id="5fe924da-46df-40e3-97b9-80789728d547" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
-</input><label class="sd-tab-label" for="5fe924da-46df-40e3-97b9-80789728d547">
-Notes</label><div class="sd-tab-content docutils">
-<div class="tip admonition">
-<p class="admonition-title">A few notes…</p>
-<div class="admonition-creating-variables-in-the-stack admonition">
-<p class="admonition-title">Creating variables in the stack</p>
-<ul class="simple">
-<li><p class="sd-card-text">variables are automatically created and freed</p></li>
-<li><p class="sd-card-text">variables only exist while the function is running</p></li>
-<li><p class="sd-card-text">faster and good for small local variables</p></li>
-</ul>
-</div>
-<div class="admonition-allocating-memory-in-the-heap admonition">
-<p class="admonition-title">Allocating memory in the heap</p>
-<ul class="simple">
-<li><p class="sd-card-text">memory is allocated at runtime</p></li>
-<li><p class="sd-card-text">programmer is responsible for allocating/de-allocating memory</p></li>
-<li><p class="sd-card-text">variables can be accessed globally (in the program)</p></li>
-<li><p class="sd-card-text">memory may become fragmented</p></li>
-<li><p class="sd-card-text">slower but good for large variables</p></li>
-</ul>
-</div>
-</div>
-</div>
-<input id="76403819-c553-4580-8bb2-05610aecadea" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
-</input><label class="sd-tab-label" for="76403819-c553-4580-8bb2-05610aecadea">
+<input id="0797d2b6-033e-4d03-9e3d-25d48883ce0f" name="4539dea2-9e43-4caf-8e9b-d1bcef5584f7" type="radio">
+</input><label class="sd-tab-label" for="0797d2b6-033e-4d03-9e3d-25d48883ce0f">
 What if</label><div class="sd-tab-content docutils">
 <div class="attention admonition">
 <p class="admonition-title">What if…?</p>
@@ -1222,8 +1302,8 @@ What if</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="15c3d20d-84c1-44cf-9692-f21cccce0450" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
-</input><label class="sd-tab-label" for="15c3d20d-84c1-44cf-9692-f21cccce0450">
+<input checked="checked" id="48d0900c-ba96-440e-936d-665f0b64a842" name="e2d07faf-3a21-48a9-a766-4c20f20fe00d" type="radio">
+</input><label class="sd-tab-label" for="48d0900c-ba96-440e-936d-665f0b64a842">
 Grow by 1</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n\)</span> elements</p>
 <ul class="simple">
@@ -1311,8 +1391,8 @@ Grow by 1</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="b8fb8741-af9b-4106-8ae6-7063c431eba9" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
-</input><label class="sd-tab-label" for="b8fb8741-af9b-4106-8ae6-7063c431eba9">
+<input id="49f19c08-5033-4538-b018-27b168a65c5b" name="e2d07faf-3a21-48a9-a766-4c20f20fe00d" type="radio">
+</input><label class="sd-tab-label" for="49f19c08-5033-4538-b018-27b168a65c5b">
 Doubling array</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n = 2^i\)</span> elements</p>
 <ul class="simple">
@@ -1353,8 +1433,8 @@ Doubling array</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="aab437cc-5dfe-401d-bc55-6997e512925a" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
-</input><label class="sd-tab-label" for="aab437cc-5dfe-401d-bc55-6997e512925a">
+<input id="dc58ffe6-26e9-4c04-92fa-233541599c8b" name="e2d07faf-3a21-48a9-a766-4c20f20fe00d" type="radio">
+</input><label class="sd-tab-label" for="dc58ffe6-26e9-4c04-92fa-233541599c8b">
 Proof</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="../../_images/05_s20.png" src="../../_images/05_s20.png" />
