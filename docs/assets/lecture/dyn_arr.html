@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../module/main.html">
-   Main
+   Main &amp; CLAs
   </a>
  </li>
  <li class="toctree-l1">
@@ -228,7 +228,12 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="array.html">
+     Array
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1009,8 +1014,8 @@ Code sample<div class="sd-summary-down docutils">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8c783ae9-0a62-4e9b-9f50-3de86bcd671a" name="fbb99943-fbd4-4d22-873b-1c56bbb44a6d" type="radio">
-</input><label class="sd-tab-label" for="8c783ae9-0a62-4e9b-9f50-3de86bcd671a">
+<input checked="checked" id="d1b20430-ea55-41ad-b524-fb9b5104bad4" name="ab57ed89-de4e-4a4a-96c7-bec8c166dfde" type="radio">
+</input><label class="sd-tab-label" for="d1b20430-ea55-41ad-b524-fb9b5104bad4">
 Definition</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1036,8 +1041,8 @@ Definition</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="5798d476-b2e4-472a-af6c-02837169373f" name="fbb99943-fbd4-4d22-873b-1c56bbb44a6d" type="radio">
-</input><label class="sd-tab-label" for="5798d476-b2e4-472a-af6c-02837169373f">
+<input id="12f2cec1-ec05-4ec1-b861-20a81d84663d" name="ab57ed89-de4e-4a4a-96c7-bec8c166dfde" type="radio">
+</input><label class="sd-tab-label" for="12f2cec1-ec05-4ec1-b861-20a81d84663d">
 Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1093,8 +1098,8 @@ Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9deec5ea-7577-462a-badb-aee0a575195d" name="1db2b7e0-db24-41ae-b5fe-3ef2ce2fa724" type="radio">
-</input><label class="sd-tab-label" for="9deec5ea-7577-462a-badb-aee0a575195d">
+<input checked="checked" id="2a00e4b3-d6e1-4c9c-b46f-c6caccc724c8" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
+</input><label class="sd-tab-label" for="2a00e4b3-d6e1-4c9c-b46f-c6caccc724c8">
 Layout</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">Memory layout of C/C++ programs</p>
@@ -1102,8 +1107,8 @@ Layout</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/memory-layout-of-c-program/">https://www.geeksforgeeks.org/memory-layout-of-c-program/</a></p>
 </div>
 </div>
-<input id="9af67bc2-91cd-426a-a9e7-bd6c3dcab7d1" name="1db2b7e0-db24-41ae-b5fe-3ef2ce2fa724" type="radio">
-</input><label class="sd-tab-label" for="9af67bc2-91cd-426a-a9e7-bd6c3dcab7d1">
+<input id="fa539b48-85e4-49d7-8855-3693b3eb9aa6" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
+</input><label class="sd-tab-label" for="fa539b48-85e4-49d7-8855-3693b3eb9aa6">
 Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Memory allocation is an essential aspect of data structures and algorithms as it determines how memory is allocated and used to store data. Data structures are designed to efficiently organize and store data in memory, and algorithms use these data structures to perform operations on the data.</p>
 <p class="sd-card-text">In general, there are two types of memory allocation: static and dynamic. Static memory allocation refers to memory allocation that is fixed at compile-time and cannot be changed at runtime. This is typically used for variables that have a fixed size and do not need to be resized during program execution.</p>
@@ -1112,13 +1117,13 @@ Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Another common data structure that uses dynamic memory allocation is the dynamic array. In a dynamic array, the size of the array can be dynamically resized as needed, allowing for efficient memory usage.</p>
 <p class="sd-card-text">Memory allocation is an important consideration when designing and implementing data structures and algorithms. Efficient memory usage can greatly improve the performance of an algorithm, while inefficient memory usage can lead to performance problems or even crashes. Therefore, it is important to carefully consider the memory requirements of a data structure or algorithm and optimize memory usage wherever possible.</p>
 </div>
-<input id="f35a68e5-2406-440e-9d14-18d004e3d98d" name="1db2b7e0-db24-41ae-b5fe-3ef2ce2fa724" type="radio">
-</input><label class="sd-tab-label" for="f35a68e5-2406-440e-9d14-18d004e3d98d">
+<input id="836756fa-41ff-45a8-bcd7-8688c9292adb" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
+</input><label class="sd-tab-label" for="836756fa-41ff-45a8-bcd7-8688c9292adb">
 Visualization</label><div class="sd-tab-content docutils">
 <iframe width="1000" height="600" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20Example%20C%2B%2B%20code%20for%20OPT%0Aint%20main%28%29%20%7B%0A%20%20float%20var1%3B%0A%20%20float%20var2%3B%0A%20%20int%20static_array%5B10%5D%3B%0A%20%20int%20*static_array_heap%20%3D%20new%20int%20%5B10%5D%3B%0A%20%20//%20...%0A%20%20//%20work%20with%20this%20array%0A%20%20//%20...%0A%20%20delete%20%5B%5D%20static_array_heap%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 </div>
-<input id="f8fa8c9a-5a1d-4b6f-8b2c-f4776391f185" name="1db2b7e0-db24-41ae-b5fe-3ef2ce2fa724" type="radio">
-</input><label class="sd-tab-label" for="f8fa8c9a-5a1d-4b6f-8b2c-f4776391f185">
+<input id="5fe924da-46df-40e3-97b9-80789728d547" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
+</input><label class="sd-tab-label" for="5fe924da-46df-40e3-97b9-80789728d547">
 Notes</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">A few notes…</p>
@@ -1142,8 +1147,8 @@ Notes</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="b5f81039-a7e5-4f63-a52d-8e2a12cd9612" name="1db2b7e0-db24-41ae-b5fe-3ef2ce2fa724" type="radio">
-</input><label class="sd-tab-label" for="b5f81039-a7e5-4f63-a52d-8e2a12cd9612">
+<input id="76403819-c553-4580-8bb2-05610aecadea" name="17695d73-72d9-426b-accf-f697faf75b4c" type="radio">
+</input><label class="sd-tab-label" for="76403819-c553-4580-8bb2-05610aecadea">
 What if</label><div class="sd-tab-content docutils">
 <div class="attention admonition">
 <p class="admonition-title">What if…?</p>
@@ -1217,8 +1222,8 @@ What if</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="06064698-70ed-497a-b679-e0af7a485890" name="3a255a24-e72e-4e65-b702-3e0a3de2a0a2" type="radio">
-</input><label class="sd-tab-label" for="06064698-70ed-497a-b679-e0af7a485890">
+<input checked="checked" id="15c3d20d-84c1-44cf-9692-f21cccce0450" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
+</input><label class="sd-tab-label" for="15c3d20d-84c1-44cf-9692-f21cccce0450">
 Grow by 1</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n\)</span> elements</p>
 <ul class="simple">
@@ -1306,8 +1311,8 @@ Grow by 1</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="3482851b-91b9-4873-b181-a6c6886dbcf5" name="3a255a24-e72e-4e65-b702-3e0a3de2a0a2" type="radio">
-</input><label class="sd-tab-label" for="3482851b-91b9-4873-b181-a6c6886dbcf5">
+<input id="b8fb8741-af9b-4106-8ae6-7063c431eba9" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
+</input><label class="sd-tab-label" for="b8fb8741-af9b-4106-8ae6-7063c431eba9">
 Doubling array</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n = 2^i\)</span> elements</p>
 <ul class="simple">
@@ -1348,8 +1353,8 @@ Doubling array</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="fa75a9e5-03dd-48cd-80b5-aec2cdca529f" name="3a255a24-e72e-4e65-b702-3e0a3de2a0a2" type="radio">
-</input><label class="sd-tab-label" for="fa75a9e5-03dd-48cd-80b5-aec2cdca529f">
+<input id="aab437cc-5dfe-401d-bc55-6997e512925a" name="5d08c4a6-912c-425e-a72b-89e2790b367d" type="radio">
+</input><label class="sd-tab-label" for="aab437cc-5dfe-401d-bc55-6997e512925a">
 Proof</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="../../_images/05_s20.png" src="../../_images/05_s20.png" />

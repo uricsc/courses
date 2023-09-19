@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../module/main.html">
-   Main
+   Main &amp; CLAs
   </a>
  </li>
  <li class="toctree-l1">
@@ -228,7 +228,12 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="array.html">
+     Array
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -850,8 +855,8 @@ Additional Resources</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cb928fca-dd27-4c83-88fb-2fdcf4536619" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="cb928fca-dd27-4c83-88fb-2fdcf4536619">
+<input checked="checked" id="db3200ab-5291-4253-b68c-0a787c7ec55a" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="db3200ab-5291-4253-b68c-0a787c7ec55a">
 Reachability</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-Problem">Problem<a class="headerlink" href="#term-Problem" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Given a digraph <span class="math notranslate nohighlight">\(G\)</span> and vertex <span class="math notranslate nohighlight">\(s\)</span>, find all the vertices <i class="rhody">reachable</i> from <span class="math notranslate nohighlight">\(s\)</span></p>
@@ -861,8 +866,8 @@ Reachability</label><div class="sd-tab-content docutils">
 <img alt="../../_images/19_07.png" src="../../_images/19_07.png" />
 </figure>
 </div>
-<input id="55a7d0c4-21c6-40f9-8b2d-a5a2ea393b90" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="55a7d0c4-21c6-40f9-8b2d-a5a2ea393b90">
+<input id="85484842-6f61-4814-828d-55b21babca9d" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="85484842-6f61-4814-828d-55b21babca9d">
 DFS</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://media.geeksforgeeks.org/wp-content/uploads/20200507074112/ezgif.com-gif-maker61.gif" src="https://media.geeksforgeeks.org/wp-content/uploads/20200507074112/ezgif.com-gif-maker61.gif" />
@@ -886,8 +891,8 @@ Path finding: find directed path from one vertex to another</p>
 </dd>
 </dl>
 </div>
-<input id="b17e3487-1343-4f04-b7b9-210c04e4c75b" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="b17e3487-1343-4f04-b7b9-210c04e4c75b">
+<input id="aaa161d9-5c1d-407e-b8ed-54e2a6063915" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="aaa161d9-5c1d-407e-b8ed-54e2a6063915">
 Directed-DFS</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-To-visit-vertex-v">To visit vertex <span class="math notranslate nohighlight">\(v\)</span>:  <a class="headerlink" href="#term-To-visit-vertex-v" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Mark vertex <span class="math notranslate nohighlight">\(v\)</span><br />
@@ -902,8 +907,8 @@ Recursively visit all unmarked vertices adjacent from <span class="math notransl
 </figure>
 <!-- _Errata: E(G,J) should read, E(G,I)_ -->
 </div>
-<input id="9b3d8bc3-3931-47e2-9475-27af4c640618" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="9b3d8bc3-3931-47e2-9475-27af4c640618">
+<input id="c7701df0-9e37-43e0-a046-2d3ba9d88b8c" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="c7701df0-9e37-43e0-a046-2d3ba9d88b8c">
 Properties</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-Proposition">Proposition<a class="headerlink" href="#term-Proposition" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">DFS marks all vertices reachable from <span class="math notranslate nohighlight">\(s\)</span> in <span class="math notranslate nohighlight">\(\Theta(E+V)\)</span> time in the worst case</p>
@@ -924,8 +929,8 @@ Visiting a vertex takes time proportional to its outdegree:</p>
 </dd>
 </dl>
 </div>
-<input id="fda26039-da90-4e15-82dc-4cea3adbadbf" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="fda26039-da90-4e15-82dc-4cea3adbadbf">
+<input id="72c0ab30-1713-48a3-94d1-4c32adbccbac" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="72c0ab30-1713-48a3-94d1-4c32adbccbac">
 Application 1</label><div class="sd-tab-content docutils">
 <div class="admonition-program-control-flow-analysis admonition">
 <p class="admonition-title">Program control-flow analysis</p>
@@ -959,8 +964,8 @@ Edge = jump</p>
 </div>
 </div>
 </div>
-<input id="776c977e-987e-4a7f-a29f-d29e1c2a3123" name="363a14c7-9fd6-437a-9e26-30b43d06bc4b" type="radio">
-</input><label class="sd-tab-label" for="776c977e-987e-4a7f-a29f-d29e1c2a3123">
+<input id="145f3e8a-a4ce-4a97-abc0-a24aaa2b0867" name="95a9d970-0ae8-4c11-9d35-3ed372ed9fbe" type="radio">
+</input><label class="sd-tab-label" for="145f3e8a-a4ce-4a97-abc0-a24aaa2b0867">
 Application 2</label><div class="sd-tab-content docutils">
 <div class="admonition-mark-sweep-garbage-collection admonition">
 <p class="admonition-title">Mark-sweep garbage collection</p>
@@ -1007,8 +1012,8 @@ Edge = jump</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c2246bd6-013e-4b00-89d1-d31c233d283b" name="fd5abdc4-2384-466e-b477-d38c0c3303e9" type="radio">
-</input><label class="sd-tab-label" for="c2246bd6-013e-4b00-89d1-d31c233d283b">
+<input checked="checked" id="40bb6306-5b48-4abe-87e2-a6515dc7f55c" name="6f7fc602-f038-4292-bf74-47c5b950a935" type="radio">
+</input><label class="sd-tab-label" for="40bb6306-5b48-4abe-87e2-a6515dc7f55c">
 Directed Path DFS</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-1">Goal<a class="headerlink" href="#term-1" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">DFS determines which vertices are reachable from s. How to reconstruct paths?</p>
@@ -1037,8 +1042,8 @@ Directed Path DFS</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="987b487c-ff51-4dd5-82cb-bce0dd9c4928" name="fd5abdc4-2384-466e-b477-d38c0c3303e9" type="radio">
-</input><label class="sd-tab-label" for="987b487c-ff51-4dd5-82cb-bce0dd9c4928">
+<input id="a7eecca0-bbd9-414d-a4bc-3fff55488461" name="6f7fc602-f038-4292-bf74-47c5b950a935" type="radio">
+</input><label class="sd-tab-label" for="a7eecca0-bbd9-414d-a4bc-3fff55488461">
 Parent-link</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-Parent-link-representation-of-paths-from-s">Parent-link representation of paths from <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#term-Parent-link-representation-of-paths-from-s" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Maintain an integer array <span class="math notranslate nohighlight">\(edgeTo[]\)</span><br />
@@ -1090,8 +1095,8 @@ To reconstruct path from <span class="math notranslate nohighlight">\(s\)</span>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3c29cb2b-4c0a-4536-9d2d-b87b5ea8227b" name="d34ab3b3-3365-4fe2-bf63-e1c4410b8d3a" type="radio">
-</input><label class="sd-tab-label" for="3c29cb2b-4c0a-4536-9d2d-b87b5ea8227b">
+<input checked="checked" id="b3e0d712-6226-4ba1-b2c7-931cdcb2c35f" name="cb79d629-b6c4-48fc-aabc-962d4f188b88" type="radio">
+</input><label class="sd-tab-label" for="b3e0d712-6226-4ba1-b2c7-931cdcb2c35f">
 Flood Fill</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-2">Problem<a class="headerlink" href="#term-2" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Implement flood fill (Photoshop magic wand)</p>
@@ -1104,8 +1109,8 @@ Flood Fill</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="fbffbaea-782d-4779-9028-a82ba4401a0c" name="d34ab3b3-3365-4fe2-bf63-e1c4410b8d3a" type="radio">
-</input><label class="sd-tab-label" for="fbffbaea-782d-4779-9028-a82ba4401a0c">
+<input id="8cd270d2-d5bf-4122-a82d-21121a6cdca6" name="cb79d629-b6c4-48fc-aabc-962d4f188b88" type="radio">
+</input><label class="sd-tab-label" for="8cd270d2-d5bf-4122-a82d-21121a6cdca6">
 Graphs</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-3">Problem<a class="headerlink" href="#term-3" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Given an undirected graph <span class="math notranslate nohighlight">\(G\)</span> and vertex <span class="math notranslate nohighlight">\(s\)</span>, find all vertices connected to <span class="math notranslate nohighlight">\(s\)</span></p>
@@ -1126,8 +1131,8 @@ Find a path between two vertices</p>
 </dd>
 </dl>
 </div>
-<input id="23342d96-15e9-4b53-9973-d05606200ab6" name="d34ab3b3-3365-4fe2-bf63-e1c4410b8d3a" type="radio">
-</input><label class="sd-tab-label" for="23342d96-15e9-4b53-9973-d05606200ab6">
+<input id="44b79dc2-d85c-4907-8021-d324703bbc49" name="cb79d629-b6c4-48fc-aabc-962d4f188b88" type="radio">
+</input><label class="sd-tab-label" for="44b79dc2-d85c-4907-8021-d324703bbc49">
 Undirected Search</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-6">To visit vertex <span class="math notranslate nohighlight">\(v\)</span>:  <a class="headerlink" href="#term-6" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Mark vertex <span class="math notranslate nohighlight">\(v\)</span><br />
@@ -1168,8 +1173,8 @@ Recursively visit all unmarked vertices adjacent from <span class="math notransl
 </div>
 </div>
 </div>
-<input id="dbf2ee7d-02de-4651-89e0-ddf5bccb60be" name="d34ab3b3-3365-4fe2-bf63-e1c4410b8d3a" type="radio">
-</input><label class="sd-tab-label" for="dbf2ee7d-02de-4651-89e0-ddf5bccb60be">
+<input id="499b7af0-56bb-40ea-af86-65a532713cfc" name="cb79d629-b6c4-48fc-aabc-962d4f188b88" type="radio">
+</input><label class="sd-tab-label" for="499b7af0-56bb-40ea-af86-65a532713cfc">
 Search</label><div class="sd-tab-content docutils">
 <dl class="glossary simple">
 <dt id="term-Tree-traversal">Tree traversal<a class="headerlink" href="#term-Tree-traversal" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Many ways in a binary tree</p>
