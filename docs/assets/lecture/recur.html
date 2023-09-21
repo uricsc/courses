@@ -116,6 +116,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="admin_day.html">
+   Admin Day
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../csc212.html">
    CSC 212: Data Structures &amp; Algorithms
   </a>
@@ -1193,8 +1198,8 @@ Total work &amp;= n * \frac{2^{log_2\ (n)} - 1}{2 - 1} \\
 <span class="math notranslate nohighlight">\(f(n)\)</span> is the time complexity of the remaining work done outside the recursive calls.</p>
 <p class="sd-card-text">The master theorem provides three cases based on the relationship between <span class="math notranslate nohighlight">\(f(n)\)</span> and the subproblem part <span class="math notranslate nohighlight">\(aT(\frac{n}{b})\)</span>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ad70f425-0eff-4030-9b3e-b36ac2d90827" name="1f898f41-b44a-427a-9ee8-9acd5b04e2f6" type="radio">
-</input><label class="sd-tab-label" for="ad70f425-0eff-4030-9b3e-b36ac2d90827">
+<input checked="checked" id="05d414ea-dd39-42cf-a370-9aa414af9d10" name="9879c47c-9af4-4148-9a96-0b1016b38309" type="radio">
+</input><label class="sd-tab-label" for="05d414ea-dd39-42cf-a370-9aa414af9d10">
 Cases</label><div class="sd-tab-content docutils">
 <dl class="simple myst">
 <dt>Case 1</dt><dd><p class="sd-card-text">If <span class="math notranslate nohighlight">\(f(n) = O(n^c)\)</span> for some constant <span class="math notranslate nohighlight">\(c &lt; log_b(a)\)</span>, then the time complexity is dominated by the subproblem part, and the overall time complexity is given by</p>
@@ -1215,8 +1220,8 @@ Cases</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = \Theta(f(n))\]</div>
 </div>
-<input id="fe3f3507-2d9e-44a1-89a8-023586ae7a47" name="1f898f41-b44a-427a-9ee8-9acd5b04e2f6" type="radio">
-</input><label class="sd-tab-label" for="fe3f3507-2d9e-44a1-89a8-023586ae7a47">
+<input id="8ec11a6a-3229-4f72-aafc-a79b0b308f12" name="9879c47c-9af4-4148-9a96-0b1016b38309" type="radio">
+</input><label class="sd-tab-label" for="8ec11a6a-3229-4f72-aafc-a79b0b308f12">
 Case 1 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 4T \bigg(\frac{n}{2} \bigg) + n\]</div>
@@ -1257,8 +1262,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 <p class="sd-card-text">So, the overall time complexity of the algorithm in this example is <span class="math notranslate nohighlight">\(\Theta(n^2)\)</span>, which means the algorithm’s running time grows quadratically with the input size <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 </details></div>
-<input id="ddf69de0-feb6-4616-83e9-99fe3a7e7912" name="1f898f41-b44a-427a-9ee8-9acd5b04e2f6" type="radio">
-</input><label class="sd-tab-label" for="ddf69de0-feb6-4616-83e9-99fe3a7e7912">
+<input id="703c4838-51f2-490f-ab7b-a8a901ed2b70" name="9879c47c-9af4-4148-9a96-0b1016b38309" type="radio">
+</input><label class="sd-tab-label" for="703c4838-51f2-490f-ab7b-a8a901ed2b70">
 Case 2 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 9T \bigg(\frac{n}{3} \bigg) + n^2\]</div>
@@ -1299,8 +1304,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 \[T(n) = Θ(n^2 \ log(n))\]</div>
 </div>
 </details></div>
-<input id="a14cafab-5dee-4d9d-ba9d-d51948d133a3" name="1f898f41-b44a-427a-9ee8-9acd5b04e2f6" type="radio">
-</input><label class="sd-tab-label" for="a14cafab-5dee-4d9d-ba9d-d51948d133a3">
+<input id="b878bed6-c89a-4bfc-a319-424c2dd66133" name="9879c47c-9af4-4148-9a96-0b1016b38309" type="radio">
+</input><label class="sd-tab-label" for="b878bed6-c89a-4bfc-a319-424c2dd66133">
 Case 3 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 2T \bigg(\frac{n}{2} \bigg) + n^3\]</div>
