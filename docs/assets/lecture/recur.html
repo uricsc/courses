@@ -844,8 +844,8 @@ Total work &amp;= n * \frac{2^{log_2\ (n)} - 1}{2 - 1} \\
 <span class="math notranslate nohighlight">\(f(n)\)</span> is the time complexity of the remaining work done outside the recursive calls.</p>
 <p class="sd-card-text">The master theorem provides three cases based on the relationship between <span class="math notranslate nohighlight">\(f(n)\)</span> and the subproblem part <span class="math notranslate nohighlight">\(aT(\frac{n}{b})\)</span>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ab952931-88ee-41e3-a483-19d7fd80c609" name="45e707cf-a22e-4f85-956e-f2f2c927a55f" type="radio">
-</input><label class="sd-tab-label" for="ab952931-88ee-41e3-a483-19d7fd80c609">
+<input checked="checked" id="d7068b11-9fda-454b-a7cf-9a9aa2483ec1" name="f98323c5-adf9-4a8f-bf19-2fd70d8a7c51" type="radio">
+</input><label class="sd-tab-label" for="d7068b11-9fda-454b-a7cf-9a9aa2483ec1">
 Cases</label><div class="sd-tab-content docutils">
 <dl class="simple myst">
 <dt>Case 1</dt><dd><p class="sd-card-text">If <span class="math notranslate nohighlight">\(f(n) = O(n^c)\)</span> for some constant <span class="math notranslate nohighlight">\(c &lt; log_b(a)\)</span>, then the time complexity is dominated by the subproblem part, and the overall time complexity is given by</p>
@@ -866,8 +866,8 @@ Cases</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = \Theta(f(n))\]</div>
 </div>
-<input id="e57c1c8c-0867-4661-9567-be255ee6de9e" name="45e707cf-a22e-4f85-956e-f2f2c927a55f" type="radio">
-</input><label class="sd-tab-label" for="e57c1c8c-0867-4661-9567-be255ee6de9e">
+<input id="cf191ed1-578b-4bb9-a590-285ac5e91432" name="f98323c5-adf9-4a8f-bf19-2fd70d8a7c51" type="radio">
+</input><label class="sd-tab-label" for="cf191ed1-578b-4bb9-a590-285ac5e91432">
 Case 1 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 4T \bigg(\frac{n}{2} \bigg) + n\]</div>
@@ -908,8 +908,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 <p class="sd-card-text">So, the overall time complexity of the algorithm in this example is <span class="math notranslate nohighlight">\(\Theta(n^2)\)</span>, which means the algorithm’s running time grows quadratically with the input size <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 </details></div>
-<input id="7e8e1162-ca04-44da-b13e-e00b1d594996" name="45e707cf-a22e-4f85-956e-f2f2c927a55f" type="radio">
-</input><label class="sd-tab-label" for="7e8e1162-ca04-44da-b13e-e00b1d594996">
+<input id="01bc0d57-ea6f-435c-94f5-51d9d75f2479" name="f98323c5-adf9-4a8f-bf19-2fd70d8a7c51" type="radio">
+</input><label class="sd-tab-label" for="01bc0d57-ea6f-435c-94f5-51d9d75f2479">
 Case 2 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 9T \bigg(\frac{n}{3} \bigg) + n^2\]</div>
@@ -950,8 +950,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 \[T(n) = Θ(n^2 \ log(n))\]</div>
 </div>
 </details></div>
-<input id="36c1d961-12c0-4d3f-8e1d-d5b436d3d0d7" name="45e707cf-a22e-4f85-956e-f2f2c927a55f" type="radio">
-</input><label class="sd-tab-label" for="36c1d961-12c0-4d3f-8e1d-d5b436d3d0d7">
+<input id="fd637ffd-db51-4ce0-bc96-6a6cd283ba51" name="f98323c5-adf9-4a8f-bf19-2fd70d8a7c51" type="radio">
+</input><label class="sd-tab-label" for="fd637ffd-db51-4ce0-bc96-6a6cd283ba51">
 Case 3 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 2T \bigg(\frac{n}{2} \bigg) + n^3\]</div>
