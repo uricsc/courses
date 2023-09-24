@@ -1,27 +1,36 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Linked Lists &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -29,17 +38,21 @@
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -54,865 +67,433 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assets/lecture/ll';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Stacks" href="stacks.html" />
     <link rel="prev" title="Dynamic Arrays" href="dyn_arr.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/URI Brandmark 282.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">URI CSC <br> Core Course Modules</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Needful Things
- </span>
-</p>
+    
+    
+    <img src="../../_static/URI Brandmark 282.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/URI Brandmark 282.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Needful Things</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="admin_day.html">
-   Admin Day
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../csc212.html">
-   CSC 212: Data Structures &amp; Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../tips.html">
-   Tips for Success
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../faq.html">
-   FAQs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="admin_day.html">Admin Day</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csc212.html">CSC 212: Data Structures &amp; Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Problem Solving
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/basics.html">
-   Basics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prob_solv.html">
-     <span class="xref myst">
-      Problem Solving
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="expressions.html">
-     Expressions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_types2.html">
-     <span class="xref myst">
-      Data Types
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="operators.html">
-     Operators
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_types2.html"><span class="xref myst">Data Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Programming
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/main.html">
-   Main &amp; CLAs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/controls.html">
-   Controls
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="conditionals2.html">
-     <span class="xref myst">
-      Conditionals
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="iterations.html">
-     Iteration Statements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jumps2.html">
-     Jump Statements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/collections.html">
-   Collections
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="array.html">
-     Array
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/classes.html">
-   Classes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="class.html">
-     <span class="xref myst">
-      Object-Oriented Programming
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="inheritance.html">
-     Inheritance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="polymorphism.html">
-     Polymorphism
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/files2.html">
-   <span class="xref myst">
-    File Handling
-   </span>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/err_handling.html">
-   <span class="xref myst">
-    Exceptions &amp; Errors
-   </span>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals2.html"><span class="xref myst">Conditionals</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations.html">Iteration Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jumps2.html">Jump Statements</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Data Structures
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/collections.html">Collections</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="array.html">Array</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/classes.html">Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="class.html"><span class="xref myst">Object-Oriented Programming</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polymorphism.html">Polymorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../module/files2.html"><span class="xref myst">File Handling</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/err_handling.html"><span class="xref myst">Exceptions &amp; Errors</span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Structures</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../module/m03.html">
-   Linear Structures
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="dyn_arr.html">
-     Dynamic Arrays
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Linked Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="stacks.html">
-     Stacks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="queues.html">
-     Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pq.html">
-     Priority Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="map.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="set.html">
-     Sets
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m05.html">
-   Non-Linear Structures
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tree.html">
-     Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heaps.html">
-     Heaps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bst.html">
-     Binary Search Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_3.html">
-     2-3 Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="llrbt.html">
-     Left-Leaning Red-Black Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hash_tables.html">
-     Hash Tables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="graphs.html">
-     Graphs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dfs.html">
-     Graphs : Depth-First Search
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bfs.html">
-     Graphs : Breadth-First Search
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m03.html">Linear Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dyn_arr.html">Dynamic Arrays</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algorithms
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m02.html">
-   Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis of Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cost.html">
-     Computational Cost
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="big_o.html">
-     Big-O
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m04.html">
-   Searching &amp; Sorting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="search.html">
-     Search Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rec_algo.html">
-     Recursive Algorithms (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="recur.html">
-     Recurrences
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basic.html">
-     Basic Sorts (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="merge.html">
-     Mergesort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="qs.html">
-     Quicksort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heapsort.html">
-     Heapsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="timsort.html">
-     Timsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="introsort.html">
-     Introsort
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="greedy.html">
-   Greedy Algorithms
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="bst.html">Binary Search Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_3.html">2-3 Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llrbt.html">Left-Leaning Red-Black Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash_tables.html">Hash Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dfs.html">Graphs : Depth-First Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bfs.html">Graphs : Breadth-First Search</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../ide.html">
-   Development Environments
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/cpp.html">
-     C++
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/py.html">
-     Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.learncpp.com">
-   Learn C++
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">
-   C++ Syntax Cheat Sheet
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mth180.html">
-   MTH 180 Concepts
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/opendsa.html">
-   OpenDSA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">
-     Logarithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">
-     Summations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">
-     Recurrence Relations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">
-     Mathematical Proof Techniques
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../gradescope.html">
-   Submission Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">
-   Official GitHub Training Manual
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../add_rss.html">
-   Additional Resources
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m02.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis of Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cost.html">Computational Cost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_o.html">Big-O</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m04.html">Searching &amp; Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rec_algo.html">Recursive Algorithms (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recur.html">Recurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Basic Sorts (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">Mergesort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qs.html">Quicksort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heapsort.html">Heapsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timsort.html">Timsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introsort.html">Introsort</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="greedy.html">Greedy Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ide.html">Development Environments</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../misc/cpp.html">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/py.html">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://www.learncpp.com">Learn C++</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">C++ Syntax Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mth180.html">MTH 180 Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/opendsa.html">OpenDSA</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">Logarithms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">Summations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">Recurrence Relations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">Mathematical Proof Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gradescope.html">Submission Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">Official GitHub Training Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add_rss.html">Additional Resources</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/ll.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/assets/lecture/ll.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/csc-dsa/su23"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/ll.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/assets/lecture/ll.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-stl-containers">
-   Some STL Containers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Linked Lists
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arrays">
-     Arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Linked Lists
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#singly-linked-list">
-   Singly Linked List
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-a-singly-linked-list">
-     Implementing a Singly Linked List
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-linked-list">
-     Creating a Linked List
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linked-list-operations">
-     Linked List Operations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linked-lists-variations">
-   Linked Lists : Variations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-complexities">
-   Time Complexities
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linked Lists</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-stl-containers">
-   Some STL Containers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Linked Lists
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arrays">
-     Arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Linked Lists
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#singly-linked-list">
-   Singly Linked List
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-a-singly-linked-list">
-     Implementing a Singly Linked List
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-linked-list">
-     Creating a Linked List
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linked-list-operations">
-     Linked List Operations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linked-lists-variations">
-   Linked Lists : Variations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-complexities">
-   Time Complexities
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linked Lists</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-stl-containers">Some STL Containers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Linked Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linked Lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singly-linked-list">Singly Linked List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-a-singly-linked-list">Implementing a Singly Linked List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-linked-list">Creating a Linked List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-list-operations">Linked List Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-lists-variations">Linked Lists : Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-complexities">Time Complexities</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="linked-lists">
-<h1>Linked Lists<a class="headerlink" href="#linked-lists" title="Permalink to this headline">#</a></h1>
+<h1>Linked Lists<a class="headerlink" href="#linked-lists" title="Permalink to this heading">#</a></h1>
 <div class="full-width docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -943,7 +524,7 @@ Additional Resources</div>
 </div>
 </details></div>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -979,7 +560,7 @@ Additional Resources</div>
 </div>
 </section>
 <section id="some-stl-containers">
-<h2>Some STL Containers<a class="headerlink" href="#some-stl-containers" title="Permalink to this headline">#</a></h2>
+<h2>Some STL Containers<a class="headerlink" href="#some-stl-containers" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -992,8 +573,8 @@ Additional Resources</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="89ea1136-62ce-4dd8-b8d5-3a07f7703419" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="89ea1136-62ce-4dd8-b8d5-3a07f7703419">
+<input checked="checked" id="5cb4ea36-7afd-4fdc-94b3-a11e8ecb4f80" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="5cb4ea36-7afd-4fdc-94b3-a11e8ecb4f80">
 Containers</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Arrays, vectors, forward lists, and lists are all data structures used in computer science and programming to store collections of data. Each of these data structures has its own strengths and weaknesses, and understanding the differences between them can help you choose the best one for your particular application.</p>
 <dl class="glossary simple">
@@ -1008,8 +589,8 @@ Containers</label><div class="sd-tab-content docutils">
 </dl>
 <p class="sd-card-text">In summary, arrays and vectors are best for situations where you need random access to elements and the size of the collection is known in advance. Forward lists and lists are better for situations where you need to insert or delete elements from the beginning, middle, or end of the collection, or when you need to maintain a sorted collection.</p>
 </div>
-<input id="cf1c0428-751a-4a6c-9793-fd3d83dca741" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="cf1c0428-751a-4a6c-9793-fd3d83dca741">
+<input id="f093e7c9-bc68-4441-8b60-286835acf1d0" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="f093e7c9-bc68-4441-8b60-286835acf1d0">
 Array Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1018,10 +599,10 @@ Array Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Stack Allocation</strong></p>
 <p class="sd-card-text">When an array is declared as a local variable inside a function without using the new operator, the memory for the array is allocated on the stack. The size of the array must be known at compile-time. Here’s an example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// allocate 10 integers on the stack</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Stack allocation is fast and efficient, but the size of the array is limited by the available stack space, which is typically smaller than the heap.</p>
@@ -1033,11 +614,11 @@ Array Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Heap Allocation</strong></p>
 <p class="sd-card-text">When an array is declared using the new operator, the memory for the array is allocated on the heap. The size of the array can be determined at runtime. Here’s an example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// allocate 10 integers on the heap</span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">myArray</span><span class="p">;</span><span class="w"> </span><span class="c1">// free the memory when done</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Heap allocation is more flexible than stack allocation, but it’s slower and more prone to memory leaks if the programmer forgets to free the memory when done.</p>
@@ -1048,18 +629,18 @@ Array Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="6f6726d8-fc5b-41ae-ae17-d7e0fb7b6af4" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="6f6726d8-fc5b-41ae-ae17-d7e0fb7b6af4">
+<input id="2fc76a8d-c04c-4099-a0e4-1ab086e38c74" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="2fc76a8d-c04c-4099-a0e4-1ab086e38c74">
 Array Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-array-https-en-cppreference-com-w-cpp-container-array admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/array">array</a></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span><span class="cp"></span>
-<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="c1">// Declare an array with initial values</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="w">    </span><span class="c1">// Access an element by index</span>
 <span class="linenos">10</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints 1</span>
@@ -1071,60 +652,60 @@ Array Functions</label><div class="sd-tab-content docutils">
 <span class="linenos">16</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints 5</span>
 <span class="linenos">17</span>
 <span class="linenos">18</span><span class="w">    </span><span class="c1">// Add an element to the end of the array</span>
-<span class="linenos">19</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="linenos">20</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// arr is now {0, 0, 0, 0, 6}</span>
 <span class="linenos">21</span>
 <span class="linenos">22</span><span class="w">    </span><span class="c1">// Remove and return the last element of the array</span>
-<span class="linenos">23</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">last_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">back</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">last_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
 <span class="linenos">24</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// arr is now {0, 0, 0, 0, 0}</span>
 <span class="linenos">25</span>
 <span class="linenos">26</span><span class="w">    </span><span class="c1">// Add an element to the beginning of the array</span>
-<span class="linenos">27</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">28</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">29</span><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
-<span class="linenos">30</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">28</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+<span class="linenos">30</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">31</span><span class="w">    </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// arr is now {0, 0, 0, 0, 0}</span>
 <span class="linenos">32</span>
 <span class="linenos">33</span><span class="w">    </span><span class="c1">// Remove and return the first element of the array</span>
-<span class="linenos">34</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">first_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">35</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">36</span><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="linenos">37</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">34</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">first_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="linenos">35</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">36</span><span class="w">        </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<span class="linenos">37</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">38</span><span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// arr is now {0, 0, 0, 0, 0}</span>
 <span class="linenos">39</span>
 <span class="linenos">40</span><span class="w">    </span><span class="c1">// Find the index of a given element in the array</span>
-<span class="linenos">41</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">41</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span><span class="w">    </span><span class="c1">// Sort the array in ascending order</span>
-<span class="linenos">44</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">44</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="linenos">45</span>
 <span class="linenos">46</span><span class="w">    </span><span class="c1">// Reverse the order of the elements in the array</span>
-<span class="linenos">47</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">47</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="linenos">48</span>
 <span class="linenos">49</span><span class="w">    </span><span class="c1">// Concatenate two arrays into a new array</span>
-<span class="linenos">50</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">51</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="n">concatenated</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">52</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">concatenated</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="w"></span>
-<span class="linenos">53</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr2</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">concatenated</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">50</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+<span class="linenos">51</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="n">concatenated</span><span class="p">;</span>
+<span class="linenos">52</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">concatenated</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">arr2</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">concatenated</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
 <span class="linenos">54</span>
 <span class="linenos">55</span><span class="w">    </span><span class="c1">// Slice a portion of the array into a new array</span>
-<span class="linenos">56</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">57</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">slice</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">56</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="p">;</span>
+<span class="linenos">57</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">slice</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
 <span class="linenos">58</span>
 <span class="linenos">59</span><span class="w">    </span><span class="c1">// Iterate over the elements of the array</span>
-<span class="linenos">60</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">61</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">62</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">60</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">61</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">62</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">63</span>
-<span class="linenos">64</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">65</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">64</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">65</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/array">link: cppreference</a></p>
 </div>
 </div>
-<input id="ab6976f9-74d1-45a3-9767-ea46f8594afc" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="ab6976f9-74d1-45a3-9767-ea46f8594afc">
+<input id="23d7d49a-b036-4093-9dea-56127a0e8c42" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="23d7d49a-b036-4093-9dea-56127a0e8c42">
 Vector Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1141,25 +722,25 @@ Vector Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">Here’s an example of creating and using a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"> </span><span class="c1">// create an empty vector</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="n">v</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// reserve space for 10 integers (but size is still 0)</span>
 <span class="linenos"> 7</span>
 <span class="linenos"> 8</span><span class="w">    </span><span class="c1">// add some elements to the vector</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">10</span><span class="w">        </span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// append an element to the vector</span>
-<span class="linenos">11</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">12</span>
 <span class="linenos">13</span><span class="w">    </span><span class="c1">// iterate over the elements of the vector</span>
-<span class="linenos">14</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">17</span>
-<span class="linenos">18</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">19</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">19</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text">In this example,</p>
@@ -1179,18 +760,18 @@ Vector Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="07084704-822a-4c87-91ad-ec888f4b8d58" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="07084704-822a-4c87-91ad-ec888f4b8d58">
+<input id="2a8e96fe-ff78-44f6-b831-a57e468d3af4" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="2a8e96fe-ff78-44f6-b831-a57e468d3af4">
 Vector Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-vector-https-en-cppreference-com-w-cpp-container-vector admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">vector</a></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="c1">// Declare a vector with initial values</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="w">    </span><span class="c1">// Access an element by index</span>
 <span class="linenos">10</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints 1</span>
@@ -1205,50 +786,50 @@ Vector Functions</label><div class="sd-tab-content docutils">
 <span class="linenos">19</span><span class="w">    </span><span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// vec is now {10, 2, 3, 4, 5, 6}</span>
 <span class="linenos">20</span>
 <span class="linenos">21</span><span class="w">    </span><span class="c1">// Remove and return the last element of the vector</span>
-<span class="linenos">22</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">last_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">last_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
 <span class="linenos">23</span><span class="w">    </span><span class="n">vec</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w"> </span><span class="c1">// vec is now {10, 2, 3, 4, 5}</span>
 <span class="linenos">24</span>
 <span class="linenos">25</span><span class="w">    </span><span class="c1">// Add an element to the beginning of the vector</span>
 <span class="linenos">26</span><span class="w">    </span><span class="n">vec</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// vec is now {0, 10, 2, 3, 4, 5}</span>
 <span class="linenos">27</span>
 <span class="linenos">28</span><span class="w">    </span><span class="c1">// Remove and return the first element of the vector</span>
-<span class="linenos">29</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">first_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">first_element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
 <span class="linenos">30</span><span class="w">    </span><span class="n">vec</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="w"> </span><span class="c1">// vec is now {10, 2, 3, 4, 5}</span>
 <span class="linenos">31</span>
 <span class="linenos">32</span><span class="w">    </span><span class="c1">// Find the index of a given element in the vector</span>
-<span class="linenos">33</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">itr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">34</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">itr</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">itr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos">34</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">itr</span><span class="p">);</span>
 <span class="linenos">35</span>
 <span class="linenos">36</span><span class="w">    </span><span class="c1">// Sort the vector in ascending order</span>
-<span class="linenos">37</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">37</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span><span class="w">    </span><span class="c1">// Reverse the order of the elements in the vector</span>
-<span class="linenos">40</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">40</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="linenos">41</span>
 <span class="linenos">42</span><span class="w">    </span><span class="c1">// Concatenate two vectors into a new vector</span>
-<span class="linenos">43</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span><span class="w"></span>
-<span class="linenos">44</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">concatenated</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">45</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"></span>
-<span class="linenos">46</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">concatenated</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
-<span class="linenos">47</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">concatenated</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">43</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+<span class="linenos">44</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">concatenated</span><span class="p">;</span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">46</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">concatenated</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="linenos">47</span><span class="w">    </span><span class="n">concatenated</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">concatenated</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vec2</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 <span class="linenos">48</span>
 <span class="linenos">49</span><span class="w">    </span><span class="c1">// Slice a portion of the vector into a new vector</span>
-<span class="linenos">50</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">50</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">slice</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
 <span class="linenos">51</span>
 <span class="linenos">52</span><span class="w">    </span><span class="c1">// Iterate over the elements of the vector</span>
-<span class="linenos">53</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">54</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">55</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">53</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">54</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">55</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">56</span>
-<span class="linenos">57</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">58</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">57</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">58</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">link: cppreference</a></p>
 </div>
 </div>
-<input id="2fa33896-796b-4aae-be70-a7d0590637ec" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="2fa33896-796b-4aae-be70-a7d0590637ec">
+<input id="a40457a0-8c0d-41e0-8c3b-9b260bc1e39c" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="a40457a0-8c0d-41e0-8c3b-9b260bc1e39c">
 Forward-list Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1264,24 +845,24 @@ Forward-list Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">Here’s an example of creating and using a <code class="docutils literal notranslate"><span class="pre">std::forward_list</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;forward_list&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;forward_list&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">forward_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">flist</span><span class="p">;</span><span class="w"> </span><span class="c1">// create an empty forward list</span>
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="w">    </span><span class="c1">// add some elements to the list</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 9</span><span class="w">        </span><span class="n">flist</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// insert an element at the beginning of the list</span>
-<span class="linenos">10</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">11</span>
 <span class="linenos">12</span><span class="w">    </span><span class="c1">// iterate over the elements of the list</span>
-<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">16</span>
-<span class="linenos">17</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">18</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">18</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text">In this example,</p>
@@ -1302,17 +883,17 @@ Forward-list Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="c1e9e411-1f84-467d-894a-7c28e98b8e28" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="c1e9e411-1f84-467d-894a-7c28e98b8e28">
+<input id="79d4d0c4-ea39-4c87-8ac3-4da487497100" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="79d4d0c4-ea39-4c87-8ac3-4da487497100">
 Forward-list Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-forward-list-https-en-cppreference-com-w-cpp-container-forward-list admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/forward_list">forward-list</a></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;forward_list&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;forward_list&gt;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="c1">// Declare a forward list with initial values</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">forward_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">flist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">forward_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">flist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
 <span class="linenos"> 7</span>
 <span class="linenos"> 8</span><span class="w">    </span><span class="c1">// Access the first element of the list</span>
 <span class="linenos"> 9</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">front</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints 1</span>
@@ -1327,32 +908,32 @@ Forward-list Functions</label><div class="sd-tab-content docutils">
 <span class="linenos">18</span><span class="w">    </span><span class="n">flist</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span><span class="w"> </span><span class="c1">// flist is now {10, 2, 3, 4, 5}</span>
 <span class="linenos">19</span>
 <span class="linenos">20</span><span class="w">    </span><span class="c1">// Insert an element after a given position in the list</span>
-<span class="linenos">21</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="linenos">22</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="linenos">23</span><span class="w">    </span><span class="n">flist</span><span class="p">.</span><span class="n">insert_after</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// flist is now {10, 2, 6, 3, 4, 5}</span>
 <span class="linenos">24</span>
 <span class="linenos">25</span><span class="w">    </span><span class="c1">// Remove an element after a given position in the list</span>
-<span class="linenos">26</span><span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">27</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="linenos">27</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 <span class="linenos">28</span><span class="w">    </span><span class="n">flist</span><span class="p">.</span><span class="n">erase_after</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span><span class="w"> </span><span class="c1">// flist is now {10, 2, 6, 4, 5}</span>
 <span class="linenos">29</span>
 <span class="linenos">30</span><span class="w">    </span><span class="c1">// Find the position of a given element in the list</span>
-<span class="linenos">31</span><span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">31</span><span class="w">    </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">flist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">flist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 <span class="linenos">32</span>
 <span class="linenos">33</span><span class="w">    </span><span class="c1">// Iterate over the elements of the list</span>
-<span class="linenos">34</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">flist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">35</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">36</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">34</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">flist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">35</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">36</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">37</span>
-<span class="linenos">38</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">39</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">38</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">39</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/forward_list">link: cppreference</a></p>
 </div>
 </div>
-<input id="267a79f9-a8e9-41af-9765-94bc63006342" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="267a79f9-a8e9-41af-9765-94bc63006342">
+<input id="ca000836-db9e-4d78-859e-ae626982d3f7" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="ca000836-db9e-4d78-859e-ae626982d3f7">
 List Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1367,24 +948,24 @@ List Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="c1">// create an empty list</span>
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="w">    </span><span class="c1">// add some elements to the list</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 9</span><span class="w">        </span><span class="n">l</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// insert an element at the end of the list</span>
-<span class="linenos">10</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">11</span>
 <span class="linenos">12</span><span class="w">    </span><span class="c1">// iterate over the elements of the list</span>
-<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">16</span>
-<span class="linenos">17</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">18</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">18</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text">In this example,</p>
@@ -1405,21 +986,21 @@ List Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="280e196f-3646-44a6-a5c1-ab159fa6d8c3" name="7e098c95-c56d-47e7-8923-986091e655af" type="radio">
-</input><label class="sd-tab-label" for="280e196f-3646-44a6-a5c1-ab159fa6d8c3">
+<input id="4273a12e-652e-4e87-b2ac-567dcfe9a52f" name="714fa947-36c5-4b7f-827b-3b3b78ab94d5" type="radio">
+</input><label class="sd-tab-label" for="4273a12e-652e-4e87-b2ac-567dcfe9a52f">
 List Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-list-https-en-cppreference-com-w-cpp-container-list admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/list">list</a></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="c1">// Declare a list with initial values</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mylist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mylist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
 <span class="linenos"> 7</span>
 <span class="linenos"> 8</span><span class="w">    </span><span class="c1">// Access an element by iterator</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="linenos">11</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints 3</span>
 <span class="linenos">12</span>
 <span class="linenos">13</span><span class="w">    </span><span class="c1">// Modify an element by iterator</span>
@@ -1441,25 +1022,25 @@ List Functions</label><div class="sd-tab-content docutils">
 <span class="linenos">29</span><span class="w">    </span><span class="n">mylist</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span><span class="w"> </span><span class="c1">// mylist is now {1, 2, 10, 4, 5}</span>
 <span class="linenos">30</span>
 <span class="linenos">31</span><span class="w">    </span><span class="c1">// Insert an element before a given position in the list</span>
-<span class="linenos">32</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">33</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="linenos">33</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 <span class="linenos">34</span><span class="w">    </span><span class="n">mylist</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// mylist is now {1, 2, 10, 6, 4, 5}</span>
 <span class="linenos">35</span>
 <span class="linenos">36</span><span class="w">    </span><span class="c1">// Remove an element at a given position in the list</span>
-<span class="linenos">37</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">38</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">37</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="linenos">38</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">advance</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="linenos">39</span><span class="w">    </span><span class="n">mylist</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span><span class="w"> </span><span class="c1">// mylist is now {1, 2, 6, 4, 5}</span>
 <span class="linenos">40</span>
 <span class="linenos">41</span><span class="w">    </span><span class="c1">// Find the position of a given element in the list</span>
-<span class="linenos">42</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">mylist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">mylist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 <span class="linenos">43</span>
 <span class="linenos">44</span><span class="w">    </span><span class="c1">// Iterate over the elements of the list</span>
-<span class="linenos">45</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mylist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">46</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">47</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mylist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">46</span><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">47</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">48</span>
-<span class="linenos">49</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">50</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">50</span><span class="p">}</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/list">link: cppreference</a></p>
@@ -1471,9 +1052,9 @@ List Functions</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="id1">
-<h2>Linked Lists<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>Linked Lists<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="arrays">
-<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h3>
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1518,7 +1099,7 @@ List Functions</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="id2">
-<h3><a class="reference external" href="https://www.geeksforgeeks.org/data-structures/linked-list/">Linked Lists</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://www.geeksforgeeks.org/data-structures/linked-list/">Linked Lists</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1551,7 +1132,7 @@ List Functions</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="singly-linked-list">
-<h2><a class="reference external" href="https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/">Singly Linked List</a><a class="headerlink" href="#singly-linked-list" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/">Singly Linked List</a><a class="headerlink" href="#singly-linked-list" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1571,7 +1152,7 @@ Node Right: <strong>memory location of next element in LL</strong></p>
 </div>
 </div>
 <section id="implementing-a-singly-linked-list">
-<h3>Implementing a Singly Linked List<a class="headerlink" href="#implementing-a-singly-linked-list" title="Permalink to this headline">#</a></h3>
+<h3>Implementing a Singly Linked List<a class="headerlink" href="#implementing-a-singly-linked-list" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1605,7 +1186,7 @@ Linked lists in C++</div>
 </div>
 </section>
 <section id="creating-a-linked-list">
-<h3>Creating a Linked List<a class="headerlink" href="#creating-a-linked-list" title="Permalink to this headline">#</a></h3>
+<h3>Creating a Linked List<a class="headerlink" href="#creating-a-linked-list" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1615,20 +1196,20 @@ Linked lists in C++</div>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">class <code class="docutils literal notranslate"><span class="pre">Node</span></code></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span>
+<span class="linenos"> 2</span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
 <span class="linenos"> 6</span><span class="w">        </span><span class="c1">// private data/methods</span>
 <span class="linenos"> 7</span><span class="w">        </span><span class="c1">// ...</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">        </span><span class="o">~</span><span class="n">Node</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="linenos">10</span><span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">        </span><span class="o">~</span><span class="n">Node</span><span class="p">();</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">        </span><span class="n">Friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">List</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">14</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">Friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">List</span><span class="p">;</span>
+<span class="linenos">14</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -1638,20 +1219,20 @@ Linked lists in C++</div>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">class <code class="docutils literal notranslate"><span class="pre">List</span></code></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">List</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">tail</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">List</span>
+<span class="linenos"> 2</span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">tail</span><span class="p">;</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="c1">// private data/methods</span>
 <span class="linenos"> 7</span><span class="w">    </span><span class="c1">// ...</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">    </span><span class="n">List</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">    </span><span class="o">~</span><span class="n">List</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">List</span><span class="p">();</span>
+<span class="linenos">11</span><span class="w">    </span><span class="o">~</span><span class="n">List</span><span class="p">();</span>
 <span class="linenos">12</span><span class="w">    </span><span class="c1">// public methods</span>
 <span class="linenos">13</span><span class="w">    </span><span class="c1">// ...</span>
-<span class="linenos">14</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -1665,13 +1246,13 @@ Linked lists in C++</div>
 </div>
 </section>
 <section id="linked-list-operations">
-<h3>Linked List Operations<a class="headerlink" href="#linked-list-operations" title="Permalink to this headline">#</a></h3>
+<h3>Linked List Operations<a class="headerlink" href="#linked-list-operations" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6aea1aa1-db98-4704-8a5d-316c578192b1" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="6aea1aa1-db98-4704-8a5d-316c578192b1">
+<input checked="checked" id="a8f6f894-e754-45da-946f-e80d4e3401f3" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="a8f6f894-e754-45da-946f-e80d4e3401f3">
 Insert&#64;Head</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1701,8 +1282,8 @@ Algorithm of insertion at the beginning</div>
 </div>
 </div>
 </div>
-<input id="6f51f537-8d47-46d8-8b8a-b29e7ef94037" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="6f51f537-8d47-46d8-8b8a-b29e7ef94037">
+<input id="988ae437-fe33-44dd-9118-4acf35a5f920" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="988ae437-fe33-44dd-9118-4acf35a5f920">
 Insert&#64;Tail</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1736,8 +1317,8 @@ To insert element in linked list last we would use the following steps to insert
 </div>
 </div>
 </div>
-<input id="b672d9e2-4c14-465c-a5ab-18224a54e9ce" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="b672d9e2-4c14-465c-a5ab-18224a54e9ce">
+<input id="33fe9985-a87f-4e65-9937-cb9b60427173" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="33fe9985-a87f-4e65-9937-cb9b60427173">
 Insert&#64;Nth</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1766,8 +1347,8 @@ Insertion at After nth position node</div>
 </div>
 </div>
 </div>
-<input id="2f07f667-cac9-43ab-a58f-9476331e8f2c" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="2f07f667-cac9-43ab-a58f-9476331e8f2c">
+<input id="d7ff3b97-6af8-415c-8489-bdeac6f63700" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="d7ff3b97-6af8-415c-8489-bdeac6f63700">
 Delete&#64;Tail</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1799,8 +1380,8 @@ Delete an element from end in singly linked list</div>
 </div>
 </div>
 </div>
-<input id="8564d7f4-03a3-4b9e-b9c3-4a041590fa33" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="8564d7f4-03a3-4b9e-b9c3-4a041590fa33">
+<input id="9eef4aff-d5fc-4559-bf1e-0f8a748c9ba4" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="9eef4aff-d5fc-4559-bf1e-0f8a748c9ba4">
 Delete&#64;Head</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1829,8 +1410,8 @@ Insertion at After nth position node</div>
 </div>
 </div>
 </div>
-<input id="ec6f88ca-f5a6-4490-91de-210c1f2a6533" name="0e74c1a4-ba00-4904-a65d-90d08689e9e4" type="radio">
-</input><label class="sd-tab-label" for="ec6f88ca-f5a6-4490-91de-210c1f2a6533">
+<input id="8ad01cde-a771-4188-a6f1-f3d70e410a2d" name="26686111-9f9f-4b92-9d47-110df94386cb" type="radio">
+</input><label class="sd-tab-label" for="8ad01cde-a771-4188-a6f1-f3d70e410a2d">
 Delete&#64;Nth</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -2012,20 +1593,20 @@ For virtual walkthroughs : [https://visualgo.net/en/list](https://visualgo.net/e
 </section>
 </section>
 <section id="linked-lists-variations">
-<h2>Linked Lists : Variations<a class="headerlink" href="#linked-lists-variations" title="Permalink to this headline">#</a></h2>
+<h2>Linked Lists : Variations<a class="headerlink" href="#linked-lists-variations" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="dfbe6059-8fe4-46d0-9ee7-8207dd4220b4" name="9abcbf40-eee5-402b-8fca-249535e1b001" type="radio">
-</input><label class="sd-tab-label" for="dfbe6059-8fe4-46d0-9ee7-8207dd4220b4">
+<input checked="checked" id="af307692-0062-470c-ba09-747e8f0ebddd" name="dcd737da-c3f4-4436-9ff4-fedb663f694f" type="radio">
+</input><label class="sd-tab-label" for="af307692-0062-470c-ba09-747e8f0ebddd">
 Visualize</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://i1.faceprep.in/Companies-1/types-of-linked-list.png" src="https://i1.faceprep.in/Companies-1/types-of-linked-list.png" />
 </figure>
 </div>
-<input id="57327787-58fb-4912-8d64-5574a59126f3" name="9abcbf40-eee5-402b-8fca-249535e1b001" type="radio">
-</input><label class="sd-tab-label" for="57327787-58fb-4912-8d64-5574a59126f3">
+<input id="16a386e0-9244-4f29-8fd8-f8103190b6d6" name="dcd737da-c3f4-4436-9ff4-fedb663f694f" type="radio">
+</input><label class="sd-tab-label" for="16a386e0-9244-4f29-8fd8-f8103190b6d6">
 Circular Singly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/circular-singly-linked-list-insertion/">Circular Singly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -2034,29 +1615,29 @@ Circular Singly Linked</label><div class="sd-tab-content docutils">
 <img alt="https://media.geeksforgeeks.org/wp-content/uploads/20220817185024/CircularSinglyLinkedList.png" src="https://media.geeksforgeeks.org/wp-content/uploads/20220817185024/CircularSinglyLinkedList.png" />
 </figure>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Define a Node class to represent each node in the circular singly-linked list</span>
-<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span>
 <span class="linenos"> 4</span><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// data stored in the node</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to the next node in the list</span>
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="w">    </span><span class="c1">// constructor to initialize a new node with the given data and next pointer</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">12</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">12</span><span class="p">};</span>
 <span class="linenos">13</span>
 <span class="linenos">14</span><span class="c1">// Define the CircularSinglyLinkedList class to represent the circular singly-linked list</span>
-<span class="linenos">15</span><span class="k">class</span><span class="w"> </span><span class="nc">CircularSinglyLinkedList</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">16</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">15</span><span class="k">class</span><span class="w"> </span><span class="nc">CircularSinglyLinkedList</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="k">private</span><span class="o">:</span>
 <span class="linenos">17</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to the last node in the list</span>
 <span class="linenos">18</span>
-<span class="linenos">19</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">19</span><span class="k">public</span><span class="o">:</span>
 <span class="linenos">20</span><span class="w">    </span><span class="c1">// constructor to initialize an empty list with a null tail pointer</span>
-<span class="linenos">21</span><span class="w">    </span><span class="n">CircularSinglyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">        </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">23</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">24</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">    </span><span class="n">CircularSinglyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">        </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="linenos">23</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">24</span><span class="p">};</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Note a circular singly-linked list has the following built-in functions:</p>
@@ -2074,8 +1655,8 @@ Circular Singly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp</a></p>
 </div>
 </div>
-<input id="204b864e-0f45-4997-8def-9190b5aa177e" name="9abcbf40-eee5-402b-8fca-249535e1b001" type="radio">
-</input><label class="sd-tab-label" for="204b864e-0f45-4997-8def-9190b5aa177e">
+<input id="82516847-2767-4c01-be98-f60cae684f0f" name="dcd737da-c3f4-4436-9ff4-fedb663f694f" type="radio">
+</input><label class="sd-tab-label" for="82516847-2767-4c01-be98-f60cae684f0f">
 Doubly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/doubly-linked-list-tutorial/">Doubly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -2084,23 +1665,23 @@ Doubly Linked</label><div class="sd-tab-content docutils">
 <img alt="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/03/DLL1.png" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/03/DLL1.png" />
 </figure>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Node of a doubly linked list</span>
-<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 <span class="linenos"> 5</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="c1">// Pointer to next node in DLL</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="w">    </span><span class="c1">// Pointer to previous node in DLL</span>
-<span class="linenos">10</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">11</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
+<span class="linenos">11</span><span class="p">};</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/doubly-linked-list/?ref=lbp">https://www.geeksforgeeks.org/doubly-linked-list/?ref=lbp</a></p>
 </div>
 </div>
-<input id="8fa63370-ea16-4e37-8903-3802b7856b70" name="9abcbf40-eee5-402b-8fca-249535e1b001" type="radio">
-</input><label class="sd-tab-label" for="8fa63370-ea16-4e37-8903-3802b7856b70">
+<input id="868892ee-0ec2-4695-8407-eff626d14a5b" name="dcd737da-c3f4-4436-9ff4-fedb663f694f" type="radio">
+</input><label class="sd-tab-label" for="868892ee-0ec2-4695-8407-eff626d14a5b">
 Circular Doubly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.javatpoint.com/circular-doubly-linked-list">Circular Doubly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -2110,33 +1691,33 @@ Circular Doubly Linked</label><div class="sd-tab-content docutils">
 </figure>
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/doubly-circular-linked-list-set-1-introduction-and-insertion/">https://www.geeksforgeeks.org/doubly-circular-linked-list-set-1-introduction-and-insertion/</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Define a Node class to represent each node in the circular doubly-linked list</span>
-<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="k">public</span><span class="o">:</span>
 <span class="linenos"> 4</span><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// data stored in the node</span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to the previous node in the list</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to the next node in the list</span>
 <span class="linenos"> 7</span>
 <span class="linenos"> 8</span><span class="w">    </span><span class="c1">// constructor to initialize a new node with the given data and next pointer</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">12</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">13</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">14</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="linenos">13</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">14</span><span class="p">};</span>
 <span class="linenos">15</span>
 <span class="linenos">16</span><span class="c1">// Define the CircularDoublyLinkedList class to represent the circular doubly-linked list</span>
-<span class="linenos">17</span><span class="k">class</span><span class="w"> </span><span class="nc">CircularDoublyLinkedList</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">18</span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">17</span><span class="k">class</span><span class="w"> </span><span class="nc">CircularDoublyLinkedList</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="k">private</span><span class="o">:</span>
 <span class="linenos">19</span><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to the last node in the list</span>
 <span class="linenos">20</span>
-<span class="linenos">21</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="linenos">21</span><span class="k">public</span><span class="o">:</span>
 <span class="linenos">22</span><span class="w">    </span><span class="c1">// constructor to initialize an empty list with a null tail pointer</span>
-<span class="linenos">23</span><span class="w">    </span><span class="n">CircularDoublyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">24</span><span class="w">        </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">25</span><span class="w">        </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">26</span><span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">27</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">28</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">    </span><span class="n">CircularDoublyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">        </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">        </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="linenos">26</span><span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">27</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">28</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -2147,13 +1728,13 @@ Circular Doubly Linked</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="time-complexities">
-<h2><a class="reference external" href="https://www.geeksforgeeks.org/time-complexities-of-different-data-structures/">Time Complexities</a><a class="headerlink" href="#time-complexities" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://www.geeksforgeeks.org/time-complexities-of-different-data-structures/">Time Complexities</a><a class="headerlink" href="#time-complexities" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="admonition-array-v-linked-list admonition">
 <p class="admonition-title">array v. linked list</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5df1b3a4-1ead-469b-b4c6-ef234b1a1afd" name="89c2b148-dca4-4302-984e-012400ad1223" type="radio">
-</input><label class="sd-tab-label" for="5df1b3a4-1ead-469b-b4c6-ef234b1a1afd">
+<input checked="checked" id="2053fdf0-65ac-4ad7-bf0e-2c7c02504a3b" name="81661e6e-045d-4555-9098-7af1ecdfd779" type="radio">
+</input><label class="sd-tab-label" for="2053fdf0-65ac-4ad7-bf0e-2c7c02504a3b">
 Best-case</label><div class="sd-tab-content docutils">
 <table class="table">
 <colgroup>
@@ -2193,8 +1774,8 @@ Best-case</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<input id="ae49b643-a0d7-4c8b-a0da-d26d563c73c1" name="89c2b148-dca4-4302-984e-012400ad1223" type="radio">
-</input><label class="sd-tab-label" for="ae49b643-a0d7-4c8b-a0da-d26d563c73c1">
+<input id="4d60636e-e457-4db2-862c-f35dafd70b4d" name="81661e6e-045d-4555-9098-7af1ecdfd779" type="radio">
+</input><label class="sd-tab-label" for="4d60636e-e457-4db2-862c-f35dafd70b4d">
 Worst-case</label><div class="sd-tab-content docutils">
 <table class="table">
 <colgroup>
@@ -2234,8 +1815,8 @@ Worst-case</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<input id="f8f8a311-ccbd-4c42-98ba-a6e9b8a65af0" name="89c2b148-dca4-4302-984e-012400ad1223" type="radio">
-</input><label class="sd-tab-label" for="f8f8a311-ccbd-4c42-98ba-a6e9b8a65af0">
+<input id="e8173edb-3952-43ff-80dc-dc4e5c7e236f" name="81661e6e-045d-4555-9098-7af1ecdfd779" type="radio">
+</input><label class="sd-tab-label" for="e8173edb-3952-43ff-80dc-dc4e5c7e236f">
 Average-case</label><div class="sd-tab-content docutils">
 <table class="table">
 <colgroup>
@@ -2301,53 +1882,118 @@ Average-case</label><div class="sd-tab-content docutils">
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="dyn_arr.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dynamic Arrays</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dyn_arr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dynamic Arrays</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="stacks.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="stacks.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Stacks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-stl-containers">Some STL Containers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Linked Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linked Lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singly-linked-list">Singly Linked List</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-a-singly-linked-list">Implementing a Singly Linked List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-linked-list">Creating a Linked List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-list-operations">Linked List Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linked-lists-variations">Linked Lists : Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-complexities">Time Complexities</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Professor Jonathan Schrader<br/>
-  
-      &copy; Copyright 2023.<br/>
-    <div class="extra_footer">
-      Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
-    </div>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Professor Jonathan Schrader
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

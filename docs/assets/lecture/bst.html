@@ -1,27 +1,36 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Binary Search Trees &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -29,17 +38,21 @@
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -54,905 +67,434 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assets/lecture/bst';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2-3 Trees" href="2_3.html" />
     <link rel="prev" title="Heaps" href="heaps.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/URI Brandmark 282.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">URI CSC <br> Core Course Modules</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Needful Things
- </span>
-</p>
+    
+    
+    <img src="../../_static/URI Brandmark 282.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/URI Brandmark 282.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Needful Things</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="admin_day.html">
-   Admin Day
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../csc212.html">
-   CSC 212: Data Structures &amp; Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../tips.html">
-   Tips for Success
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../faq.html">
-   FAQs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="admin_day.html">Admin Day</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csc212.html">CSC 212: Data Structures &amp; Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Problem Solving
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/basics.html">
-   Basics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prob_solv.html">
-     <span class="xref myst">
-      Problem Solving
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="expressions.html">
-     Expressions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_types2.html">
-     <span class="xref myst">
-      Data Types
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="operators.html">
-     Operators
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_types2.html"><span class="xref myst">Data Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Programming
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/main.html">
-   Main &amp; CLAs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/controls.html">
-   Controls
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="conditionals2.html">
-     <span class="xref myst">
-      Conditionals
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="iterations.html">
-     Iteration Statements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jumps2.html">
-     Jump Statements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/collections.html">
-   Collections
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="array.html">
-     Array
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/classes.html">
-   Classes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="class.html">
-     <span class="xref myst">
-      Object-Oriented Programming
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="inheritance.html">
-     Inheritance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="polymorphism.html">
-     Polymorphism
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/files2.html">
-   <span class="xref myst">
-    File Handling
-   </span>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/err_handling.html">
-   <span class="xref myst">
-    Exceptions &amp; Errors
-   </span>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals2.html"><span class="xref myst">Conditionals</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations.html">Iteration Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jumps2.html">Jump Statements</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Data Structures
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/collections.html">Collections</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="array.html">Array</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/classes.html">Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="class.html"><span class="xref myst">Object-Oriented Programming</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polymorphism.html">Polymorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../module/files2.html"><span class="xref myst">File Handling</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/err_handling.html"><span class="xref myst">Exceptions &amp; Errors</span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Structures</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m03.html">
-   Linear Structures
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dyn_arr.html">
-     Dynamic Arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ll.html">
-     Linked Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="stacks.html">
-     Stacks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="queues.html">
-     Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pq.html">
-     Priority Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="map.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="set.html">
-     Sets
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../module/m05.html">
-   Non-Linear Structures
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="tree.html">
-     Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heaps.html">
-     Heaps
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Binary Search Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_3.html">
-     2-3 Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="llrbt.html">
-     Left-Leaning Red-Black Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hash_tables.html">
-     Hash Tables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="graphs.html">
-     Graphs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dfs.html">
-     Graphs : Depth-First Search
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bfs.html">
-     Graphs : Breadth-First Search
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m03.html">Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dyn_arr.html">Dynamic Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ll.html">Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algorithms
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m02.html">
-   Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis of Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cost.html">
-     Computational Cost
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="big_o.html">
-     Big-O
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m04.html">
-   Searching &amp; Sorting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="search.html">
-     Search Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rec_algo.html">
-     Recursive Algorithms (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="recur.html">
-     Recurrences
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basic.html">
-     Basic Sorts (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="merge.html">
-     Mergesort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="qs.html">
-     Quicksort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heapsort.html">
-     Heapsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="timsort.html">
-     Timsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="introsort.html">
-     Introsort
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="greedy.html">
-   Greedy Algorithms
-  </a>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Binary Search Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_3.html">2-3 Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llrbt.html">Left-Leaning Red-Black Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash_tables.html">Hash Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dfs.html">Graphs : Depth-First Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bfs.html">Graphs : Breadth-First Search</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../ide.html">
-   Development Environments
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/cpp.html">
-     C++
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/py.html">
-     Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.learncpp.com">
-   Learn C++
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">
-   C++ Syntax Cheat Sheet
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mth180.html">
-   MTH 180 Concepts
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/opendsa.html">
-   OpenDSA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">
-     Logarithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">
-     Summations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">
-     Recurrence Relations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">
-     Mathematical Proof Techniques
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../gradescope.html">
-   Submission Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">
-   Official GitHub Training Manual
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../add_rss.html">
-   Additional Resources
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m02.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis of Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cost.html">Computational Cost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_o.html">Big-O</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m04.html">Searching &amp; Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rec_algo.html">Recursive Algorithms (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recur.html">Recurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Basic Sorts (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">Mergesort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qs.html">Quicksort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heapsort.html">Heapsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timsort.html">Timsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introsort.html">Introsort</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="greedy.html">Greedy Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ide.html">Development Environments</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../misc/cpp.html">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/py.html">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://www.learncpp.com">Learn C++</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">C++ Syntax Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mth180.html">MTH 180 Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/opendsa.html">OpenDSA</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">Logarithms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">Summations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">Recurrence Relations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">Mathematical Proof Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gradescope.html">Submission Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">Official GitHub Training Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add_rss.html">Additional Resources</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/bst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/assets/lecture/bst.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/csc-dsa/su23"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/bst.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/assets/lecture/bst.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-tree">
-   Binary Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-binary-trees">
-     Implementing binary trees
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#k-ary-trees">
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
-   -ary trees
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Binary Search Trees
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bst-classes">
-     BST Classes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       search
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insert">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       insert
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remove">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       remove
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#traversals">
-     Traversals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implications">
-     Implications
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#average-case-analysis">
-     Average-case analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collections-dictionaries">
-   Collections / Dictionaries
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Binary Search Trees</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-tree">
-   Binary Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-binary-trees">
-     Implementing binary trees
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#k-ary-trees">
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
-   -ary trees
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Binary Search Trees
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bst-classes">
-     BST Classes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       search
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insert">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       insert
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remove">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       remove
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#traversals">
-     Traversals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implications">
-     Implications
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#average-case-analysis">
-     Average-case analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collections-dictionaries">
-   Collections / Dictionaries
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Binary Search Trees</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-tree">Binary Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-binary-trees">Implementing binary trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-ary-trees"><span class="math notranslate nohighlight">\(k\)</span>-ary trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Binary Search Trees</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bst-classes">BST Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search"><code class="docutils literal notranslate"><span class="pre">search</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove"><code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traversals">Traversals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-case-analysis">Average-case analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-dictionaries">Collections / Dictionaries</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="binary-search-trees">
-<h1>Binary Search Trees<a class="headerlink" href="#binary-search-trees" title="Permalink to this headline">#</a></h1>
+<h1>Binary Search Trees<a class="headerlink" href="#binary-search-trees" title="Permalink to this heading">#</a></h1>
 <div class="full-width docutils">
 <style>
 summary:first-of-type {text-align: center;}
@@ -968,7 +510,7 @@ summary:first-of-type {text-align: center;}
 </details></div>
 <!-- ![](https://miro.medium.com/max/1104/1*WEIGkEtQndEvPVwHAh4aSA.png) -->
 <section id="binary-tree">
-<h2>Binary Tree<a class="headerlink" href="#binary-tree" title="Permalink to this headline">#</a></h2>
+<h2>Binary Tree<a class="headerlink" href="#binary-tree" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="tip admonition">
 <p class="admonition-title">Overview</p>
@@ -989,7 +531,7 @@ summary:first-of-type {text-align: center;}
 </div>
 </div>
 <section id="implementing-binary-trees">
-<h3><a class="reference external" href="https://www.geeksforgeeks.org/applications-priority-queue/">Implementing binary trees</a><a class="headerlink" href="#implementing-binary-trees" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://www.geeksforgeeks.org/applications-priority-queue/">Implementing binary trees</a><a class="headerlink" href="#implementing-binary-trees" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1027,13 +569,13 @@ summary:first-of-type {text-align: center;}
 </section>
 </section>
 <section id="k-ary-trees">
-<h2><a class="reference external" href="https://www.geeksforgeeks.org/k-ary-heap/?ref=gcse"><span class="math notranslate nohighlight">\(k\)</span>-ary trees</a><a class="headerlink" href="#k-ary-trees" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://www.geeksforgeeks.org/k-ary-heap/?ref=gcse"><span class="math notranslate nohighlight">\(k\)</span>-ary trees</a><a class="headerlink" href="#k-ary-trees" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="43f4dced-dd5d-421f-a545-fe5930951677" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="43f4dced-dd5d-421f-a545-fe5930951677">
+<input checked="checked" id="cca24aac-213e-4b27-a402-bd2f38768b5a" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="cca24aac-213e-4b27-a402-bd2f38768b5a">
 k-ary trees</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id2">
 <img alt="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7TSf_YpdLyF0uIfW0Rm_GgHaHa%26pid%3DApi&amp;f=1&amp;ipt=1187f0ed9de515a480afca769ea805a6e4e566d0faeae559c7cf2c0b42873442&amp;ipo=images" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7TSf_YpdLyF0uIfW0Rm_GgHaHa%26pid%3DApi&amp;f=1&amp;ipt=1187f0ed9de515a480afca769ea805a6e4e566d0faeae559c7cf2c0b42873442&amp;ipo=images" />
@@ -1042,15 +584,15 @@ k-ary trees</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="00005b3f-8fbb-4f52-9ef6-300f701ebb70" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="00005b3f-8fbb-4f52-9ef6-300f701ebb70">
+<input id="f5cd4bc7-5971-438c-9506-8dc3b2235bbe" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="f5cd4bc7-5971-438c-9506-8dc3b2235bbe">
 types</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CMGFtehu01ZEBgzHG71sMg.png" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CMGFtehu01ZEBgzHG71sMg.png" />
 </figure>
 </div>
-<input id="fbebfb95-2dde-4b40-820f-6b0178253f76" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="fbebfb95-2dde-4b40-820f-6b0178253f76">
+<input id="6386a95e-642e-4274-8e0f-bf196c466e50" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="6386a95e-642e-4274-8e0f-bf196c466e50">
 full</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id3">
 <img alt="https://miro.medium.com/max/1400/1*fh2By4u-SxTlt6u2xHqnCg.png" src="https://miro.medium.com/max/1400/1*fh2By4u-SxTlt6u2xHqnCg.png" />
@@ -1060,8 +602,8 @@ full</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="a5ccb23f-b1d2-4537-98d7-52ec6b1c5c25" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="a5ccb23f-b1d2-4537-98d7-52ec6b1c5c25">
+<input id="5a52f185-3d9e-4ff5-afff-8a9ca9adc356" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="5a52f185-3d9e-4ff5-afff-8a9ca9adc356">
 complete</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id4">
 <img alt="https://miro.medium.com/max/1400/1*M1qfRR59TR9-i4pmI-_Clg.png" src="https://miro.medium.com/max/1400/1*M1qfRR59TR9-i4pmI-_Clg.png" />
@@ -1071,8 +613,8 @@ complete</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="ccbfcdab-ebc1-4d48-b926-86ce76a01e28" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="ccbfcdab-ebc1-4d48-b926-86ce76a01e28">
+<input id="c5ec825f-2429-4cbf-82f6-6acefb7b3771" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="c5ec825f-2429-4cbf-82f6-6acefb7b3771">
 perfect</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id5">
 <img alt="https://miro.medium.com/max/1400/1*EgcvwUHXnmdOpbHQwgCknA.png" src="https://miro.medium.com/max/1400/1*EgcvwUHXnmdOpbHQwgCknA.png" />
@@ -1082,8 +624,8 @@ perfect</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="a3de74a1-2ab8-4a73-a08a-ff890e03fb89" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="a3de74a1-2ab8-4a73-a08a-ff890e03fb89">
+<input id="28b7fd06-3d76-4567-b14d-a7ab0f85fd11" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="28b7fd06-3d76-4567-b14d-a7ab0f85fd11">
 degenerate</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id6">
 <img alt="https://miro.medium.com/max/1400/1*m5BjLJeSrSGH4US-QXj4aA.png" src="https://miro.medium.com/max/1400/1*m5BjLJeSrSGH4US-QXj4aA.png" />
@@ -1093,8 +635,8 @@ degenerate</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="3f52b9cc-eb5c-490e-96fa-ddb2f40c708d" name="d176ee70-06bc-4d30-a81a-b9fb7092a20e" type="radio">
-</input><label class="sd-tab-label" for="3f52b9cc-eb5c-490e-96fa-ddb2f40c708d">
+<input id="c15cc362-4fd6-43b9-b681-ced5fe0122a9" name="18c868fc-3f17-4b4c-bd11-cb21370de823" type="radio">
+</input><label class="sd-tab-label" for="c15cc362-4fd6-43b9-b681-ced5fe0122a9">
 balanced</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id7">
 <img alt="https://miro.medium.com/max/1400/1*jSq-xjEZYytNDIBpZNQC2w.png" src="https://miro.medium.com/max/1400/1*jSq-xjEZYytNDIBpZNQC2w.png" />
@@ -1111,7 +653,7 @@ balanced</label><div class="sd-tab-content docutils">
 <!-- ![](https://mathworld.wolfram.com/images/eps-gif/BinaryTrees_800.gif) -->
 </section>
 <section id="id1">
-<h2>Binary Search Trees<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>Binary Search Trees<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="tip admonition">
 <p class="admonition-title">Understanding BSTs</p>
@@ -1190,16 +732,16 @@ balanced</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ac81c13b-e187-4fe6-9153-1a8da3ac3ac5" name="1ecfb31e-5bdd-4730-aea5-ca40777b352a" type="radio">
-</input><label class="sd-tab-label" for="ac81c13b-e187-4fe6-9153-1a8da3ac3ac5">
+<input checked="checked" id="8f0937c3-6f2c-4381-a476-03f35f97a02f" name="b657ec61-4a87-4a84-9ed2-a6c39359c7d9" type="radio">
+</input><label class="sd-tab-label" for="8f0937c3-6f2c-4381-a476-03f35f97a02f">
 Example</label><div class="sd-tab-content docutils">
 <figure class="align-center">
 <img alt="https://i.pinimg.com/originals/4e/5a/00/4e5a00c98d5b46ed4cbf224ac11dc115.png" src="https://i.pinimg.com/originals/4e/5a/00/4e5a00c98d5b46ed4cbf224ac11dc115.png" />
 </figure>
 <p class="sd-card-text">(**) assume that the keys of a BST are pairwise distinct</p>
 </div>
-<input id="f62e97fc-decc-4bfa-9520-9c6fc30fbb35" name="1ecfb31e-5bdd-4730-aea5-ca40777b352a" type="radio">
-</input><label class="sd-tab-label" for="f62e97fc-decc-4bfa-9520-9c6fc30fbb35">
+<input id="60a9675d-5d2f-4547-986b-dada26319960" name="b657ec61-4a87-4a84-9ed2-a6c39359c7d9" type="radio">
+</input><label class="sd-tab-label" for="60a9675d-5d2f-4547-986b-dada26319960">
 Tree Parts</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1*PWJiwTxRdQy8A_Y0hAv5Eg.png" src="https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1*PWJiwTxRdQy8A_Y0hAv5Eg.png" />
@@ -1215,7 +757,7 @@ Tree Parts</label><div class="sd-tab-content docutils">
 </div>
 <!-- SLIDE 10 -->
 <section id="bst-classes">
-<h3>BST Classes<a class="headerlink" href="#bst-classes" title="Permalink to this headline">#</a></h3>
+<h3>BST Classes<a class="headerlink" href="#bst-classes" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1231,15 +773,15 @@ BSTNode</div>
 <span class="linenos"> 3</span><span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w"> </span>
 <span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">  </span>
 <span class="linenos"> 5</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">;</span><span class="w">  </span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">;</span>
 <span class="linenos"> 7</span><span class="w">  </span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="n">BSTNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">    </span><span class="o">~</span><span class="n">BSTNode</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">BSTNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">    </span><span class="o">~</span><span class="n">BSTNode</span><span class="p">();</span>
 <span class="linenos">11</span><span class="w">  </span>
-<span class="linenos">12</span><span class="w">  </span><span class="k">friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">  </span><span class="k">friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="p">;</span>
 <span class="linenos">13</span>
-<span class="linenos">14</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -1250,20 +792,20 @@ BSTNode</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 BSTree</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="p">{</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">BSTree</span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">root</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">(</span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">root</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">(</span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
 <span class="linenos"> 6</span><span class="w">    </span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="n">BSTree</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="o">~</span><span class="n">BSTree</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">BSTree</span><span class="p">();</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="o">~</span><span class="n">BSTree</span><span class="p">();</span>
+<span class="linenos">10</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
 <span class="linenos">11</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w">  </span>
-<span class="linenos">12</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="nf">search</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">    </span><span class="n">BSTNode</span><span class="w"> </span><span class="o">*</span><span class="nf">search</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
 <span class="linenos">13</span>
-<span class="linenos">14</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -1276,7 +818,7 @@ BSTree</div>
 </div>
 </section>
 <section id="search">
-<h3><code class="docutils literal notranslate"><span class="pre">search</span></code><a class="headerlink" href="#search" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">search</span></code><a class="headerlink" href="#search" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1322,7 +864,7 @@ c. If search key is less than current node’s<br />
 </div>
 </section>
 <section id="insert">
-<h3><a class="reference external" href="https://www.geeksforgeeks.org/height-complete-binary-tree-heap-n-nodes/"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a><a class="headerlink" href="#insert" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://www.geeksforgeeks.org/height-complete-binary-tree-heap-n-nodes/"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a><a class="headerlink" href="#insert" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1363,7 +905,7 @@ c. If search key is less than current node’s<br />
 </div>
 </section>
 <section id="remove">
-<h3><code class="docutils literal notranslate"><span class="pre">remove</span></code><a class="headerlink" href="#remove" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">remove</span></code><a class="headerlink" href="#remove" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1376,18 +918,18 @@ c. If search key is less than current node’s<br />
 <li><p class="sd-card-text">Replace the node with its successor/predecessor and delete the successor/predecessor from its original position.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d199f7fa-293f-4216-8a64-9b9c2a3f9e65" name="777bd8d7-2b54-42b6-a08a-4c4fe8dd1095" type="radio">
-</input><label class="sd-tab-label" for="d199f7fa-293f-4216-8a64-9b9c2a3f9e65">
+<input checked="checked" id="bfa48952-c5ba-4de5-8fbb-6d1f1efaf5c2" name="315f78f3-511d-4af4-9552-5421dd4f1f64" type="radio">
+</input><label class="sd-tab-label" for="bfa48952-c5ba-4de5-8fbb-6d1f1efaf5c2">
 leaf</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><img alt="remove : leaf" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_4.JPG" /></p>
 </div>
-<input id="bc0846ae-3bc8-4c4d-b6f9-fea7d63afcbf" name="777bd8d7-2b54-42b6-a08a-4c4fe8dd1095" type="radio">
-</input><label class="sd-tab-label" for="bc0846ae-3bc8-4c4d-b6f9-fea7d63afcbf">
+<input id="4fbd7709-5790-4169-967e-390f5d46c593" name="315f78f3-511d-4af4-9552-5421dd4f1f64" type="radio">
+</input><label class="sd-tab-label" for="4fbd7709-5790-4169-967e-390f5d46c593">
 1 child</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><img alt="" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_5.JPG" /></p>
 </div>
-<input id="8f7e3f24-6d8d-4587-a519-9869da869171" name="777bd8d7-2b54-42b6-a08a-4c4fe8dd1095" type="radio">
-</input><label class="sd-tab-label" for="8f7e3f24-6d8d-4587-a519-9869da869171">
+<input id="7198ee97-b610-472e-bcc4-0ecc8ad781af" name="315f78f3-511d-4af4-9552-5421dd4f1f64" type="radio">
+</input><label class="sd-tab-label" for="7198ee97-b610-472e-bcc4-0ecc8ad781af">
 2 children</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><img alt="" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_6.JPG" /></p>
 </div>
@@ -1405,10 +947,10 @@ leaf</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="traversals">
-<h3><a class="reference external" href="https://www.geeksforgeeks.org/binary-search-tree-traversal-inorder-preorder-post-order/">Traversals</a><a class="headerlink" href="#traversals" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://www.geeksforgeeks.org/binary-search-tree-traversal-inorder-preorder-post-order/">Traversals</a><a class="headerlink" href="#traversals" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="implications">
-<h3>Implications<a class="headerlink" href="#implications" title="Permalink to this headline">#</a></h3>
+<h3>Implications<a class="headerlink" href="#implications" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1419,8 +961,8 @@ leaf</label><div class="sd-tab-content docutils">
 <img alt="https://www.bogotobogo.com/GoLang/images/BinarySearchTree_BST/print_functions.png" src="https://www.bogotobogo.com/GoLang/images/BinarySearchTree_BST/print_functions.png" />
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="60cb5e25-f5f4-4585-bc9c-bf2b8708d55c" name="6851e145-98eb-4fda-84c0-c881b6df87b2" type="radio">
-</input><label class="sd-tab-label" for="60cb5e25-f5f4-4585-bc9c-bf2b8708d55c">
+<input checked="checked" id="eed737e2-f91f-4d81-8431-6f19810df16a" name="d6d1778d-c1b0-4243-90fc-219b0318bf57" type="radio">
+</input><label class="sd-tab-label" for="eed737e2-f91f-4d81-8431-6f19810df16a">
 preorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1429,13 +971,13 @@ preorder</label><div class="sd-tab-content docutils">
 <span class="c1">// pre-defined order before visiting</span>
 <span class="c1">// their child nodes.</span>
 
-<span class="n">algorithm</span><span class="w"> </span><span class="nf">preorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">algorithm</span><span class="w"> </span><span class="nf">preorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span>
+<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1460,8 +1002,8 @@ preorder</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/GenTreePreTravCON" height="600" width="100%"></iframe>
 </div>
 </div>
-<input id="121ae3d4-a63d-45a4-94db-5e9a6c0e567a" name="6851e145-98eb-4fda-84c0-c881b6df87b2" type="radio">
-</input><label class="sd-tab-label" for="121ae3d4-a63d-45a4-94db-5e9a6c0e567a">
+<input id="9c40e0f5-394f-4475-ba23-b47ac074600b" name="d6d1778d-c1b0-4243-90fc-219b0318bf57" type="radio">
+</input><label class="sd-tab-label" for="9c40e0f5-394f-4475-ba23-b47ac074600b">
 postorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1470,13 +1012,13 @@ postorder</label><div class="sd-tab-content docutils">
 <span class="c1">// pre-defined order after visiting </span>
 <span class="c1">// their child nodes.</span>
 
-<span class="n">algorithm</span><span class="w"> </span><span class="nf">postorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">algorithm</span><span class="w"> </span><span class="nf">postorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span>
+<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span>
+<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1501,8 +1043,8 @@ postorder</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/GenTreePostTravCON" height="600" width="100%"></iframe>
 </div>
 </div>
-<input id="33967994-01e5-4413-907c-0e70414db8b1" name="6851e145-98eb-4fda-84c0-c881b6df87b2" type="radio">
-</input><label class="sd-tab-label" for="33967994-01e5-4413-907c-0e70414db8b1">
+<input id="16c5fbea-87a5-4c63-aadb-5806e4d72b21" name="d6d1778d-c1b0-4243-90fc-219b0318bf57" type="radio">
+</input><label class="sd-tab-label" for="16c5fbea-87a5-4c63-aadb-5806e4d72b21">
 inorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1510,13 +1052,13 @@ inorder</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// nodes of the BST are visited in</span>
 <span class="c1">// ascending order of their values.</span>
 
-<span class="n">algorithm</span><span class="w"> </span><span class="nf">inorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">algorithm</span><span class="w"> </span><span class="nf">inorder</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span>
+<span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1575,8 +1117,8 @@ inorder</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6a41ca72-7e89-47b7-870e-837955f6b87f" name="112a84c4-2621-4263-b4e6-765df94ce58f" type="radio">
-</input><label class="sd-tab-label" for="6a41ca72-7e89-47b7-870e-837955f6b87f">
+<input checked="checked" id="6d39873f-540c-466b-9100-275f5669bd62" name="b5668cba-d890-4984-a36a-c8da8a2901fe" type="radio">
+</input><label class="sd-tab-label" for="6d39873f-540c-466b-9100-275f5669bd62">
 incomplete</label><div class="sd-tab-content docutils">
 <table class="table">
 <colgroup>
@@ -1613,8 +1155,8 @@ incomplete</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[Cost\ of\ basic\ operations??\]</div>
 </div>
-<input id="934ed613-5117-44f9-a0df-247aafd92149" name="112a84c4-2621-4263-b4e6-765df94ce58f" type="radio">
-</input><label class="sd-tab-label" for="934ed613-5117-44f9-a0df-247aafd92149">
+<input id="3a7a640c-4c77-4d1b-9e0f-677311121c97" name="b5668cba-d890-4984-a36a-c8da8a2901fe" type="radio">
+</input><label class="sd-tab-label" for="3a7a640c-4c77-4d1b-9e0f-677311121c97">
 complete</label><div class="sd-tab-content docutils">
 <table class="table">
 <colgroup>
@@ -1657,7 +1199,7 @@ complete</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="average-case-analysis">
-<h3>Average-case analysis<a class="headerlink" href="#average-case-analysis" title="Permalink to this headline">#</a></h3>
+<h3>Average-case analysis<a class="headerlink" href="#average-case-analysis" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1689,7 +1231,7 @@ complete</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="collections-dictionaries">
-<h2>Collections / Dictionaries<a class="headerlink" href="#collections-dictionaries" title="Permalink to this headline">#</a></h2>
+<h2>Collections / Dictionaries<a class="headerlink" href="#collections-dictionaries" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1775,53 +1317,119 @@ complete</label><div class="sd-tab-content docutils">
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="heaps.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Heaps</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="heaps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Heaps</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="2_3.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="2_3.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">2-3 Trees</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-tree">Binary Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-binary-trees">Implementing binary trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-ary-trees"><span class="math notranslate nohighlight">\(k\)</span>-ary trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Binary Search Trees</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bst-classes">BST Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search"><code class="docutils literal notranslate"><span class="pre">search</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove"><code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traversals">Traversals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-case-analysis">Average-case analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-dictionaries">Collections / Dictionaries</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Professor Jonathan Schrader<br/>
-  
-      &copy; Copyright 2023.<br/>
-    <div class="extra_footer">
-      Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
-    </div>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Professor Jonathan Schrader
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

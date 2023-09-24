@@ -1,27 +1,36 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Left-Leaning Red-Black Trees &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -29,17 +38,21 @@
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -54,925 +67,440 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assets/lecture/llrbt';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Hash Tables" href="hash_tables.html" />
     <link rel="prev" title="2-3 Trees" href="2_3.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/URI Brandmark 282.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">URI CSC <br> Core Course Modules</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Needful Things
- </span>
-</p>
+    
+    
+    <img src="../../_static/URI Brandmark 282.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/URI Brandmark 282.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Needful Things</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="admin_day.html">
-   Admin Day
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../csc212.html">
-   CSC 212: Data Structures &amp; Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../tips.html">
-   Tips for Success
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../faq.html">
-   FAQs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="admin_day.html">Admin Day</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csc212.html">CSC 212: Data Structures &amp; Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Problem Solving
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/basics.html">
-   Basics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prob_solv.html">
-     <span class="xref myst">
-      Problem Solving
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="expressions.html">
-     Expressions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_types2.html">
-     <span class="xref myst">
-      Data Types
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="operators.html">
-     Operators
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_types2.html"><span class="xref myst">Data Types</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Programming
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/main.html">
-   Main &amp; CLAs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/controls.html">
-   Controls
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="conditionals2.html">
-     <span class="xref myst">
-      Conditionals
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="iterations.html">
-     Iteration Statements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jumps2.html">
-     Jump Statements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/collections.html">
-   Collections
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="array.html">
-     Array
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/classes.html">
-   Classes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="class.html">
-     <span class="xref myst">
-      Object-Oriented Programming
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="inheritance.html">
-     Inheritance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="polymorphism.html">
-     Polymorphism
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/files2.html">
-   <span class="xref myst">
-    File Handling
-   </span>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../module/err_handling.html">
-   <span class="xref myst">
-    Exceptions &amp; Errors
-   </span>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="conditionals2.html"><span class="xref myst">Conditionals</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterations.html">Iteration Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jumps2.html">Jump Statements</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Data Structures
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/collections.html">Collections</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="array.html">Array</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/classes.html">Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="class.html"><span class="xref myst">Object-Oriented Programming</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polymorphism.html">Polymorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../module/files2.html"><span class="xref myst">File Handling</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/err_handling.html"><span class="xref myst">Exceptions &amp; Errors</span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Structures</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m03.html">
-   Linear Structures
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dyn_arr.html">
-     Dynamic Arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ll.html">
-     Linked Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="stacks.html">
-     Stacks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="queues.html">
-     Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pq.html">
-     Priority Queues
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="map.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="set.html">
-     Sets
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../module/m05.html">
-   Non-Linear Structures
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="tree.html">
-     Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heaps.html">
-     Heaps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bst.html">
-     Binary Search Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2_3.html">
-     2-3 Trees
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Left-Leaning Red-Black Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hash_tables.html">
-     Hash Tables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="graphs.html">
-     Graphs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dfs.html">
-     Graphs : Depth-First Search
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bfs.html">
-     Graphs : Breadth-First Search
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m03.html">Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dyn_arr.html">Dynamic Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ll.html">Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algorithms
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m02.html">
-   Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis of Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cost.html">
-     Computational Cost
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="big_o.html">
-     Big-O
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/m04.html">
-   Searching &amp; Sorting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="search.html">
-     Search Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rec_algo.html">
-     Recursive Algorithms (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="recur.html">
-     Recurrences
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basic.html">
-     Basic Sorts (Analysis)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="merge.html">
-     Mergesort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="qs.html">
-     Quicksort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heapsort.html">
-     Heapsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="timsort.html">
-     Timsort
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="introsort.html">
-     Introsort
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="greedy.html">
-   Greedy Algorithms
-  </a>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="bst.html">Binary Search Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_3.html">2-3 Trees</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Left-Leaning Red-Black Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash_tables.html">Hash Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphs.html">Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dfs.html">Graphs : Depth-First Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bfs.html">Graphs : Breadth-First Search</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../ide.html">
-   Development Environments
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/cpp.html">
-     C++
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../misc/py.html">
-     Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://www.learncpp.com">
-   Learn C++
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">
-   C++ Syntax Cheat Sheet
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../mth180.html">
-   MTH 180 Concepts
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module/opendsa.html">
-   OpenDSA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">
-     Logarithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">
-     Summations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">
-     Recurrence Relations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">
-     Mathematical Proof Techniques
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../gradescope.html">
-   Submission Notes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">
-   Official GitHub Training Manual
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../add_rss.html">
-   Additional Resources
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m02.html">Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis of Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cost.html">Computational Cost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_o.html">Big-O</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m04.html">Searching &amp; Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rec_algo.html">Recursive Algorithms (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recur.html">Recurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Basic Sorts (Analysis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">Mergesort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qs.html">Quicksort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heapsort.html">Heapsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timsort.html">Timsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introsort.html">Introsort</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="greedy.html">Greedy Algorithms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ide.html">Development Environments</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../misc/cpp.html">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/py.html">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://www.learncpp.com">Learn C++</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gibsjose/cpp-cheat-sheet/blob/master/C%2B%2B%20Syntax.md">C++ Syntax Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mth180.html">MTH 180 Concepts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/opendsa.html">OpenDSA</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Logarithms.html">Logarithms</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Summations.html">Summations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/RecurrenceIntro.html">Recurrence Relations</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS3/html/Proofs.html">Mathematical Proof Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gradescope.html">Submission Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://githubtraining.github.io/training-manual/book.pdf">Official GitHub Training Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add_rss.html">Additional Resources</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/llrbt.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/assets/lecture/llrbt.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/csc-dsa/su23"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/csc-dsa/su23/issues/new?title=Issue%20on%20page%20%2Fassets/lecture/llrbt.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/assets/lecture/llrbt.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#left-leaning-red-black-bsts">
-   Left-leaning red-black BSTs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-red-black-trees">
-     Why Red-Black Trees?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-2-3-trees-with-binary-trees">
-     Implementing 2-3 trees with binary trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-with-2-3-trees">
-     1-1 correspondence with 2-3 trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definition-of-llrb-trees-without-reference-to-2-3">
-     Definition of LLRB trees (without reference to 2-3)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search">
-     Search
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#observation">
-       Observation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation">
-     Representation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-road-to-llrb-trees">
-     The road to LLRB trees
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#red-black-tree-operations">
-   Red-Black Tree Operations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insertions">
-     Insertions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualize">
-     Visualize
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementation">
-     Implementation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizations-n-255">
-     Visualizations |
-     <span class="math notranslate nohighlight">
-      \(n=255\)
-     </span>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#balance">
-   Balance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Left-Leaning Red-Black Trees</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#left-leaning-red-black-bsts">
-   Left-leaning red-black BSTs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-red-black-trees">
-     Why Red-Black Trees?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementing-2-3-trees-with-binary-trees">
-     Implementing 2-3 trees with binary trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correspondence-with-2-3-trees">
-     1-1 correspondence with 2-3 trees
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definition-of-llrb-trees-without-reference-to-2-3">
-     Definition of LLRB trees (without reference to 2-3)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search">
-     Search
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#observation">
-       Observation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation">
-     Representation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-road-to-llrb-trees">
-     The road to LLRB trees
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#red-black-tree-operations">
-   Red-Black Tree Operations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insertions">
-     Insertions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualize">
-     Visualize
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implementation">
-     Implementation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizations-n-255">
-     Visualizations |
-     <span class="math notranslate nohighlight">
-      \(n=255\)
-     </span>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#balance">
-   Balance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Left-Leaning Red-Black Trees</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-leaning-red-black-bsts">Left-leaning red-black BSTs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-red-black-trees">Why Red-Black Trees?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-2-3-trees-with-binary-trees">Implementing 2-3 trees with binary trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-with-2-3-trees">1-1 correspondence with 2-3 trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-llrb-trees-without-reference-to-2-3">Definition of LLRB trees (without reference to 2-3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search">Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observation">Observation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation">Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-road-to-llrb-trees">The road to LLRB trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-black-tree-operations">Red-Black Tree Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insertions">Insertions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">Visualize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizations-n-255">Visualizations | <span class="math notranslate nohighlight">\(n=255\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance">Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="left-leaning-red-black-trees">
-<h1>Left-Leaning Red-Black Trees<a class="headerlink" href="#left-leaning-red-black-trees" title="Permalink to this headline">#</a></h1>
+<h1>Left-Leaning Red-Black Trees<a class="headerlink" href="#left-leaning-red-black-trees" title="Permalink to this heading">#</a></h1>
 <div class="full-width docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1013,7 +541,7 @@ Additional Resources</div>
 ```
 ```````` -->
 <section id="left-leaning-red-black-bsts">
-<h2>Left-leaning red-black BSTs<a class="headerlink" href="#left-leaning-red-black-bsts" title="Permalink to this headline">#</a></h2>
+<h2>Left-leaning red-black BSTs<a class="headerlink" href="#left-leaning-red-black-bsts" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="tip admonition">
 <p class="admonition-title">Structure</p>
@@ -1047,13 +575,13 @@ $b\ is\ the\ larger\ root\ key$
 `````` -->
 </div>
 <section id="why-red-black-trees">
-<h3><a class="reference external" href="https://www.geeksforgeeks.org/introduction-to-red-black-tree/">Why Red-Black Trees?</a><a class="headerlink" href="#why-red-black-trees" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://www.geeksforgeeks.org/introduction-to-red-black-tree/">Why Red-Black Trees?</a><a class="headerlink" href="#why-red-black-trees" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="678956c3-fdbb-429e-b378-3f9943288795" name="85646628-e5d2-4457-b21b-69b965c9caf6" type="radio">
-</input><label class="sd-tab-label" for="678956c3-fdbb-429e-b378-3f9943288795">
+<input checked="checked" id="0cf80601-d869-4a65-bef7-dfde51bd5283" name="8b7af7bc-8d9f-40ae-9614-19ab88cbe656" type="radio">
+</input><label class="sd-tab-label" for="0cf80601-d869-4a65-bef7-dfde51bd5283">
 Applications</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -1069,8 +597,8 @@ Applications</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">– Geeks For Geeks</p>
 </div></blockquote>
 </div>
-<input id="85909227-c595-4291-abd1-e2e989d8990b" name="85646628-e5d2-4457-b21b-69b965c9caf6" type="radio">
-</input><label class="sd-tab-label" for="85909227-c595-4291-abd1-e2e989d8990b">
+<input id="0e41f454-6d9a-4be5-90c2-ed0948c936dd" name="8b7af7bc-8d9f-40ae-9614-19ab88cbe656" type="radio">
+</input><label class="sd-tab-label" for="0e41f454-6d9a-4be5-90c2-ed0948c936dd">
 Advantages</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -1082,8 +610,8 @@ Advantages</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">– Geeks For Geeks</p>
 </div></blockquote>
 </div>
-<input id="afb77ae2-e85f-42e9-ac8b-21a491730fb1" name="85646628-e5d2-4457-b21b-69b965c9caf6" type="radio">
-</input><label class="sd-tab-label" for="afb77ae2-e85f-42e9-ac8b-21a491730fb1">
+<input id="bb95c48c-4eb9-417b-96c8-d6121c787e9b" name="8b7af7bc-8d9f-40ae-9614-19ab88cbe656" type="radio">
+</input><label class="sd-tab-label" for="bb95c48c-4eb9-417b-96c8-d6121c787e9b">
 Disadvantages</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -1100,21 +628,21 @@ Disadvantages</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="implementing-2-3-trees-with-binary-trees">
-<h3>Implementing 2-3 trees with binary trees<a class="headerlink" href="#implementing-2-3-trees-with-binary-trees" title="Permalink to this headline">#</a></h3>
+<h3>Implementing 2-3 trees with binary trees<a class="headerlink" href="#implementing-2-3-trees-with-binary-trees" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ccadcb43-c187-41de-b1c5-312f6d75461b" name="9367485b-70a0-4470-987b-29536bc775d7" type="radio">
-</input><label class="sd-tab-label" for="ccadcb43-c187-41de-b1c5-312f6d75461b">
+<input checked="checked" id="5df14ca7-1623-4bdc-95f3-6552fd362372" name="06d54d34-c3c9-4bc9-bfde-b75477ae3d84" type="radio">
+</input><label class="sd-tab-label" for="5df14ca7-1623-4bdc-95f3-6552fd362372">
 Challenge</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><strong>How to represent a 3-node?</strong></p>
 <figure class="align-center">
 <img alt="https://iq.opengenus.org/content/images/2020/06/2-3-Tree-1.png" src="https://iq.opengenus.org/content/images/2020/06/2-3-Tree-1.png" />
 </figure>
 </div>
-<input id="650b82ca-8d71-4ae1-b847-4a9a8c3fcdd2" name="9367485b-70a0-4470-987b-29536bc775d7" type="radio">
-</input><label class="sd-tab-label" for="650b82ca-8d71-4ae1-b847-4a9a8c3fcdd2">
+<input id="ebfef328-1f8e-4359-9d39-c31b998b8ef1" name="06d54d34-c3c9-4bc9-bfde-b75477ae3d84" type="radio">
+</input><label class="sd-tab-label" for="ebfef328-1f8e-4359-9d39-c31b998b8ef1">
 Approach 1</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1132,8 +660,8 @@ Regular BST<div class="sd-summary-down docutils">
 <img alt="../../_images/17_02.png" src="../../_images/17_02.png" />
 </figure>
 </div>
-<input id="0173cc16-599c-4565-b9e4-1fca89112c7a" name="9367485b-70a0-4470-987b-29536bc775d7" type="radio">
-</input><label class="sd-tab-label" for="0173cc16-599c-4565-b9e4-1fca89112c7a">
+<input id="76d723a6-d5ec-4124-893c-bae986ae8f05" name="06d54d34-c3c9-4bc9-bfde-b75477ae3d84" type="radio">
+</input><label class="sd-tab-label" for="76d723a6-d5ec-4124-893c-bae986ae8f05">
 Approach 2</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1151,8 +679,8 @@ Regular BST with red “glue” nodes<div class="sd-summary-down docutils">
 <img alt="../../_images/17_03.png" src="../../_images/17_03.png" />
 </figure>
 </div>
-<input id="5d0dc225-30b9-4d53-b4db-0b509332c6f9" name="9367485b-70a0-4470-987b-29536bc775d7" type="radio">
-</input><label class="sd-tab-label" for="5d0dc225-30b9-4d53-b4db-0b509332c6f9">
+<input id="c81cfb00-c04a-4233-a986-66268fde5665" name="06d54d34-c3c9-4bc9-bfde-b75477ae3d84" type="radio">
+</input><label class="sd-tab-label" for="c81cfb00-c04a-4233-a986-66268fde5665">
 Approach 3</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1176,7 +704,7 @@ Regular BST with red “glue” links<div class="sd-summary-down docutils">
 </div>
 </section>
 <section id="correspondence-with-2-3-trees">
-<h3>1-1 correspondence with 2-3 trees<a class="headerlink" href="#correspondence-with-2-3-trees" title="Permalink to this headline">#</a></h3>
+<h3>1-1 correspondence with 2-3 trees<a class="headerlink" href="#correspondence-with-2-3-trees" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1227,7 +755,7 @@ Key Properties</div>
 </div>
 </section>
 <section id="definition-of-llrb-trees-without-reference-to-2-3">
-<h3>Definition of LLRB trees (without reference to 2-3)<a class="headerlink" href="#definition-of-llrb-trees-without-reference-to-2-3" title="Permalink to this headline">#</a></h3>
+<h3>Definition of LLRB trees (without reference to 2-3)<a class="headerlink" href="#definition-of-llrb-trees-without-reference-to-2-3" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1253,9 +781,9 @@ A BST such that</div>
 </div>
 </section>
 <section id="search">
-<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">#</a></h3>
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this heading">#</a></h3>
 <section id="observation">
-<h4>Observation<a class="headerlink" href="#observation" title="Permalink to this headline">#</a></h4>
+<h4>Observation<a class="headerlink" href="#observation" title="Permalink to this heading">#</a></h4>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1267,16 +795,16 @@ A BST such that</div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span><span class="w">  </span>
-<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">compareTo</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">key</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w">      </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">val</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">null</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">compareTo</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">key</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w">      </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">null</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1301,7 +829,7 @@ A BST such that</div>
 </section>
 </section>
 <section id="representation">
-<h3>Representation<a class="headerlink" href="#representation" title="Permalink to this headline">#</a></h3>
+<h3>Representation<a class="headerlink" href="#representation" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1315,22 +843,22 @@ A BST such that</div>
 <div class="sd-col sd-d-flex-row sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">RED</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">BLACK</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">RED</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">BLACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 
-<span class="kd">private</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
-  <span class="n">Key</span>     <span class="n">key</span><span class="p">;</span>  
-  <span class="n">Value</span>   <span class="n">val</span><span class="p">;</span>
-  <span class="n">Node</span>    <span class="n">left</span><span class="p">;</span>
-  <span class="n">Node</span>    <span class="n">right</span><span class="p">;</span>
-  <span class="c1">// color of parent link</span>
-  <span class="n">Boolean</span> <span class="n">color</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Key</span><span class="w">     </span><span class="n">key</span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="n">Value</span><span class="w">   </span><span class="n">val</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Node</span><span class="w">    </span><span class="n">left</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Node</span><span class="w">    </span><span class="n">right</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// color of parent link</span>
+<span class="w">  </span><span class="n">Boolean</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isRed</span><span class="p">(</span><span class="n">Node</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// null links are black</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>    
-  <span class="k">return</span> <span class="n">x</span><span class="p">.</span><span class="na">color</span> <span class="o">==</span> <span class="n">red</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isRed</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// null links are black</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">    </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">red</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1363,13 +891,13 @@ A BST such that</div>
 </div>
 </section>
 <section id="the-road-to-llrb-trees">
-<h3>The road to LLRB trees<a class="headerlink" href="#the-road-to-llrb-trees" title="Permalink to this headline">#</a></h3>
+<h3>The road to LLRB trees<a class="headerlink" href="#the-road-to-llrb-trees" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="374e75aa-f280-4b5b-877d-28ebd9fd26e9" name="c04422dc-cf18-408d-9e46-7240c9cc58f7" type="radio">
-</input><label class="sd-tab-label" for="374e75aa-f280-4b5b-877d-28ebd9fd26e9">
+<input checked="checked" id="9a0ce262-8938-4e12-a334-1931200b5556" name="6a7203e7-dd2f-43c3-8143-3d994b7a17a6" type="radio">
+</input><label class="sd-tab-label" for="9a0ce262-8938-4e12-a334-1931200b5556">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/17_11.png"><img alt="../../_images/17_11.png" src="../../_images/17_11.png" style="width: 300px;" /></a>
@@ -1378,8 +906,8 @@ A BST such that</div>
 </figcaption>
 </figure>
 </div>
-<input id="23dd4e2b-7ff3-4045-9f64-776428536760" name="c04422dc-cf18-408d-9e46-7240c9cc58f7" type="radio">
-</input><label class="sd-tab-label" for="23dd4e2b-7ff3-4045-9f64-776428536760">
+<input id="0b33d849-abac-4cc3-ac07-09f2f2ff5cf6" name="6a7203e7-dd2f-43c3-8143-3d994b7a17a6" type="radio">
+</input><label class="sd-tab-label" for="0b33d849-abac-4cc3-ac07-09f2f2ff5cf6">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id7">
 <img alt="../../_images/17_07.png" src="../../_images/17_07.png" />
@@ -1388,8 +916,8 @@ A BST such that</div>
 </figcaption>
 </figure>
 </div>
-<input id="3174dbfb-5dc5-4c7b-8eea-a1aa7aeeb6ed" name="c04422dc-cf18-408d-9e46-7240c9cc58f7" type="radio">
-</input><label class="sd-tab-label" for="3174dbfb-5dc5-4c7b-8eea-a1aa7aeeb6ed">
+<input id="cee6b70b-bd4a-403f-bd12-7f75c386e223" name="6a7203e7-dd2f-43c3-8143-3d994b7a17a6" type="radio">
+</input><label class="sd-tab-label" for="cee6b70b-bd4a-403f-bd12-7f75c386e223">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id8">
 <img alt="../../_images/17_09.png" src="../../_images/17_09.png" />
@@ -1398,8 +926,8 @@ A BST such that</div>
 </figcaption>
 </figure>
 </div>
-<input id="d812484c-b704-40c1-9fde-34acc70769a2" name="c04422dc-cf18-408d-9e46-7240c9cc58f7" type="radio">
-</input><label class="sd-tab-label" for="d812484c-b704-40c1-9fde-34acc70769a2">
+<input id="b5d5c9f5-fb0e-4efb-9c10-ce469fa12ff8" name="6a7203e7-dd2f-43c3-8143-3d994b7a17a6" type="radio">
+</input><label class="sd-tab-label" for="b5d5c9f5-fb0e-4efb-9c10-ce469fa12ff8">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id9">
 <img alt="../../_images/17_08.png" src="../../_images/17_08.png" />
@@ -1408,8 +936,8 @@ A BST such that</div>
 </figcaption>
 </figure>
 </div>
-<input id="e3c126df-a47d-4b3c-b22f-c5cfe45bcd4d" name="c04422dc-cf18-408d-9e46-7240c9cc58f7" type="radio">
-</input><label class="sd-tab-label" for="e3c126df-a47d-4b3c-b22f-c5cfe45bcd4d">
+<input id="c03e7d5c-15e6-4556-b847-2cb601b97083" name="6a7203e7-dd2f-43c3-8143-3d994b7a17a6" type="radio">
+</input><label class="sd-tab-label" for="c03e7d5c-15e6-4556-b847-2cb601b97083">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id10">
 <img alt="../../_images/17_12.png" src="../../_images/17_12.png" />
@@ -1425,13 +953,13 @@ A BST such that</div>
 </section>
 </section>
 <section id="red-black-tree-operations">
-<h2>Red-Black Tree Operations<a class="headerlink" href="#red-black-tree-operations" title="Permalink to this headline">#</a></h2>
+<h2>Red-Black Tree Operations<a class="headerlink" href="#red-black-tree-operations" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ef7bd7ed-8357-486b-a254-9c5b76f192e9" name="88defaa3-1923-4892-9ce0-9ddd99c16663" type="radio">
-</input><label class="sd-tab-label" for="ef7bd7ed-8357-486b-a254-9c5b76f192e9">
+<input checked="checked" id="22dca623-cadb-4cb8-91bd-3701082c7a5d" name="6a3c33b3-14b9-48db-8de1-96e12ea79208" type="radio">
+</input><label class="sd-tab-label" for="22dca623-cadb-4cb8-91bd-3701082c7a5d">
 Overview</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1457,8 +985,8 @@ During internal operations, maintain</div>
 </div>
 </div>
 </div>
-<input id="993d1eaf-8454-4695-bc21-a639399b088c" name="88defaa3-1923-4892-9ce0-9ddd99c16663" type="radio">
-</input><label class="sd-tab-label" for="993d1eaf-8454-4695-bc21-a639399b088c">
+<input id="8ae21dd2-f9cf-494f-aab3-2e249be358e4" name="6a3c33b3-14b9-48db-8de1-96e12ea79208" type="radio">
+</input><label class="sd-tab-label" for="8ae21dd2-f9cf-494f-aab3-2e249be358e4">
 Left rotation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1486,15 +1014,15 @@ Rotate E left</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Pseudocode</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="w"></span>
-<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span>
+<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1522,8 +1050,8 @@ Rotate E left</div>
 </div>
 </div>
 </div>
-<input id="61281b24-6dab-4a1e-8490-e7bd5183b942" name="88defaa3-1923-4892-9ce0-9ddd99c16663" type="radio">
-</input><label class="sd-tab-label" for="61281b24-6dab-4a1e-8490-e7bd5183b942">
+<input id="b317039d-f8df-4f62-9930-1343020809ed" name="6a3c33b3-14b9-48db-8de1-96e12ea79208" type="radio">
+</input><label class="sd-tab-label" for="b317039d-f8df-4f62-9930-1343020809ed">
 Right rotation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1551,15 +1079,15 @@ Rotate E right</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Pseudocode</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="w"></span>
-<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">;</span>
+<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span>
+<span class="w">  </span><span class="n">x</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1587,8 +1115,8 @@ Rotate E right</div>
 </div>
 </div>
 </div>
-<input id="f899b1ef-e81b-4dd6-be2b-c5822b4da889" name="88defaa3-1923-4892-9ce0-9ddd99c16663" type="radio">
-</input><label class="sd-tab-label" for="f899b1ef-e81b-4dd6-be2b-c5822b4da889">
+<input id="846313c5-ac8e-4c24-bb5b-ea97bbb64362" name="6a3c33b3-14b9-48db-8de1-96e12ea79208" type="radio">
+</input><label class="sd-tab-label" for="846313c5-ac8e-4c24-bb5b-ea97bbb64362">
 Color flip</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1616,14 +1144,14 @@ Color flip</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Pseudocode</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">color</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">BLACK</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">color</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BLACK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">rotateLeft</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">);</span>
+<span class="w">  </span><span class="n">assert</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">);</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">color</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">color</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">BLACK</span><span class="p">;</span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">color</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BLACK</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1656,7 +1184,7 @@ Color flip</div>
 </div>
 </div>
 <section id="insertions">
-<h3>Insertions<a class="headerlink" href="#insertions" title="Permalink to this headline">#</a></h3>
+<h3>Insertions<a class="headerlink" href="#insertions" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1689,8 +1217,8 @@ Repeat up the tree until color invariants restored</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Inserting H</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="08a619ef-f25d-48d5-9d05-8664e2662b35" name="8998880c-9583-4c83-8097-8493c2220603" type="radio">
-</input><label class="sd-tab-label" for="08a619ef-f25d-48d5-9d05-8664e2662b35">
+<input checked="checked" id="1bbca522-1a2d-42ed-90aa-87d199bad153" name="3468722f-a9b8-4b7e-825a-b21f962b742b" type="radio">
+</input><label class="sd-tab-label" for="1bbca522-1a2d-42ed-90aa-87d199bad153">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id17">
 <img alt="../../_images/17_21.png" src="../../_images/17_21.png" />
@@ -1699,8 +1227,8 @@ Inserting H</div>
 </figcaption>
 </figure>
 </div>
-<input id="f46a0f2d-73bf-42f0-830e-0eb137861348" name="8998880c-9583-4c83-8097-8493c2220603" type="radio">
-</input><label class="sd-tab-label" for="f46a0f2d-73bf-42f0-830e-0eb137861348">
+<input id="e51afb76-7398-4af6-b03d-29b90704aa3d" name="3468722f-a9b8-4b7e-825a-b21f962b742b" type="radio">
+</input><label class="sd-tab-label" for="e51afb76-7398-4af6-b03d-29b90704aa3d">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id18">
 <img alt="../../_images/17_22.png" src="../../_images/17_22.png" />
@@ -1709,8 +1237,8 @@ Inserting H</div>
 </figcaption>
 </figure>
 </div>
-<input id="92ebba74-7856-4536-89ff-ef8dc84cec47" name="8998880c-9583-4c83-8097-8493c2220603" type="radio">
-</input><label class="sd-tab-label" for="92ebba74-7856-4536-89ff-ef8dc84cec47">
+<input id="853e5e67-ff5e-42ec-aa57-092abe5f571f" name="3468722f-a9b8-4b7e-825a-b21f962b742b" type="radio">
+</input><label class="sd-tab-label" for="853e5e67-ff5e-42ec-aa57-092abe5f571f">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id19">
 <img alt="../../_images/17_23.png" src="../../_images/17_23.png" />
@@ -1719,8 +1247,8 @@ Inserting H</div>
 </figcaption>
 </figure>
 </div>
-<input id="29735897-0286-4b25-95d5-4179a7ebaf11" name="8998880c-9583-4c83-8097-8493c2220603" type="radio">
-</input><label class="sd-tab-label" for="29735897-0286-4b25-95d5-4179a7ebaf11">
+<input id="4d584234-71d5-4faa-9512-b3981b348d2a" name="3468722f-a9b8-4b7e-825a-b21f962b742b" type="radio">
+</input><label class="sd-tab-label" for="4d584234-71d5-4faa-9512-b3981b348d2a">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id20">
 <img alt="../../_images/17_24.png" src="../../_images/17_24.png" />
@@ -1729,8 +1257,8 @@ Inserting H</div>
 </figcaption>
 </figure>
 </div>
-<input id="f6efb498-67a3-4796-be08-8acd82ebb8ab" name="8998880c-9583-4c83-8097-8493c2220603" type="radio">
-</input><label class="sd-tab-label" for="f6efb498-67a3-4796-be08-8acd82ebb8ab">
+<input id="f1e62af2-ca31-4911-8011-1e81cf9d5ee0" name="3468722f-a9b8-4b7e-825a-b21f962b742b" type="radio">
+</input><label class="sd-tab-label" for="f1e62af2-ca31-4911-8011-1e81cf9d5ee0">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id21">
 <img alt="../../_images/17_25.png" src="../../_images/17_25.png" />
@@ -1749,8 +1277,8 @@ Inserting H</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Inserting P</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c9d24047-4ca5-4a0a-8ba3-b19550f34526" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="c9d24047-4ca5-4a0a-8ba3-b19550f34526">
+<input checked="checked" id="21fbeee1-6d64-4b75-940e-3ba612925cc5" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="21fbeee1-6d64-4b75-940e-3ba612925cc5">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id22">
 <img alt="../../_images/17_26.png" src="../../_images/17_26.png" />
@@ -1759,8 +1287,8 @@ Inserting P</div>
 </figcaption>
 </figure>
 </div>
-<input id="c4ed9939-d6df-47b1-abd9-bd256dbeb1ef" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="c4ed9939-d6df-47b1-abd9-bd256dbeb1ef">
+<input id="c378570b-79b9-48d7-9aa6-3b7dd288376b" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="c378570b-79b9-48d7-9aa6-3b7dd288376b">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id23">
 <img alt="../../_images/17_27.png" src="../../_images/17_27.png" />
@@ -1769,8 +1297,8 @@ Inserting P</div>
 </figcaption>
 </figure>
 </div>
-<input id="26299dc6-352c-44a6-939c-bb92128bb246" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="26299dc6-352c-44a6-939c-bb92128bb246">
+<input id="9fbc7dcf-c99e-4489-a5cf-b80b83d4f22a" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="9fbc7dcf-c99e-4489-a5cf-b80b83d4f22a">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id24">
 <img alt="../../_images/17_28.png" src="../../_images/17_28.png" />
@@ -1779,8 +1307,8 @@ Inserting P</div>
 </figcaption>
 </figure>
 </div>
-<input id="b2a00c85-d781-4d69-aebe-e86bc3e79455" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="b2a00c85-d781-4d69-aebe-e86bc3e79455">
+<input id="cc7e8a61-84fd-45e0-9e3d-dab33b31618f" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="cc7e8a61-84fd-45e0-9e3d-dab33b31618f">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id25">
 <img alt="../../_images/17_29.png" src="../../_images/17_29.png" />
@@ -1789,8 +1317,8 @@ Inserting P</div>
 </figcaption>
 </figure>
 </div>
-<input id="8ff05769-d7d2-4e56-ba64-4d392af1db7b" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="8ff05769-d7d2-4e56-ba64-4d392af1db7b">
+<input id="3380f930-0118-4f0e-8c0b-0b3e3eaf8ebc" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="3380f930-0118-4f0e-8c0b-0b3e3eaf8ebc">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id26">
 <img alt="../../_images/17_30.png" src="../../_images/17_30.png" />
@@ -1799,8 +1327,8 @@ Inserting P</div>
 </figcaption>
 </figure>
 </div>
-<input id="0351e85e-6c5a-4c7d-81ca-e8311c58cc03" name="331e9afb-ab03-499f-bec3-aea0010002bc" type="radio">
-</input><label class="sd-tab-label" for="0351e85e-6c5a-4c7d-81ca-e8311c58cc03">
+<input id="2a88ff1a-2804-4894-8ca4-55f09061846d" name="4d5b7f9a-97a1-4c64-85f9-3da9bf5f5b1c" type="radio">
+</input><label class="sd-tab-label" for="2a88ff1a-2804-4894-8ca4-55f09061846d">
 6</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id27">
 <img alt="../../_images/17_31.png" src="../../_images/17_31.png" />
@@ -1821,7 +1349,7 @@ Inserting P</div>
 <!-- SLIDE 15 -->
 </section>
 <section id="visualize">
-<h3>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">#</a></h3>
+<h3>Visualize<a class="headerlink" href="#visualize" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
@@ -1833,7 +1361,7 @@ Click the image to hyperlink and interact</div>
 </div>
 </section>
 <section id="implementation">
-<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">#</a></h3>
+<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1853,22 +1381,22 @@ Repeat up the tree until color invariants restored</div>
 </ul>
 </div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">RED</span><span class="p">;</span><span class="w">         </span><span class="c1">// insert at bottom and color red</span>
 <span class="w">  </span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">cmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">compareTo</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">key</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w">      </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">val</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">cmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">compareTo</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">key</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w">      </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w">  </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">val</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
 <span class="w">  </span>
 <span class="w">  </span><span class="c1">// following lines restore color invariants</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">))</span><span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">left</span><span class="p">))</span><span class="w">   </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateRight</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">))</span><span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">left</span><span class="p">))</span><span class="w">   </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateRight</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
 <span class="w">  </span><span class="c1">// only a few extra lines of code provides near-perfect balance</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">right</span><span class="p">))</span><span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flipColors</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w">           </span>
 <span class="w">  </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">h</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1876,13 +1404,13 @@ Repeat up the tree until color invariants restored</div>
 </div>
 </section>
 <section id="visualizations-n-255">
-<h3>Visualizations | <span class="math notranslate nohighlight">\(n=255\)</span><a class="headerlink" href="#visualizations-n-255" title="Permalink to this headline">#</a></h3>
+<h3>Visualizations | <span class="math notranslate nohighlight">\(n=255\)</span><a class="headerlink" href="#visualizations-n-255" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="05985b91-284d-49f9-8d55-0329b65e9a84" name="4c9b79e9-d741-4afd-8e82-3f743bae0f2a" type="radio">
-</input><label class="sd-tab-label" for="05985b91-284d-49f9-8d55-0329b65e9a84">
+<input checked="checked" id="373eba93-4161-4832-b09f-0837fd613c78" name="a4941f97-c2d7-4f2f-9101-64683de4e61e" type="radio">
+</input><label class="sd-tab-label" for="373eba93-4161-4832-b09f-0837fd613c78">
 Random order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 9\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.3\)</span></p>
@@ -1893,8 +1421,8 @@ Random order</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="4aa45741-44a1-418a-bdde-1aa528c062ba" name="4c9b79e9-d741-4afd-8e82-3f743bae0f2a" type="radio">
-</input><label class="sd-tab-label" for="4aa45741-44a1-418a-bdde-1aa528c062ba">
+<input id="6b356315-5032-4e27-ae08-5a9b85cddff2" name="a4941f97-c2d7-4f2f-9101-64683de4e61e" type="radio">
+</input><label class="sd-tab-label" for="6b356315-5032-4e27-ae08-5a9b85cddff2">
 Ascending order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 7\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.0\)</span></p>
@@ -1905,8 +1433,8 @@ Ascending order</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="003b55a8-5ad2-4fbd-848b-603a5f5c5e78" name="4c9b79e9-d741-4afd-8e82-3f743bae0f2a" type="radio">
-</input><label class="sd-tab-label" for="003b55a8-5ad2-4fbd-848b-603a5f5c5e78">
+<input id="8da8f34a-83e3-4f7f-ba49-03551eb0a387" name="a4941f97-c2d7-4f2f-9101-64683de4e61e" type="radio">
+</input><label class="sd-tab-label" for="8da8f34a-83e3-4f7f-ba49-03551eb0a387">
 Descending order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 13\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.5\)</span></p>
@@ -1924,7 +1452,7 @@ Descending order</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="balance">
-<h2>Balance<a class="headerlink" href="#balance" title="Permalink to this headline">#</a></h2>
+<h2>Balance<a class="headerlink" href="#balance" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1958,7 +1486,7 @@ Proof</div>
 </div>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1994,53 +1522,125 @@ Proof</div>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2_3.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">2-3 Trees</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2-3 Trees</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="hash_tables.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="hash_tables.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Hash Tables</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-leaning-red-black-bsts">Left-leaning red-black BSTs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-red-black-trees">Why Red-Black Trees?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-2-3-trees-with-binary-trees">Implementing 2-3 trees with binary trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-with-2-3-trees">1-1 correspondence with 2-3 trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-llrb-trees-without-reference-to-2-3">Definition of LLRB trees (without reference to 2-3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search">Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observation">Observation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation">Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-road-to-llrb-trees">The road to LLRB trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-black-tree-operations">Red-Black Tree Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insertions">Insertions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">Visualize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizations-n-255">Visualizations | <span class="math notranslate nohighlight">\(n=255\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance">Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Professor Jonathan Schrader<br/>
-  
-      &copy; Copyright 2023.<br/>
-    <div class="extra_footer">
-      Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
-    </div>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Professor Jonathan Schrader
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Materials herein are a compilation under guise of 'Fair Use for Education'.<br>All rights reserved by their intellectual property owners, respectfully.
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
