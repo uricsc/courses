@@ -468,8 +468,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priority-queue">Priority Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-priority-queue">Queue &amp; Priority Queue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Priority Queues</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
@@ -491,93 +490,127 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="priority-queues">
 <h1>Priority Queues<a class="headerlink" href="#priority-queues" title="Permalink to this heading">#</a></h1>
+<style>
+iframe {width:100%;height:70vh;}
+</style>
 <div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="c49dc4e1-f200-4bbf-9e4c-6b27614b434d" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="c49dc4e1-f200-4bbf-9e4c-6b27614b434d">
+Introduction</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/wptevk0bshY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<input id="085e40fa-8aa4-473c-a4f0-a1528b5511df" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="085e40fa-8aa4-473c-a4f0-a1528b5511df">
+Queues &amp; PQs</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/_U1AJZQxYTU?si=nsu6QXGjAM0Tenic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<input id="7682f74a-2fe1-4300-a401-28b70d4a61bd" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="7682f74a-2fe1-4300-a401-28b70d4a61bd">
+PQ Pt.1</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/5HC6qrWGrpA?si=iSPfsT8HCsULn-mi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<input id="c2f61b81-a7dd-49e1-9ecc-726370159171" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="c2f61b81-a7dd-49e1-9ecc-726370159171">
+PQ Pt.2</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/2iSJJSci5u4?si=UHw9H2UDrCeIqxPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<input id="3ec9d1e8-15a2-4910-88a8-ae1daeada988" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="3ec9d1e8-15a2-4910-88a8-ae1daeada988">
+PQ Pt.3</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/fFbtftih_eY?si=KCjiWFdUugkJDwNx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<input id="cd5dd120-c379-4820-9411-c39226be4538" name="82b0f35d-de6f-4e95-9a63-dfffd079d752" type="radio">
+</input><label class="sd-tab-label" for="cd5dd120-c379-4820-9411-c39226be4538">
+PQ Pt.4</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/ujbhsL1Ngg8?si=8tZrpO9X8Ft-Fx3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<iframe width="100%" height="600" src="https://www.youtube.com/embed/wptevk0bshY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="sd-summary-down docutils">
+TL;DR<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-TL;DR</div>
 <p class="sd-card-text">A priority queue is an abstract data type in computer science that stores a collection of elements with associated priorities, and provides operations for adding and removing elements in a way that respects their priorities.</p>
 <p class="sd-card-text">A priority queue is similar to a queue data structure, but unlike a queue, the order in which elements are removed from a priority queue is based on their priority rather than their order of insertion. In other words, the element with the highest priority is removed first, regardless of when it was added to the priority queue.</p>
 <p class="sd-card-text">Priority queues are commonly used in applications where tasks or events have different levels of importance, such as task scheduling, event-driven simulations, and network routing protocols.</p>
 <p class="sd-card-text">Priority queues can be implemented using various data structures, such as arrays, linked lists, heaps, and binary search trees. However, heap-based implementations are the most common, as they provide efficient <span class="math notranslate nohighlight">\(O(log\ n)\)</span> time complexity for both insertion and removal operations, making them suitable for large collections.</p>
 </div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Additional Resources</div>
-<ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://youtu.be/5HC6qrWGrpA">Priority Queues | davefeinberg</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://youtu.be/2iSJJSci5u4">Priority Queues 2 | davefeinberg</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://youtu.be/fFbtftih_eY">Priority Queues 3 | davefeinberg</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://youtu.be/ujbhsL1Ngg8">Priority Queues 4 | davefeinberg</a></p></li>
-</ul>
-</div>
-</div>
-</div>
 </details></div>
+</div>
+</div>
 <section id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-border-1 docutils">
 <dl class="simple myst">
-<dt>Collections</dt><dd><p class="sd-card-text">Insert and delete items. Which items to delete?</p>
+<dt>Collections</dt><dd><p>Insert and delete items. Which items to delete?</p>
 </dd>
 </dl>
 </div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
 <dl class="simple myst">
-<dt>Stack</dt><dd><p class="sd-card-text">Remove the item most recently added</p>
-</dd>
-<dt>Queue</dt><dd><p class="sd-card-text">Remove the item least recently added</p>
-</dd>
-<dt>Randomized Queue</dt><dd><p class="sd-card-text">Remove a random item</p>
-</dd>
-<dt>Generalizes</dt><dd><p class="sd-card-text">stack, queue, randomized queue</p>
+<dt>Stack</dt><dd><p>Remove the item most recently added</p>
 </dd>
 </dl>
 </div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
 <dl class="simple myst">
-<dt>Priority Queue</dt><dd><p class="sd-card-text">Remove the largest (or smallest) item</p>
+<dt>Generalizes</dt><dd><p>stack, queue, randomized queue</p>
 </dd>
 </dl>
 </div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
+<dl class="simple myst">
+<dt>Queue</dt><dd><p>Remove the item least recently added</p>
+</dd>
+</dl>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
+<dl class="simple myst">
+<dt>Randomized Queue</dt><dd><p>Remove a random item</p>
+</dd>
+</dl>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-border-1 docutils">
+<dl class="simple myst">
+<dt>Priority Queue</dt><dd><p>Remove the largest (or smallest) item</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="queues">
-<h2><a class="reference external" href="https://www.geeksforgeeks.org/queue-data-structure/?ref=gcse">Queues</a><a class="headerlink" href="#queues" title="Permalink to this heading">#</a></h2>
+<section id="queue-priority-queue">
+<h2>Queue &amp; Priority Queue<a class="headerlink" href="#queue-priority-queue" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="4ad3b5da-2a49-4606-b350-edce9336bfed" name="b8ac362a-0239-4df9-b438-b0590383cb72" type="radio">
+</input><label class="sd-tab-label" for="4ad3b5da-2a49-4606-b350-edce9336bfed">
+Q</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id2">
 <img alt="https://miro.medium.com/max/3148/0*TRbfsq86lqDoqW6b.png" src="https://miro.medium.com/max/3148/0*TRbfsq86lqDoqW6b.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text"><a class="reference external" href="https://www.geeksforgeeks.org/queue-data-structure/?ref=gcse">Queues</a></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
-</div>
-</div>
-</section>
-<section id="priority-queue">
-<h2><a class="reference external" href="https://www.geeksforgeeks.org/priority-queue-set-1-introduction/">Priority Queue</a><a class="headerlink" href="#priority-queue" title="Permalink to this heading">#</a></h2>
-<div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<input id="3eaecdb7-f622-4ca4-b15c-14c69ed28a6a" name="b8ac362a-0239-4df9-b438-b0590383cb72" type="radio">
+</input><label class="sd-tab-label" for="3eaecdb7-f622-4ca4-b15c-14c69ed28a6a">
+PQ</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id3">
 <img alt="https://netmatze.files.wordpress.com/2014/08/priorityqueue.png" src="https://netmatze.files.wordpress.com/2014/08/priorityqueue.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text"><a class="reference external" href="https://www.geeksforgeeks.org/priority-queue-set-1-introduction/">Priority Queue</a></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -754,10 +787,10 @@ Priority Queues</div>
 </div>
 </div>
 <div class="full-width docutils">
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Priority-Queue-min-1024x512.png"><img alt="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Priority-Queue-min-1024x512.png" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Priority-Queue-min-1024x512.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Working with PQ’s</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Working with PQ’s</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1008,8 +1041,7 @@ Less predictable at times  <div class="sd-summary-down docutils">
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priority-queue">Priority Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-priority-queue">Queue &amp; Priority Queue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Priority Queues</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
