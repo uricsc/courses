@@ -467,7 +467,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-array">Implementation : Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-linked-list">Implementation : Linked List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
 </ul>
@@ -483,6 +484,9 @@ document.write(`
                   
   <section id="stacks">
 <h1>Stacks<a class="headerlink" href="#stacks" title="Permalink to this heading">#</a></h1>
+<style>
+iframe {width:100%;height:70vh;}
+</style>
 <div class="full-width docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -497,7 +501,7 @@ document.write(`
 TL;DR</div>
 <p class="sd-card-text">A stack is a linear data structure in computer science that follows the Last-In-First-Out (LIFO) principle. In simpler terms, the element that is added last to the stack is the first element to be removed from it.</p>
 <p class="sd-card-text">A stack is similar to a stack of books, where the book that is placed on top is the first book to be removed. The stack data structure has two primary operations: push and pop. The push operation adds an element to the top of the stack, while the pop operation removes the topmost element from the stack.</p>
-<p class="sd-card-text">Stacks are commonly used in programming for various purposes, such as function calls, expression evaluation, and memory allocation. In function calls, a stack is used to keep track of the sequence of function calls that are made during the execution of a program. In expression evaluation, a stack is used to evaluate arithmetic expressions, such as infix, postfix, and prefix expressions. In memory allocation, a stack is used to allocate and deallocate memory for variables and data structures.</p>
+<p class="sd-card-text">Stacks are commonly used in programming for various purposes, such as function calls, expression evaluation, and memory allocation. In function calls, a stack is used to keep track of the sequence of function calls that are made during the execution of a program. In expression evaluation, a stack is used to evaluate arithmetic expressions, such as infix, postfix, and prefix expressions. In memory allocation, a stack is used to allocate and de-allocate memory for variables and data structures.</p>
 </div>
 </div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
@@ -511,27 +515,20 @@ Additional Resources</div>
 </div>
 </div>
 </details></div>
-<div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-LIFO: Last In, First Out</div>
-<iframe src="https://joaogabrielferr.github.io/data-structures-visualizer"></iframe>
-</div>
-</div>
-</div>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="fb403bff-7368-423c-833e-021abf14ac6c" name="12d24b71-b4dd-4943-b61f-03c1aa99af04" type="radio">
+</input><label class="sd-tab-label" for="fb403bff-7368-423c-833e-021abf14ac6c">
+CPPRef</label><div class="sd-tab-content docutils">
 <iframe src="https://en.cppreference.com/w/cpp/container/stack" frameborder="0"></iframe>
 </div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Example</div>
+<input id="321044ee-efe2-40bb-a7d5-217d0d279be7" name="12d24b71-b4dd-4943-b61f-03c1aa99af04" type="radio">
+</input><label class="sd-tab-label" for="321044ee-efe2-40bb-a7d5-217d0d279be7">
+Sample</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stack&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -549,6 +546,20 @@ Example</div>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="n">elements</span> <span class="n">on</span> <span class="n">stack</span>
+<span class="n">Top</span> <span class="n">element</span><span class="p">:</span> <span class="mi">3</span>
+<span class="mi">3</span> <span class="n">elements</span> <span class="n">on</span> <span class="n">stack</span>
+<span class="mi">2</span> <span class="n">elements</span> <span class="n">on</span> <span class="n">stack</span>
+<span class="n">Top</span> <span class="n">element</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<input id="fe192378-8b64-471e-8204-094a829c4dec" name="12d24b71-b4dd-4943-b61f-03c1aa99af04" type="radio">
+</input><label class="sd-tab-label" for="fe192378-8b64-471e-8204-094a829c4dec">
+LIFO</label><div class="sd-tab-content docutils">
+<iframe src="https://joaogabrielferr.github.io/data-structures-visualizer"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -664,11 +675,17 @@ isEmpty<div class="sd-summary-down docutils">
 </div>
 </div>
 </section>
-<section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<section id="implementation-array">
+<h2>Implementation : Array<a class="headerlink" href="#implementation-array" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
+<div class="dropdown tip admonition">
+<p class="admonition-title">Flow Chart Sample</p>
+<figure class="align-default">
+<img alt="https://i0.wp.com/www.xamnation.com/wp-content/uploads/2020/07/stack-flowchart.png?w=540&amp;ssl=1" src="https://i0.wp.com/www.xamnation.com/wp-content/uploads/2020/07/stack-flowchart.png?w=540&amp;ssl=1" />
+</figure>
+</div>
 <div class="admonition-arrays admonition">
 <p class="admonition-title">Arrays</p>
 <ul class="simple">
@@ -735,16 +752,18 @@ isEmpty<div class="sd-summary-down docutils">
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Visualize: Stack Array (in Memory)</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<iframe src="https://pythontutor.com/visualize.html#code=/*%20C%2B%2B%20program%20to%20implement%20basic%20stack%0Aoperations%20*/%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0A%0Ausing%20namespace%20std%3B%0A%0A%23define%20MAX%203%0A%0Aclass%20Stack%20%7B%0A%20%20%20%20int%20top%3B%0A%0Apublic%3A%0A%20%20%20%20int%20a%5BMAX%5D%3B%20//%20Maximum%20size%20of%20Stack%0A%0A%20%20%20%20Stack%28%29%20%7B%20top%20%3D%20-1%3B%20%7D%0A%20%20%20%20bool%20push%28int%20x%29%3B%0A%20%20%20%20int%20pop%28%29%3B%0A%20%20%20%20int%20peek%28%29%3B%0A%20%20%20%20bool%20isEmpty%28%29%3B%0A%7D%3B%0A%0Abool%20Stack%3A%3Apush%28int%20x%29%0A%7B%0A%20%20%20%20if%20%28top%20%3E%3D%20%28MAX%20-%201%29%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20Overflow%22%3B%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20a%5B%2B%2Btop%5D%20%3D%20x%3B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20%22%20pushed%20into%20stack%5Cn%22%3B%0A%20%20%20%20%20%20%20%20return%20true%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20Stack%3A%3Apop%28%29%0A%7B%0A%20%20%20%20if%20%28top%20%3C%200%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20Underflow%22%3B%0A%20%20%20%20%20%20%20%20return%200%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%20a%5Btop--%5D%3B%0A%20%20%20%20%20%20%20%20return%20x%3B%0A%20%20%20%20%7D%0A%7D%0Aint%20Stack%3A%3Apeek%28%29%0A%7B%0A%20%20%20%20if%20%28top%20%3C%200%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20is%20Empty%22%3B%0A%20%20%20%20%20%20%20%20return%200%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%20a%5Btop%5D%3B%0A%20%20%20%20%20%20%20%20return%20x%3B%0A%20%20%20%20%7D%0A%7D%0A%0Abool%20Stack%3A%3AisEmpty%28%29%0A%7B%0A%20%20%20%20return%20%28top%20%3C%200%29%3B%0A%7D%0A%0A//%20Driver%20program%20to%20test%20above%20functions%0Aint%20main%28%29%0A%7B%0A%20%20%20%20class%20Stack%20s%3B%0A%20%20%20%20s.push%2810%29%3B%0A%20%20%20%20s.push%2820%29%3B%0A%20%20%20%20s.push%2830%29%3B%0A%20%20%20%20cout%20%3C%3C%20s.pop%28%29%20%3C%3C%20%22%20Popped%20from%20stack%5Cn%22%3B%0A%0A%20%20%20%20//%20//print%20top%20element%20of%20stack%20after%20popping%0A%20%20%20%20//%20cout%20%3C%3C%20%22Top%20element%20is%20%3A%20%22%20%3C%3C%20s.peek%28%29%20%3C%3C%20endl%3B%0A%0A%20%20%20%20//%20//print%20all%20elements%20in%20stack%20%3A%0A%20%20%20%20//%20cout%20%3C%3C%22Elements%20present%20in%20stack%20%3A%20%22%3B%0A%20%20%20%20//%20while%28!s.isEmpty%28%29%29%0A%20%20%20%20//%20%7B%0A%20%20%20%20//%20%20%20%20%20//%20print%20top%20element%20in%20stack%0A%20%20%20%20//%20%20%20%20%20cout%20%3C%3C%20s.peek%28%29%20%3C%3C%22%20%22%3B%0A%20%20%20%20//%20%20%20%20%20//%20remove%20top%20element%20in%20stack%0A%20%20%20%20//%20%20%20%20%20s.pop%28%29%3B%0A%20%20%20%20//%20%7D%0A%0A%20%20%20%20return%200%3B%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" frameborder="0"></iframe>
+<p class="sd-card-text"><em>May take a few seconds to load…</em></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementation-linked-list">
+<h2>Implementation : Linked List<a class="headerlink" href="#implementation-linked-list" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Click to interact…</p>
-<figure class="align-center">
-<img alt="../../_images/w5_stack_array.png" src="../../_images/w5_stack_array.png" />
-</figure>
-<p class="sd-card-text"><em>Note: may need a few seconds to execute code…</em></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://pythontutor.com/visualize.html#code=/*%20C%2B%2B%20program%20to%20implement%20basic%20stack%0Aoperations%20*/%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0A%0Ausing%20namespace%20std%3B%0A%0A%23define%20MAX%203%0A%0Aclass%20Stack%20%7B%0A%20%20%20%20int%20top%3B%0A%0Apublic%3A%0A%20%20%20%20int%20a%5BMAX%5D%3B%20//%20Maximum%20size%20of%20Stack%0A%0A%20%20%20%20Stack%28%29%20%7B%20top%20%3D%20-1%3B%20%7D%0A%20%20%20%20bool%20push%28int%20x%29%3B%0A%20%20%20%20int%20pop%28%29%3B%0A%20%20%20%20int%20peek%28%29%3B%0A%20%20%20%20bool%20isEmpty%28%29%3B%0A%7D%3B%0A%0Abool%20Stack%3A%3Apush%28int%20x%29%0A%7B%0A%20%20%20%20if%20%28top%20%3E%3D%20%28MAX%20-%201%29%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20Overflow%22%3B%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20a%5B%2B%2Btop%5D%20%3D%20x%3B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20%22%20pushed%20into%20stack%5Cn%22%3B%0A%20%20%20%20%20%20%20%20return%20true%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20Stack%3A%3Apop%28%29%0A%7B%0A%20%20%20%20if%20%28top%20%3C%200%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20Underflow%22%3B%0A%20%20%20%20%20%20%20%20return%200%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%20a%5Btop--%5D%3B%0A%20%20%20%20%20%20%20%20return%20x%3B%0A%20%20%20%20%7D%0A%7D%0Aint%20Stack%3A%3Apeek%28%29%0A%7B%0A%20%20%20%20if%20%28top%20%3C%200%29%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Stack%20is%20Empty%22%3B%0A%20%20%20%20%20%20%20%20return%200%3B%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%20a%5Btop%5D%3B%0A%20%20%20%20%20%20%20%20return%20x%3B%0A%20%20%20%20%7D%0A%7D%0A%0Abool%20Stack%3A%3AisEmpty%28%29%0A%7B%0A%20%20%20%20return%20%28top%20%3C%200%29%3B%0A%7D%0A%0A//%20Driver%20program%20to%20test%20above%20functions%0Aint%20main%28%29%0A%7B%0A%20%20%20%20class%20Stack%20s%3B%0A%20%20%20%20s.push%2810%29%3B%0A%20%20%20%20s.push%2820%29%3B%0A%20%20%20%20s.push%2830%29%3B%0A%20%20%20%20cout%20%3C%3C%20s.pop%28%29%20%3C%3C%20%22%20Popped%20from%20stack%5Cn%22%3B%0A%0A%20%20%20%20//%20//print%20top%20element%20of%20stack%20after%20popping%0A%20%20%20%20//%20cout%20%3C%3C%20%22Top%20element%20is%20%3A%20%22%20%3C%3C%20s.peek%28%29%20%3C%3C%20endl%3B%0A%0A%20%20%20%20//%20//print%20all%20elements%20in%20stack%20%3A%0A%20%20%20%20//%20cout%20%3C%3C%22Elements%20present%20in%20stack%20%3A%20%22%3B%0A%20%20%20%20//%20while%28!s.isEmpty%28%29%29%0A%20%20%20%20//%20%7B%0A%20%20%20%20//%20%20%20%20%20//%20print%20top%20element%20in%20stack%0A%20%20%20%20//%20%20%20%20%20cout%20%3C%3C%20s.peek%28%29%20%3C%3C%22%20%22%3B%0A%20%20%20%20//%20%20%20%20%20//%20remove%20top%20element%20in%20stack%0A%20%20%20%20//%20%20%20%20%20s.pop%28%29%3B%0A%20%20%20%20//%20%7D%0A%0A%20%20%20%20return%200%3B%0A%7D&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=cpp_g%2B%2B9.3.0&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></a></div>
-</div>
 <div class="admonition-linked-lists admonition">
 <p class="admonition-title">Linked Lists</p>
 <ul class="simple">
@@ -757,8 +776,8 @@ isEmpty<div class="sd-summary-down docutils">
 <div class="admonition-stack-ll-sample admonition">
 <p class="admonition-title">Stack: LL Sample</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c864cac9-b994-4506-9e1f-38f1f5506490" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="c864cac9-b994-4506-9e1f-38f1f5506490">
+<input checked="checked" id="35e5961b-753f-4744-bc7c-403bc9a5b327" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="35e5961b-753f-4744-bc7c-403bc9a5b327">
 Altogether</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -810,8 +829,8 @@ Altogether</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="41dbcb25-4abb-43b5-b81f-ebcecc3a4e2c" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="41dbcb25-4abb-43b5-b81f-ebcecc3a4e2c">
+<input id="370f4f96-73fb-4954-be1e-37cce5fa97ff" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="370f4f96-73fb-4954-be1e-37cce5fa97ff">
 Node</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -825,8 +844,8 @@ Node</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c94d1958-3c59-454f-8f18-44504fe736a9" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="c94d1958-3c59-454f-8f18-44504fe736a9">
+<input id="8caeca10-8325-49ca-a6db-fb88eb4707dc" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="8caeca10-8325-49ca-a6db-fb88eb4707dc">
 Stack</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="w"> </span><span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
@@ -840,8 +859,8 @@ Stack</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="8bc1920d-c73e-412f-8311-b0bb4ca3f3de" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="8bc1920d-c73e-412f-8311-b0bb4ca3f3de">
+<input id="16e0a4d0-edf4-45c3-bbbc-2b9f1b23bcb7" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="16e0a4d0-edf4-45c3-bbbc-2b9f1b23bcb7">
 push()</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
@@ -851,8 +870,8 @@ push()</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e852d40b-e4bb-4617-b879-795e39466224" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="e852d40b-e4bb-4617-b879-795e39466224">
+<input id="dc9cdbd9-ffb0-44af-aa3a-3870fdf71690" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="dc9cdbd9-ffb0-44af-aa3a-3870fdf71690">
 pop()</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">pop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">top</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -867,8 +886,8 @@ pop()</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="1544fcce-b41e-47fe-bd06-f8fb915b5fa9" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="1544fcce-b41e-47fe-bd06-f8fb915b5fa9">
+<input id="1e5a0f38-f060-4298-9f8d-66db988213dd" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="1e5a0f38-f060-4298-9f8d-66db988213dd">
 peek()</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">peek</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">top</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -879,8 +898,8 @@ peek()</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="cf07efe1-2901-4bb1-9813-87aecbf1e9b8" name="47b13f27-34cc-4d6c-ba9b-b177a3bd1216" type="radio">
-</input><label class="sd-tab-label" for="cf07efe1-2901-4bb1-9813-87aecbf1e9b8">
+<input id="3bc01ad2-99de-4983-be84-9fd622bc59f9" name="534faa1f-3927-4a9f-81d5-4b212dd29af7" type="radio">
+</input><label class="sd-tab-label" for="3bc01ad2-99de-4983-be84-9fd622bc59f9">
 isEmpty()</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
@@ -893,20 +912,12 @@ isEmpty()</label><div class="sd-tab-content docutils">
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Visualize: Stack Array (general premise)</p>
-<!-- <iframe src="https://www.cs.usfca.edu/~galles/visualization/StackLL.html" width="1000" height="600" frameborder="0"> -->
 <p class="sd-card-text"><a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/StackLL.html">https://www.cs.usfca.edu/~galles/visualization/StackLL.html</a></p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Visualize: Stack LL (in Memory)</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text">Click to interact…</p>
-<figure class="align-center">
-<img alt="../../_images/w5_stack_ll.png" src="../../_images/w5_stack_ll.png" />
-</figure>
-<p class="sd-card-text"><em>Note: may need a few seconds to execute code…</em></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://pythontutor.com/iframe-embed.html#code=//%20C%2B%2B%20program%20for%20linked%20list%20implementation%20of%20stack%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20structure%20to%20represent%20a%20stack%0Aclass%20StackNode%20%7B%0Apublic%3A%0A%20%20%20%20int%20data%3B%0A%20%20%20%20StackNode*%20next%3B%0A%7D%3B%0A%0AStackNode*%20newNode%28int%20data%29%0A%7B%0A%20%20%20%20StackNode*%20stackNode%20%3D%20new%20StackNode%28%29%3B%0A%20%20%20%20stackNode-%3Edata%20%3D%20data%3B%0A%20%20%20%20stackNode-%3Enext%20%3D%20NULL%3B%0A%20%20%20%20return%20stackNode%3B%0A%7D%0A%0Aint%20isEmpty%28StackNode*%20root%29%0A%7B%0A%20%20%20%20return%20!root%3B%0A%7D%0A%0Avoid%20push%28StackNode**%20root,%20int%20data%29%0A%7B%0A%20%20%20%20StackNode*%20stackNode%20%3D%20newNode%28data%29%3B%0A%20%20%20%20stackNode-%3Enext%20%3D%20*root%3B%0A%20%20%20%20*root%20%3D%20stackNode%3B%0A%20%20%20%20cout%20%3C%3C%20data%20%3C%3C%20%22%20pushed%20to%20stack%5Cn%22%3B%0A%7D%0A%0Aint%20pop%28StackNode**%20root%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28*root%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20StackNode*%20temp%20%3D%20*root%3B%0A%20%20%20%20*root%20%3D%20%28*root%29-%3Enext%3B%0A%20%20%20%20int%20popped%20%3D%20temp-%3Edata%3B%0A%20%20%20%20delete%20temp%3B%0A%0A%20%20%20%20return%20popped%3B%0A%7D%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%20%20%20%20StackNode*%20root%20%3D%20NULL%3B%0A%0A%20%20%20%20push%28%26root,%2010%29%3B%0A%20%20%20%20push%28%26root,%2020%29%3B%0A%20%20%20%20push%28%26root,%2030%29%3B%0A%0A%20%20%20%20cout%20%3C%3C%20pop%28%26root%29%20%3C%3C%20%22%20popped%20from%20stack%5Cn%22%3B%0A%0A%20%20%20%20return%200%3B%0A%7D&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=cpp_g%2B%2B9.3.0&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></a></div>
+<iframe src="https://pythontutor.com/iframe-embed.html#code=//%20C%2B%2B%20program%20for%20linked%20list%20implementation%20of%20stack%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20structure%20to%20represent%20a%20stack%0Aclass%20StackNode%20%7B%0Apublic%3A%0A%20%20%20%20int%20data%3B%0A%20%20%20%20StackNode*%20next%3B%0A%7D%3B%0A%0AStackNode*%20newNode%28int%20data%29%0A%7B%0A%20%20%20%20StackNode*%20stackNode%20%3D%20new%20StackNode%28%29%3B%0A%20%20%20%20stackNode-%3Edata%20%3D%20data%3B%0A%20%20%20%20stackNode-%3Enext%20%3D%20NULL%3B%0A%20%20%20%20return%20stackNode%3B%0A%7D%0A%0Aint%20isEmpty%28StackNode*%20root%29%0A%7B%0A%20%20%20%20return%20!root%3B%0A%7D%0A%0Avoid%20push%28StackNode**%20root,%20int%20data%29%0A%7B%0A%20%20%20%20StackNode*%20stackNode%20%3D%20newNode%28data%29%3B%0A%20%20%20%20stackNode-%3Enext%20%3D%20*root%3B%0A%20%20%20%20*root%20%3D%20stackNode%3B%0A%20%20%20%20cout%20%3C%3C%20data%20%3C%3C%20%22%20pushed%20to%20stack%5Cn%22%3B%0A%7D%0A%0Aint%20pop%28StackNode**%20root%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28*root%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20StackNode*%20temp%20%3D%20*root%3B%0A%20%20%20%20*root%20%3D%20%28*root%29-%3Enext%3B%0A%20%20%20%20int%20popped%20%3D%20temp-%3Edata%3B%0A%20%20%20%20delete%20temp%3B%0A%0A%20%20%20%20return%20popped%3B%0A%7D%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%20%20%20%20StackNode*%20root%20%3D%20NULL%3B%0A%0A%20%20%20%20push%28%26root,%2010%29%3B%0A%20%20%20%20push%28%26root,%2020%29%3B%0A%20%20%20%20push%28%26root,%2030%29%3B%0A%0A%20%20%20%20cout%20%3C%3C%20pop%28%26root%29%20%3C%3C%20%22%20popped%20from%20stack%5Cn%22%3B%0A%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" frameborder="0"></iframe>
+<p class="sd-card-text"><em>May take a few seconds to load…</em></p>
 </div>
 </div>
 </div>
@@ -1027,7 +1038,8 @@ Overflow<div class="sd-summary-down docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-array">Implementation : Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-linked-list">Implementation : Linked List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
 </ul>

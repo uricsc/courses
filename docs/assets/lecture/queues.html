@@ -467,7 +467,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-array">Implementation : Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-linked-list">Implementation : Linked List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
 </ul>
@@ -483,10 +484,13 @@ document.write(`
                   
   <section id="queues">
 <h1>Queues<a class="headerlink" href="#queues" title="Permalink to this heading">#</a></h1>
+<style>
+iframe {width:100%;height:70vh;}
+</style>
 <div class="full-width docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<iframe width="100%" height="600" src="https://www.youtube.com/embed/D6gu-_tmEpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="sd-summary-down docutils">
+<iframe src="https://www.youtube.com/embed/D6gu-_tmEpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -605,13 +609,17 @@ isEmpty<div class="sd-summary-down docutils">
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-text-center docutils">
-<div class="sd-card-body docutils">
-<iframe src="https://en.cppreference.com/w/cpp/container/queue" frameborder="0"></iframe>
-</div>
-</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="7708f164-577e-4bd3-a3e2-11b2ff368db1" name="6b1f55b9-7363-4519-86e7-4bb7890ddb4b" type="radio">
+</input><label class="sd-tab-label" for="7708f164-577e-4bd3-a3e2-11b2ff368db1">
+CPPRef</label><div class="sd-tab-content docutils">
+<iframe src="https://en.cppreference.com/w/cpp/container/queue" frameborder="0"></iframe>
+</div>
+<input id="d250e1d9-373b-40af-8bab-cab0be9f1bef" name="6b1f55b9-7363-4519-86e7-4bb7890ddb4b" type="radio">
+</input><label class="sd-tab-label" for="d250e1d9-373b-40af-8bab-cab0be9f1bef">
+Sample</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stack&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -630,18 +638,26 @@ isEmpty<div class="sd-summary-down docutils">
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/queue">https://en.cppreference.com/w/cpp/container/queue</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">1</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<section id="implementation-array">
+<h2>Implementation : Array<a class="headerlink" href="#implementation-array" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<div class="admonition-arrays admonition">
-<p class="admonition-title">Arrays</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="bcc87b07-9cb2-49eb-9c49-9e709c4085b7" name="7fd2bbf8-64ba-4b6c-a552-0093ba0ac1d2" type="radio">
+</input><label class="sd-tab-label" for="bcc87b07-9cb2-49eb-9c49-9e709c4085b7">
+Array</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p class="sd-card-text"><strong>enqueue</strong> and <strong>dequeue</strong> at <u>different</u> ends of the array (easier and efficient)</p></li>
 <li><p class="sd-card-text">can be <span class="blue">fixed-length</span></p></li>
@@ -655,12 +671,9 @@ isEmpty<div class="sd-summary-down docutils">
 <a class="reference internal image-reference" href="../../_images/08_s05.png"><img alt="../../_images/08_s05.png" src="../../_images/08_s05.png" style="width: 92%;" /></a>
 </figure>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Visualize: Queue Array (general premise)</p>
-<p class="sd-card-text"><a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/QueueArray.html">https://www.cs.usfca.edu/~galles/visualization/QueueArray.html</a></p>
-</div>
-<div class="admonition-queue-array-sample admonition">
-<p class="admonition-title">Queue: Array Sample</p>
+<input id="604b30fe-1de4-424f-977d-c1576074dcc0" name="7fd2bbf8-64ba-4b6c-a552-0093ba0ac1d2" type="radio">
+</input><label class="sd-tab-label" for="604b30fe-1de4-424f-977d-c1576074dcc0">
+Sample</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="n">Queue</span><span class="o">*</span><span class="w"> </span><span class="n">queue</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isFull</span><span class="p">(</span><span class="n">queue</span><span class="p">))</span>
@@ -690,20 +703,27 @@ isEmpty<div class="sd-summary-down docutils">
 </figure>
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/">https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/</a></p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Visualize: Queue Array (in Memory)</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<input id="725baf80-9a6b-4c43-8ba3-af5bd866389a" name="7fd2bbf8-64ba-4b6c-a552-0093ba0ac1d2" type="radio">
+</input><label class="sd-tab-label" for="725baf80-9a6b-4c43-8ba3-af5bd866389a">
+Visualize</label><div class="sd-tab-content docutils">
+<p class="sd-card-text"><a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/QueueArray.html">https://www.cs.usfca.edu/~galles/visualization/QueueArray.html</a></p>
+<iframe src="https://pythontutor.com/iframe-embed.html#code=//%20CPP%20program%20for%20array%0A//%20implementation%20of%20queue%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20structure%20to%20represent%20a%20queue%0Aclass%20Queue%20%7B%0Apublic%3A%0A%20%20%20%20int%20front,%20rear,%20size%3B%0A%20%20%20%20unsigned%20capacity%3B%0A%20%20%20%20int*%20array%3B%0A%7D%3B%0A%0A//%20function%20to%20create%20a%20queue%0A//%20of%20given%20capacity.%0A//%20It%20initializes%20size%20of%20queue%20as%200%0AQueue*%20createQueue%28unsigned%20capacity%29%0A%7B%0A%20%20%20%20Queue*%20queue%20%3D%20new%20Queue%28%29%3B%0A%20%20%20%20queue-%3Ecapacity%20%3D%20capacity%3B%0A%20%20%20%20queue-%3Efront%20%3D%20queue-%3Esize%20%3D%200%3B%0A%0A%20%20%20%20//%20This%20is%20important,%20see%20the%20enqueue%0A%20%20%20%20queue-%3Erear%20%3D%20capacity%20-%201%3B%0A%20%20%20%20queue-%3Earray%20%3D%20new%20int%5Bqueue-%3Ecapacity%5D%3B%0A%20%20%20%20return%20queue%3B%0A%7D%0A%0A//%20Queue%20is%20full%20when%20size%0A//%20becomes%20equal%20to%20the%20capacity%0Aint%20isFull%28Queue*%20queue%29%0A%7B%0A%20%20%20%20return%20%28queue-%3Esize%20%3D%3D%20queue-%3Ecapacity%29%3B%0A%7D%0A%0A//%20Queue%20is%20empty%20when%20size%20is%200%0Aint%20isEmpty%28Queue*%20queue%29%0A%7B%0A%20%20%20%20return%20%28queue-%3Esize%20%3D%3D%200%29%3B%0A%7D%0A%0A//%20Function%20to%20add%20an%20item%20to%20the%20queue.%0A//%20It%20changes%20rear%20and%20size%0Avoid%20enqueue%28Queue*%20queue,%20int%20item%29%0A%7B%0A%20%20%20%20if%20%28isFull%28queue%29%29%0A%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20queue-%3Erear%20%3D%20%28queue-%3Erear%20%2B%201%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%25%20queue-%3Ecapacity%3B%0A%20%20%20%20queue-%3Earray%5Bqueue-%3Erear%5D%20%3D%20item%3B%0A%20%20%20%20queue-%3Esize%20%3D%20queue-%3Esize%20%2B%201%3B%0A%20%20%20%20cout%20%3C%3C%20item%20%3C%3C%20%22%20enqueued%20to%20queue%5Cn%22%3B%0A%7D%0A%0A//%20Function%20to%20remove%20an%20item%20from%20queue.%0A//%20It%20changes%20front%20and%20size%0Aint%20dequeue%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20int%20item%20%3D%20queue-%3Earray%5Bqueue-%3Efront%5D%3B%0A%20%20%20%20queue-%3Efront%20%3D%20%28queue-%3Efront%20%2B%201%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%25%20queue-%3Ecapacity%3B%0A%20%20%20%20queue-%3Esize%20%3D%20queue-%3Esize%20-%201%3B%0A%20%20%20%20return%20item%3B%0A%7D%0A%0A//%20Function%20to%20get%20front%20of%20queue%0Aint%20front%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20return%20queue-%3Earray%5Bqueue-%3Efront%5D%3B%0A%7D%0A%0A//%20Function%20to%20get%20rear%20of%20queue%0Aint%20rear%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20return%20queue-%3Earray%5Bqueue-%3Erear%5D%3B%0A%7D%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%20%20%20%20Queue*%20queue%20%3D%20createQueue%285%29%3B%0A%0A%20%20%20%20enqueue%28queue,%2010%29%3B%0A%20%20%20%20enqueue%28queue,%2020%29%3B%0A%20%20%20%20enqueue%28queue,%2030%29%3B%0A%20%20%20%20enqueue%28queue,%2040%29%3B%0A%0A%20%20%20%20cout%20%3C%3C%20dequeue%28queue%29%0A%20%20%20%20%20%20%20%20%3C%3C%20%22%20dequeued%20from%20queue%5Cn%22%3B%0A%0A%20%20%20%20cout%20%3C%3C%20%22Front%20item%20is%20%22%0A%20%20%20%20%20%20%20%20%3C%3C%20front%28queue%29%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20%22Rear%20item%20is%20%22%0A%20%20%20%20%20%20%20%20%3C%3C%20rear%28queue%29%20%3C%3C%20endl%3B%0A%0A%20%20%20%20return%200%3B%0A%7D%0A%0A//%20This%20code%20is%20contributed%20by%20rathbhupendra&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" frameborder="0"></iframe>
+<p class="sd-card-text"><em>May take a moment to load…</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementation-linked-list">
+<h2>Implementation : Linked List<a class="headerlink" href="#implementation-linked-list" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Click to interact…</p>
-<figure class="align-center">
-<img alt="../../_images/w5_queue_array.png" src="../../_images/w5_queue_array.png" />
-</figure>
-<p class="sd-card-text"><em>Note: may need a few seconds to execute code…</em></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://pythontutor.com/iframe-embed.html#code=//%20CPP%20program%20for%20array%0A//%20implementation%20of%20queue%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20structure%20to%20represent%20a%20queue%0Aclass%20Queue%20%7B%0Apublic%3A%0A%20%20%20%20int%20front,%20rear,%20size%3B%0A%20%20%20%20unsigned%20capacity%3B%0A%20%20%20%20int*%20array%3B%0A%7D%3B%0A%0A//%20function%20to%20create%20a%20queue%0A//%20of%20given%20capacity.%0A//%20It%20initializes%20size%20of%20queue%20as%200%0AQueue*%20createQueue%28unsigned%20capacity%29%0A%7B%0A%20%20%20%20Queue*%20queue%20%3D%20new%20Queue%28%29%3B%0A%20%20%20%20queue-%3Ecapacity%20%3D%20capacity%3B%0A%20%20%20%20queue-%3Efront%20%3D%20queue-%3Esize%20%3D%200%3B%0A%0A%20%20%20%20//%20This%20is%20important,%20see%20the%20enqueue%0A%20%20%20%20queue-%3Erear%20%3D%20capacity%20-%201%3B%0A%20%20%20%20queue-%3Earray%20%3D%20new%20int%5Bqueue-%3Ecapacity%5D%3B%0A%20%20%20%20return%20queue%3B%0A%7D%0A%0A//%20Queue%20is%20full%20when%20size%0A//%20becomes%20equal%20to%20the%20capacity%0Aint%20isFull%28Queue*%20queue%29%0A%7B%0A%20%20%20%20return%20%28queue-%3Esize%20%3D%3D%20queue-%3Ecapacity%29%3B%0A%7D%0A%0A//%20Queue%20is%20empty%20when%20size%20is%200%0Aint%20isEmpty%28Queue*%20queue%29%0A%7B%0A%20%20%20%20return%20%28queue-%3Esize%20%3D%3D%200%29%3B%0A%7D%0A%0A//%20Function%20to%20add%20an%20item%20to%20the%20queue.%0A//%20It%20changes%20rear%20and%20size%0Avoid%20enqueue%28Queue*%20queue,%20int%20item%29%0A%7B%0A%20%20%20%20if%20%28isFull%28queue%29%29%0A%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20queue-%3Erear%20%3D%20%28queue-%3Erear%20%2B%201%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%25%20queue-%3Ecapacity%3B%0A%20%20%20%20queue-%3Earray%5Bqueue-%3Erear%5D%20%3D%20item%3B%0A%20%20%20%20queue-%3Esize%20%3D%20queue-%3Esize%20%2B%201%3B%0A%20%20%20%20cout%20%3C%3C%20item%20%3C%3C%20%22%20enqueued%20to%20queue%5Cn%22%3B%0A%7D%0A%0A//%20Function%20to%20remove%20an%20item%20from%20queue.%0A//%20It%20changes%20front%20and%20size%0Aint%20dequeue%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20int%20item%20%3D%20queue-%3Earray%5Bqueue-%3Efront%5D%3B%0A%20%20%20%20queue-%3Efront%20%3D%20%28queue-%3Efront%20%2B%201%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%25%20queue-%3Ecapacity%3B%0A%20%20%20%20queue-%3Esize%20%3D%20queue-%3Esize%20-%201%3B%0A%20%20%20%20return%20item%3B%0A%7D%0A%0A//%20Function%20to%20get%20front%20of%20queue%0Aint%20front%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20return%20queue-%3Earray%5Bqueue-%3Efront%5D%3B%0A%7D%0A%0A//%20Function%20to%20get%20rear%20of%20queue%0Aint%20rear%28Queue*%20queue%29%0A%7B%0A%20%20%20%20if%20%28isEmpty%28queue%29%29%0A%20%20%20%20%20%20%20%20return%20INT_MIN%3B%0A%20%20%20%20return%20queue-%3Earray%5Bqueue-%3Erear%5D%3B%0A%7D%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%20%20%20%20Queue*%20queue%20%3D%20createQueue%285%29%3B%0A%0A%20%20%20%20enqueue%28queue,%2010%29%3B%0A%20%20%20%20enqueue%28queue,%2020%29%3B%0A%20%20%20%20enqueue%28queue,%2030%29%3B%0A%20%20%20%20enqueue%28queue,%2040%29%3B%0A%0A%20%20%20%20cout%20%3C%3C%20dequeue%28queue%29%0A%20%20%20%20%20%20%20%20%3C%3C%20%22%20dequeued%20from%20queue%5Cn%22%3B%0A%0A%20%20%20%20cout%20%3C%3C%20%22Front%20item%20is%20%22%0A%20%20%20%20%20%20%20%20%3C%3C%20front%28queue%29%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20%22Rear%20item%20is%20%22%0A%20%20%20%20%20%20%20%20%3C%3C%20rear%28queue%29%20%3C%3C%20endl%3B%0A%0A%20%20%20%20return%200%3B%0A%7D%0A%0A//%20This%20code%20is%20contributed%20by%20rathbhupendra&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=cpp_g%2B%2B9.3.0&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></a></div>
-</div>
-<div class="admonition-queues-linked-lists admonition">
-<p class="admonition-title">Queues : Linked Lists</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="ffcd7c3e-3ad6-4141-ba30-aba23e232faf" name="f6c9ed0a-8c77-4db0-a5b1-14b763b2620a" type="radio">
+</input><label class="sd-tab-label" for="ffcd7c3e-3ad6-4141-ba30-aba23e232faf">
+LL</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p class="sd-card-text"><strong>enqueue</strong> and <strong>dequeue</strong> at <u>different</u> ends</p></li>
 </ul>
@@ -712,8 +732,9 @@ isEmpty<div class="sd-summary-down docutils">
 </figure>
 <p class="sd-card-text"><a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/QueueLL.html">https://www.cs.usfca.edu/~galles/visualization/QueueArray.html</a></p>
 </div>
-<div class="admonition-queue-ll-sample admonition">
-<p class="admonition-title">Queue: LL Sample</p>
+<input id="53bba533-018f-404a-9553-00ad563c5d08" name="f6c9ed0a-8c77-4db0-a5b1-14b763b2620a" type="radio">
+</input><label class="sd-tab-label" for="53bba533-018f-404a-9553-00ad563c5d08">
+Sample</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">enQueue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">QNode</span><span class="o">*</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">QNode</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">     </span>
@@ -745,17 +766,12 @@ isEmpty<div class="sd-summary-down docutils">
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/queue-linked-list-implementation/">https://www.geeksforgeeks.org/queue-linked-list-implementation/</a></p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Visualize: Queue LL (in Memory)</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text">Click to interact…</p>
-<figure class="align-default">
-<img alt="../../_images/w5_queue_ll.png" src="../../_images/w5_queue_ll.png" />
-</figure>
-<p class="sd-card-text"><em>Note: may need a few seconds to execute code…</em></p>
+<input id="32983d56-19e0-44fe-aa74-8383b5fba64f" name="f6c9ed0a-8c77-4db0-a5b1-14b763b2620a" type="radio">
+</input><label class="sd-tab-label" for="32983d56-19e0-44fe-aa74-8383b5fba64f">
+Visualize</label><div class="sd-tab-content docutils">
+<iframe src="https://pythontutor.com/visualize.html#code=//%20C%2B%2B%20program%20for%20the%20above%20approach%0A%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0Astruct%20QNode%20%7B%0A%20%20%20%20int%20data%3B%0A%20%20%20%20QNode*%20next%3B%0A%20%20%20%20QNode%28int%20d%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20data%20%3D%20d%3B%0A%20%20%20%20%20%20%20%20next%20%3D%20NULL%3B%0A%20%20%20%20%7D%0A%7D%3B%0A%0Astruct%20Queue%20%7B%0A%20%20%20%20QNode%20*front,%20*rear%3B%0A%20%20%20%20Queue%28%29%20%7B%20front%20%3D%20rear%20%3D%20NULL%3B%20%7D%0A%0A%20%20%20%20void%20enQueue%28int%20x%29%0A%20%20%20%20%7B%0A%0A%20%20%20%20%20%20%20%20//%20Create%20a%20new%20LL%20node%0A%20%20%20%20%20%20%20%20QNode*%20temp%20%3D%20new%20QNode%28x%29%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20queue%20is%20empty,%20then%0A%20%20%20%20%20%20%20%20//%20new%20node%20is%20front%20and%20rear%20both%0A%20%20%20%20%20%20%20%20if%20%28rear%20%3D%3D%20NULL%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20front%20%3D%20rear%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20//%20Add%20the%20new%20node%20at%0A%20%20%20%20%20%20%20%20//%20the%20end%20of%20queue%20and%20change%20rear%0A%20%20%20%20%20%20%20%20rear-%3Enext%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20rear%20%3D%20temp%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//%20Function%20to%20remove%0A%20%20%20%20//%20a%20key%20from%20given%20queue%20q%0A%20%20%20%20void%20deQueue%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20If%20queue%20is%20empty,%20return%20NULL.%0A%20%20%20%20%20%20%20%20if%20%28front%20%3D%3D%20NULL%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%3B%0A%0A%20%20%20%20%20%20%20%20//%20Store%20previous%20front%20and%0A%20%20%20%20%20%20%20%20//%20move%20front%20one%20node%20ahead%0A%20%20%20%20%20%20%20%20QNode*%20temp%20%3D%20front%3B%0A%20%20%20%20%20%20%20%20front%20%3D%20front-%3Enext%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20front%20becomes%20NULL,%20then%0A%20%20%20%20%20%20%20%20//%20change%20rear%20also%20as%20NULL%0A%20%20%20%20%20%20%20%20if%20%28front%20%3D%3D%20NULL%29%0A%20%20%20%20%20%20%20%20%20%20%20%20rear%20%3D%20NULL%3B%0A%0A%20%20%20%20%20%20%20%20delete%20%28temp%29%3B%0A%20%20%20%20%7D%0A%7D%3B%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%0A%20%20%20%20Queue%20q%3B%0A%20%20%20%20q.enQueue%2810%29%3B%0A%20%20%20%20q.enQueue%2820%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20q.enQueue%2830%29%3B%0A%20%20%20%20q.enQueue%2840%29%3B%0A%20%20%20%20q.enQueue%2850%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20cout%20%3C%3C%20%22Queue%20Front%20%3A%20%22%20%3C%3C%20%28q.front%29-%3Edata%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20%22Queue%20Rear%20%3A%20%22%20%3C%3C%20%28q.rear%29-%3Edata%3B%0A%7D%0A//%20This%20code%20is%20contributed%20by%20rathbhupendra&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" frameborder="0"></iframe>
+<p class="sd-card-text"><em>May take a moment to load…</em></p>
 </div>
-<a class="sd-stretched-link reference external" href="https://pythontutor.com/visualize.html#code=//%20C%2B%2B%20program%20for%20the%20above%20approach%0A%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0Astruct%20QNode%20%7B%0A%20%20%20%20int%20data%3B%0A%20%20%20%20QNode*%20next%3B%0A%20%20%20%20QNode%28int%20d%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20data%20%3D%20d%3B%0A%20%20%20%20%20%20%20%20next%20%3D%20NULL%3B%0A%20%20%20%20%7D%0A%7D%3B%0A%0Astruct%20Queue%20%7B%0A%20%20%20%20QNode%20*front,%20*rear%3B%0A%20%20%20%20Queue%28%29%20%7B%20front%20%3D%20rear%20%3D%20NULL%3B%20%7D%0A%0A%20%20%20%20void%20enQueue%28int%20x%29%0A%20%20%20%20%7B%0A%0A%20%20%20%20%20%20%20%20//%20Create%20a%20new%20LL%20node%0A%20%20%20%20%20%20%20%20QNode*%20temp%20%3D%20new%20QNode%28x%29%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20queue%20is%20empty,%20then%0A%20%20%20%20%20%20%20%20//%20new%20node%20is%20front%20and%20rear%20both%0A%20%20%20%20%20%20%20%20if%20%28rear%20%3D%3D%20NULL%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20front%20%3D%20rear%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20//%20Add%20the%20new%20node%20at%0A%20%20%20%20%20%20%20%20//%20the%20end%20of%20queue%20and%20change%20rear%0A%20%20%20%20%20%20%20%20rear-%3Enext%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20rear%20%3D%20temp%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//%20Function%20to%20remove%0A%20%20%20%20//%20a%20key%20from%20given%20queue%20q%0A%20%20%20%20void%20deQueue%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20//%20If%20queue%20is%20empty,%20return%20NULL.%0A%20%20%20%20%20%20%20%20if%20%28front%20%3D%3D%20NULL%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%3B%0A%0A%20%20%20%20%20%20%20%20//%20Store%20previous%20front%20and%0A%20%20%20%20%20%20%20%20//%20move%20front%20one%20node%20ahead%0A%20%20%20%20%20%20%20%20QNode*%20temp%20%3D%20front%3B%0A%20%20%20%20%20%20%20%20front%20%3D%20front-%3Enext%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20front%20becomes%20NULL,%20then%0A%20%20%20%20%20%20%20%20//%20change%20rear%20also%20as%20NULL%0A%20%20%20%20%20%20%20%20if%20%28front%20%3D%3D%20NULL%29%0A%20%20%20%20%20%20%20%20%20%20%20%20rear%20%3D%20NULL%3B%0A%0A%20%20%20%20%20%20%20%20delete%20%28temp%29%3B%0A%20%20%20%20%7D%0A%7D%3B%0A%0A//%20Driver%20code%0Aint%20main%28%29%0A%7B%0A%0A%20%20%20%20Queue%20q%3B%0A%20%20%20%20q.enQueue%2810%29%3B%0A%20%20%20%20q.enQueue%2820%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20q.enQueue%2830%29%3B%0A%20%20%20%20q.enQueue%2840%29%3B%0A%20%20%20%20q.enQueue%2850%29%3B%0A%20%20%20%20q.deQueue%28%29%3B%0A%20%20%20%20cout%20%3C%3C%20%22Queue%20Front%20%3A%20%22%20%3C%3C%20%28q.front%29-%3Edata%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20%22Queue%20Rear%20%3A%20%22%20%3C%3C%20%28q.rear%29-%3Edata%3B%0A%7D%0A//%20This%20code%20is%20contributed%20by%20rathbhupendra&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=cpp_g%2B%2B9.3.0&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></a></div>
 </div>
 </div>
 </div>
@@ -873,7 +889,8 @@ Overflow<div class="sd-summary-down docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-array">Implementation : Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-linked-list">Implementation : Linked List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations">Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
 </ul>
