@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'assets/lecture/recur';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basic Sorts (Analysis)" href="basic.html" />
+    <link rel="next" title="Search Algorithms" href="search.html" />
     <link rel="prev" title="Recursive Algorithms (Analysis)" href="rec_algo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,9 +241,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m04.html">Searching &amp; Sorting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="search.html">Search Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rec_algo.html">Recursive Algorithms (Analysis)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Recurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search.html">Search Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic.html">Basic Sorts (Analysis)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="merge.html">Mergesort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qs.html">Quicksort</a></li>
@@ -845,8 +845,8 @@ Total work &amp;= n * \frac{2^{log_2\ (n)} - 1}{2 - 1} \\
 <span class="math notranslate nohighlight">\(f(n)\)</span> is the time complexity of the remaining work done outside the recursive calls.</p>
 <p class="sd-card-text">The master theorem provides three cases based on the relationship between <span class="math notranslate nohighlight">\(f(n)\)</span> and the subproblem part <span class="math notranslate nohighlight">\(aT(\frac{n}{b})\)</span>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6df604cc-157b-47a0-8693-1e0c1ca62c56" name="3ed8b732-503f-48cf-991a-e15b881263fc" type="radio">
-</input><label class="sd-tab-label" for="6df604cc-157b-47a0-8693-1e0c1ca62c56">
+<input checked="checked" id="f9b1f2a8-83e0-4a14-bdb1-136a97cf7aca" name="fe59629f-0e58-46f9-846b-1631a92f918c" type="radio">
+</input><label class="sd-tab-label" for="f9b1f2a8-83e0-4a14-bdb1-136a97cf7aca">
 Cases</label><div class="sd-tab-content docutils">
 <dl class="simple myst">
 <dt>Case 1</dt><dd><p class="sd-card-text">If <span class="math notranslate nohighlight">\(f(n) = O(n^c)\)</span> for some constant <span class="math notranslate nohighlight">\(c &lt; log_b(a)\)</span>, then the time complexity is dominated by the subproblem part, and the overall time complexity is given by</p>
@@ -867,8 +867,8 @@ Cases</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = \Theta(f(n))\]</div>
 </div>
-<input id="b3ba53bd-d8d1-4696-835c-4f4b6795e545" name="3ed8b732-503f-48cf-991a-e15b881263fc" type="radio">
-</input><label class="sd-tab-label" for="b3ba53bd-d8d1-4696-835c-4f4b6795e545">
+<input id="41bb31cf-b564-48b4-aa84-9c19b9e71e2f" name="fe59629f-0e58-46f9-846b-1631a92f918c" type="radio">
+</input><label class="sd-tab-label" for="41bb31cf-b564-48b4-aa84-9c19b9e71e2f">
 Case 1 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 4T \bigg(\frac{n}{2} \bigg) + n\]</div>
@@ -909,8 +909,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 <p class="sd-card-text">So, the overall time complexity of the algorithm in this example is <span class="math notranslate nohighlight">\(\Theta(n^2)\)</span>, which means the algorithm’s running time grows quadratically with the input size <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 </details></div>
-<input id="f690838d-06dd-422f-b959-620d5b93d18b" name="3ed8b732-503f-48cf-991a-e15b881263fc" type="radio">
-</input><label class="sd-tab-label" for="f690838d-06dd-422f-b959-620d5b93d18b">
+<input id="12ef704b-b540-4f88-9fbe-f58df77fda78" name="fe59629f-0e58-46f9-846b-1631a92f918c" type="radio">
+</input><label class="sd-tab-label" for="12ef704b-b540-4f88-9fbe-f58df77fda78">
 Case 2 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 9T \bigg(\frac{n}{3} \bigg) + n^2\]</div>
@@ -951,8 +951,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 \[T(n) = Θ(n^2 \ log(n))\]</div>
 </div>
 </details></div>
-<input id="132ef05b-1d34-44d6-81a1-e065d821461a" name="3ed8b732-503f-48cf-991a-e15b881263fc" type="radio">
-</input><label class="sd-tab-label" for="132ef05b-1d34-44d6-81a1-e065d821461a">
+<input id="1787d949-e66a-490a-b3ef-f5e347f57c04" name="fe59629f-0e58-46f9-846b-1631a92f918c" type="radio">
+</input><label class="sd-tab-label" for="1787d949-e66a-490a-b3ef-f5e347f57c04">
 Case 3 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 2T \bigg(\frac{n}{2} \bigg) + n^3\]</div>
@@ -1728,11 +1728,11 @@ T(n) & = 2^nT(0) + 1 + 2 + 2^2\ + \dots\ 2^k-1 \\
       </div>
     </a>
     <a class="right-next"
-       href="basic.html"
+       href="search.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basic Sorts (Analysis)</p>
+        <p class="prev-next-title">Search Algorithms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
