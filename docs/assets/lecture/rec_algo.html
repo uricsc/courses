@@ -467,12 +467,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration-v-recursion">Iteration v. Recursion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-call-tree">Recursive Call Tree</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-v-iteration">Recursion v. Iteration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-tree-call">Recursion Tree Call</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unimodal-arrays">Unimodal Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-max-strongly-unimodal">Find the max (strongly unimodal)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-max-weakly-unimodal">Find the max (weakly unimodal)</a></li>
@@ -498,13 +497,13 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="aac10e0f-f204-40c4-aae6-30fb74b218e7" name="8cf3ec63-ac7e-49d3-b742-5e2f6210c878" type="radio">
-</input><label class="sd-tab-label" for="aac10e0f-f204-40c4-aae6-30fb74b218e7">
+<input checked="checked" id="31f2754f-2dd2-473b-b4d0-166ec3eaca08" name="39a8100e-f633-4292-a0cc-249531e4f76d" type="radio">
+</input><label class="sd-tab-label" for="31f2754f-2dd2-473b-b4d0-166ec3eaca08">
 What Is It?</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/6oDQaB2one8?si=QI3E44Xy-SggB_bD" title="YouTube video player" frameborder="0" ></iframe>
 </div>
-<input id="2fe714c7-a3db-4ff6-9cb9-e5907f22a9ce" name="8cf3ec63-ac7e-49d3-b742-5e2f6210c878" type="radio">
-</input><label class="sd-tab-label" for="2fe714c7-a3db-4ff6-9cb9-e5907f22a9ce">
+<input id="4ed704eb-f77b-48b6-a111-04df8fde589a" name="39a8100e-f633-4292-a0cc-249531e4f76d" type="radio">
+</input><label class="sd-tab-label" for="4ed704eb-f77b-48b6-a111-04df8fde589a">
 Loops v. Recursion</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/HXNhEYqFo0o" title="YouTube video player" frameborder="0"></iframe> 
 </div>
@@ -528,14 +527,83 @@ TL;DR<div class="sd-summary-down docutils">
 </details></div>
 </div>
 </div>
+<section id="iteration-v-recursion">
+<h2>Iteration v. Recursion<a class="headerlink" href="#iteration-v-recursion" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="admonition-iterative admonition">
+<p class="admonition-title">Iterative</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">factorialIterative</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="linenos">13</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialIterative</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Factorial of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">16</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The iterative function <code class="docutils literal notranslate"><span class="pre">factorialIterative</span></code> calculates the factorial by using a loop. It initializes result to <code class="docutils literal notranslate"><span class="pre">1</span></code> and then iterates over the numbers from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code>, multiplying each number with the current value of result to accumulate the factorial.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="admonition-recursive admonition">
+<p class="admonition-title">Recursive</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">factorialRecursive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">else</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Factorial of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The recursive function <code class="docutils literal notranslate"><span class="pre">factorialRecursive</span></code> calculates the factorial by breaking down the problem into smaller sub-problems. The <em>base case</em> is when <code class="docutils literal notranslate"><span class="pre">n</span></code> equals <code class="docutils literal notranslate"><span class="pre">0</span></code>, and for any other value of <code class="docutils literal notranslate"><span class="pre">n</span></code>, the factorial is computed by multiplying <code class="docutils literal notranslate"><span class="pre">n</span></code> with the factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/program-for-factorial-of-a-number/">More information…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="recursion">
 <h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d8bd1f86-67f9-460c-9b26-e0454ad76171" name="494d71e6-5b41-461d-b300-a20b65b2950d" type="radio">
-</input><label class="sd-tab-label" for="d8bd1f86-67f9-460c-9b26-e0454ad76171">
+<input checked="checked" id="5ae8f1b3-b1b0-460f-a9ce-5a4d5750ea4a" name="65f31121-ff3c-4263-8b23-6c3f7c91a4b5" type="radio">
+</input><label class="sd-tab-label" for="5ae8f1b3-b1b0-460f-a9ce-5a4d5750ea4a">
 Premise</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://cdn.slidesharecdn.com/ss_thumbnails/recursion-130206094649-phpapp01-thumbnail-4.jpg?cb=1360144228" src="https://cdn.slidesharecdn.com/ss_thumbnails/recursion-130206094649-phpapp01-thumbnail-4.jpg?cb=1360144228" />
@@ -549,8 +617,8 @@ Premise</label><div class="sd-tab-content docutils">
 <li><p class="sd-card-text">Technically, a recursive function is one that calls itself</p></li>
 </ul>
 </div>
-<input id="97b82b8b-276e-496d-bc78-3f81b54a18b4" name="494d71e6-5b41-461d-b300-a20b65b2950d" type="radio">
-</input><label class="sd-tab-label" for="97b82b8b-276e-496d-bc78-3f81b54a18b4">
+<input id="b25350de-8bfa-4c21-9d23-b2ca21239b7a" name="65f31121-ff3c-4263-8b23-6c3f7c91a4b5" type="radio">
+</input><label class="sd-tab-label" for="b25350de-8bfa-4c21-9d23-b2ca21239b7a">
 General Form</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">2</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">base_case</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -600,8 +668,8 @@ recursive calls<div class="sd-summary-down docutils">
 </div>
 </div>
 </div>
-<input id="dcf5e3f1-e71b-420d-8c29-45319a66409c" name="494d71e6-5b41-461d-b300-a20b65b2950d" type="radio">
-</input><label class="sd-tab-label" for="dcf5e3f1-e71b-420d-8c29-45319a66409c">
+<input id="293aaa4b-65ec-4ffb-a849-e9caa12a4649" name="65f31121-ff3c-4263-8b23-6c3f7c91a4b5" type="radio">
+</input><label class="sd-tab-label" for="293aaa4b-65ec-4ffb-a849-e9caa12a4649">
 Rules</label><div class="sd-tab-content docutils">
 <ol class="simple">
 <li><p class="sd-card-text">Every recursive definition must have one (or more) base cases.</p></li>
@@ -609,8 +677,8 @@ Rules</label><div class="sd-tab-content docutils">
 <li><p class="sd-card-text">The base case stops the recursion.</p></li>
 </ol>
 </div>
-<input id="b0f040f5-0a1f-4c10-9bd9-07f21418d69d" name="494d71e6-5b41-461d-b300-a20b65b2950d" type="radio">
-</input><label class="sd-tab-label" for="b0f040f5-0a1f-4c10-9bd9-07f21418d69d">
+<input id="43298e77-521f-409c-8667-c9c17200b199" name="65f31121-ff3c-4263-8b23-6c3f7c91a4b5" type="radio">
+</input><label class="sd-tab-label" for="43298e77-521f-409c-8667-c9c17200b199">
 Why bother?</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -670,8 +738,8 @@ Considerations?<div class="sd-summary-down docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c3ba9edd-6a97-436f-90a9-6fea7ab7cdeb" name="b01f13ef-3299-43ba-854c-a86bf834a4b1" type="radio">
-</input><label class="sd-tab-label" for="c3ba9edd-6a97-436f-90a9-6fea7ab7cdeb">
+<input checked="checked" id="4219122f-d8bf-478d-ba11-cd3ad0212877" name="0975a25a-2e26-4dd4-bf5c-6bd1e24870df" type="radio">
+</input><label class="sd-tab-label" for="4219122f-d8bf-478d-ba11-cd3ad0212877">
 Sum Array</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -707,8 +775,8 @@ Visualize<div class="sd-summary-down docutils">
 <p class="sd-card-text"><em>May take a moment to load…</em></p>
 </div>
 </details></div>
-<input id="31905876-5c03-4ce5-8051-49441055d250" name="b01f13ef-3299-43ba-854c-a86bf834a4b1" type="radio">
-</input><label class="sd-tab-label" for="31905876-5c03-4ce5-8051-49441055d250">
+<input id="0652672a-506d-40fd-816b-fc8c5a1bbf08" name="0975a25a-2e26-4dd4-bf5c-6bd1e24870df" type="radio">
+</input><label class="sd-tab-label" for="0652672a-506d-40fd-816b-fc8c5a1bbf08">
 Largest</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">To find the largest element in list[a]…list[b]</p>
 <p class="sd-card-text">a. Find the largest element in <code class="docutils literal notranslate"><span class="pre">list[a</span> <span class="pre">+</span> <span class="pre">1]...list[b]</span></code> and call it <code class="docutils literal notranslate"><span class="pre">max</span></code>
@@ -742,8 +810,8 @@ size\ of\ list\ is\ \gt 1, &amp; \text{// recursive calls}
 </pre></div>
 </div>
 </div>
-<input id="b3f8b864-755e-4db1-86c8-9a3d8b11731d" name="b01f13ef-3299-43ba-854c-a86bf834a4b1" type="radio">
-</input><label class="sd-tab-label" for="b3f8b864-755e-4db1-86c8-9a3d8b11731d">
+<input id="1d7caf0c-0ebf-467e-911c-91e9c0b4203e" name="0975a25a-2e26-4dd4-bf5c-6bd1e24870df" type="radio">
+</input><label class="sd-tab-label" for="1d7caf0c-0ebf-467e-911c-91e9c0b4203e">
 Serpinski</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">drawSierpinski</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -794,88 +862,9 @@ Pyramid<div class="sd-summary-down docutils">
 </figure>
 </div>
 </details></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="recursion-v-iteration">
-<h2>Recursion v. Iteration<a class="headerlink" href="#recursion-v-iteration" title="Permalink to this heading">#</a></h2>
-<div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row docutils">
-<div class="sd-col sd-d-flex-column docutils">
-<div class="admonition-recursive admonition">
-<p class="admonition-title">Recursive</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">factorialRecursive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="k">else</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="linenos"> 8</span><span class="p">}</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">11</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="linenos">12</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="linenos">13</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Factorial of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">15</span><span class="p">}</span>
-</pre></div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text">The recursive function <code class="docutils literal notranslate"><span class="pre">factorialRecursive</span></code> calculates the factorial by breaking down the problem into smaller sub-problems. The <em>base case</em> is when <code class="docutils literal notranslate"><span class="pre">n</span></code> equals <code class="docutils literal notranslate"><span class="pre">0</span></code>, and for any other value of <code class="docutils literal notranslate"><span class="pre">n</span></code>, the factorial is computed by multiplying <code class="docutils literal notranslate"><span class="pre">n</span></code> with the factorial of <code class="docutils literal notranslate"><span class="pre">n-1</span></code>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sd-col sd-d-flex-column docutils">
-<div class="admonition-iterative admonition">
-<p class="admonition-title">Iterative</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">factorialIterative</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 6</span><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<span class="linenos"> 9</span><span class="p">}</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">12</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="linenos">13</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialIterative</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="linenos">14</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Factorial of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">15</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">16</span><span class="p">}</span>
-</pre></div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text">The iterative function <code class="docutils literal notranslate"><span class="pre">factorialIterative</span></code> calculates the factorial by using a loop. It initializes result to <code class="docutils literal notranslate"><span class="pre">1</span></code> and then iterates over the numbers from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code>, multiplying each number with the current value of result to accumulate the factorial.</p>
-</div>
-</div>
-</div>
-</div>
-<p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/program-for-factorial-of-a-number/">More information…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="recursion-tree-call">
-<h2>Recursion Tree Call<a class="headerlink" href="#recursion-tree-call" title="Permalink to this heading">#</a></h2>
-<div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="admonition-binary-search-https-www-geeksforgeeks-org-binary-search admonition">
-<p class="admonition-title"><a class="reference external" href="https://www.geeksforgeeks.org/binary-search/">binary search</a></p>
+<input id="22158e43-9fff-48b3-a7bf-233a6c1d44a3" name="0975a25a-2e26-4dd4-bf5c-6bd1e24870df" type="radio">
+</input><label class="sd-tab-label" for="22158e43-9fff-48b3-a7bf-233a6c1d44a3">
+Binary Search</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">int</span><span class="w"> </span><span class="nf">bsearch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="c1">//base case</span>
 <span class="linenos"> 3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hi</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lo</span><span class="p">)</span>
@@ -894,23 +883,19 @@ Pyramid<div class="sd-summary-down docutils">
 <span class="linenos">16</span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Visualize: General Form</p>
 <p class="sd-card-text"><a class="reference external" href="https://www.cs.usfca.edu/~galles/visualization/Search.html">https://www.cs.usfca.edu/~galles/visualization/Search.html</a></p>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<a class="reference external" href="https://pythontutor.com/iframe-embed.html#code=//%20C%2B%2B%20program%20to%20implement%20recursive%20Binary%20Search%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20recursive%20binary%20search%20function.%20It%20returns%0A//%20location%20of%20x%20in%20given%20array%20arr%5Bl..r%5D%20is%20present,%0A//%20otherwise%20-1%0Aint%20binarySearch%28int%20arr%5B%5D,%20int%20l,%20int%20r,%20int%20x%29%0A%7B%0A%20%20%20%20if%20%28r%20%3E%3D%20l%29%20%7B%0A%20%20%20%20%20%20%20%20int%20mid%20%3D%20l%20%2B%20%28r%20-%20l%29%20/%202%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20the%20element%20is%20present%20at%20the%20middle%0A%20%20%20%20%20%20%20%20//%20itself%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3D%3D%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20mid%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20element%20is%20smaller%20than%20mid,%20then%0A%20%20%20%20%20%20%20%20//%20it%20can%20only%20be%20present%20in%20left%20subarray%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3E%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20l,%20mid%20-%201,%20x%29%3B%0A%0A%20%20%20%20%20%20%20%20//%20Else%20the%20element%20can%20only%20be%20present%0A%20%20%20%20%20%20%20%20//%20in%20right%20subarray%0A%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20mid%20%2B%201,%20r,%20x%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//%20We%20reach%20here%20when%20element%20is%20not%0A%20%20%20%20//%20present%20in%20array%0A%20%20%20%20return%20-1%3B%0A%7D%0A%0Aint%20main%28void%29%0A%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B%202,%203,%204,%2010,%2040%20%7D%3B%0A%20%20%20%20int%20x%20%3D%2010%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28arr%5B0%5D%29%3B%0A%20%20%20%20int%20result%20%3D%20binarySearch%28arr,%200,%20n%20-%201,%20x%29%3B%0A%20%20%20%20%28result%20%3D%3D%20-1%29%0A%20%20%20%20%20%20%20%20%3F%20cout%20%3C%3C%20%22Element%20is%20not%20present%20in%20array%22%0A%20%20%20%20%20%20%20%20%3A%20cout%20%3C%3C%20%22Element%20is%20present%20at%20index%20%22%20%3C%3C%20result%3B%0A%20%20%20%20return%200%3B%0A%7D&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cppShowMemAddrs=true&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=cpp_g%2B%2B9.3.0&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Visualize: in memory</a><div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<iframe allow="fullscreen" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20C%2B%2B%20program%20to%20implement%20recursive%20Binary%20Search%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20recursive%20binary%20search%20function.%20It%20returns%0A//%20location%20of%20x%20in%20given%20array%20arr%5Bl..r%5D%20is%20present,%0A//%20otherwise%20-1%0Aint%20binarySearch%28int%20arr%5B%5D,%20int%20l,%20int%20r,%20int%20x%29%0A%7B%0A%20%20%20%20if%20%28r%20%3E%3D%20l%29%20%7B%0A%20%20%20%20%20%20%20%20int%20mid%20%3D%20l%20%2B%20%28r%20-%20l%29%20/%202%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20the%20element%20is%20present%20at%20the%20middle%0A%20%20%20%20%20%20%20%20//%20itself%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3D%3D%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20mid%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20element%20is%20smaller%20than%20mid,%20then%0A%20%20%20%20%20%20%20%20//%20it%20can%20only%20be%20present%20in%20left%20subarray%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3E%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20l,%20mid%20-%201,%20x%29%3B%0A%0A%20%20%20%20%20%20%20%20//%20Else%20the%20element%20can%20only%20be%20present%0A%20%20%20%20%20%20%20%20//%20in%20right%20subarray%0A%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20mid%20%2B%201,%20r,%20x%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//%20We%20reach%20here%20when%20element%20is%20not%0A%20%20%20%20//%20present%20in%20array%0A%20%20%20%20return%20-1%3B%0A%7D%0A%0Aint%20main%28void%29%0A%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B%202,%203,%204,%2010,%2040%20%7D%3B%0A%20%20%20%20int%20x%20%3D%2010%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28arr%5B0%5D%29%3B%0A%20%20%20%20int%20result%20%3D%20binarySearch%28arr,%200,%20n%20-%201,%20x%29%3B%0A%20%20%20%20%28result%20%3D%3D%20-1%29%0A%20%20%20%20%20%20%20%20%3F%20cout%20%3C%3C%20%22Element%20is%20not%20present%20in%20array%22%0A%20%20%20%20%20%20%20%20%3A%20cout%20%3C%3C%20%22Element%20is%20present%20at%20index%20%22%20%3C%3C%20result%3B%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cppShowMemAddrs=true&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-</div>
-</details></div>
+<hr class="docutils" />
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<iframe frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20C%2B%2B%20program%20to%20implement%20recursive%20Binary%20Search%0A%23include%20%3Cbits/stdc%2B%2B.h%3E%0Ausing%20namespace%20std%3B%0A%0A//%20A%20recursive%20binary%20search%20function.%20It%20returns%0A//%20location%20of%20x%20in%20given%20array%20arr%5Bl..r%5D%20is%20present,%0A//%20otherwise%20-1%0Aint%20binarySearch%28int%20arr%5B%5D,%20int%20l,%20int%20r,%20int%20x%29%0A%7B%0A%20%20%20%20if%20%28r%20%3E%3D%20l%29%20%7B%0A%20%20%20%20%20%20%20%20int%20mid%20%3D%20l%20%2B%20%28r%20-%20l%29%20/%202%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20the%20element%20is%20present%20at%20the%20middle%0A%20%20%20%20%20%20%20%20//%20itself%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3D%3D%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20mid%3B%0A%0A%20%20%20%20%20%20%20%20//%20If%20element%20is%20smaller%20than%20mid,%20then%0A%20%20%20%20%20%20%20%20//%20it%20can%20only%20be%20present%20in%20left%20subarray%0A%20%20%20%20%20%20%20%20if%20%28arr%5Bmid%5D%20%3E%20x%29%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20l,%20mid%20-%201,%20x%29%3B%0A%0A%20%20%20%20%20%20%20%20//%20Else%20the%20element%20can%20only%20be%20present%0A%20%20%20%20%20%20%20%20//%20in%20right%20subarray%0A%20%20%20%20%20%20%20%20return%20binarySearch%28arr,%20mid%20%2B%201,%20r,%20x%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//%20We%20reach%20here%20when%20element%20is%20not%0A%20%20%20%20//%20present%20in%20array%0A%20%20%20%20return%20-1%3B%0A%7D%0A%0Aint%20main%28void%29%0A%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B%202,%203,%204,%2010,%2040%20%7D%3B%0A%20%20%20%20int%20x%20%3D%2010%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28arr%5B0%5D%29%3B%0A%20%20%20%20int%20result%20%3D%20binarySearch%28arr,%200,%20n%20-%201,%20x%29%3B%0A%20%20%20%20%28result%20%3D%3D%20-1%29%0A%20%20%20%20%20%20%20%20%3F%20cout%20%3C%3C%20%22Element%20is%20not%20present%20in%20array%22%0A%20%20%20%20%20%20%20%20%3A%20cout%20%3C%3C%20%22Element%20is%20present%20at%20index%20%22%20%3C%3C%20result%3B%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cppShowMemAddrs=true&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="unimodal-arrays">
 <h2>Unimodal Arrays<a class="headerlink" href="#unimodal-arrays" title="Permalink to this heading">#</a></h2>
@@ -1155,12 +1140,11 @@ Example<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration-v-recursion">Iteration v. Recursion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion">Recursion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-call-tree">Recursive Call Tree</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-v-iteration">Recursion v. Iteration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-tree-call">Recursion Tree Call</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unimodal-arrays">Unimodal Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-max-strongly-unimodal">Find the max (strongly unimodal)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-max-weakly-unimodal">Find the max (weakly unimodal)</a></li>
