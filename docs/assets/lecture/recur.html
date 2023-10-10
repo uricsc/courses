@@ -469,8 +469,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-of-n-formula">Factorial of n (formula)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recurrence-relations">Recurrence Relations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-solving-recurrences">Methods of Solving Recurrences</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-solving-recurrences">Methods of Solving Recurrences</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -648,7 +650,7 @@ n = 10,\ r = 3...\ &amp;=\ ^{10}P_3 \\
 <div class="admonition-combination admonition">
 <p class="admonition-title">Combination</p>
 <ul class="simple">
-<li><p class="sd-card-text">gives the number of ways to select <span class="math notranslate nohighlight">\(r\)</span> elements from <span class="math notranslate nohighlight">\(n\)</span> elements where <em><em>order does not matter</em></em></p></li>
+<li><p class="sd-card-text">gives the number of ways to select <span class="math notranslate nohighlight">\(r\)</span> elements from <span class="math notranslate nohighlight">\(n\)</span> elements where <em><em>order does not matter</em></em><br></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[^nC_r = \frac{n!}{r! (n – r)!}\]</div>
@@ -656,7 +658,7 @@ n = 10,\ r = 3...\ &amp;=\ ^{10}P_3 \\
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Example</div>
-<p class="sd-card-text">Find the number of ways 3 students can be selected from a class of 50 students.</p>
+<p class="sd-card-text">Find the number of ways 3 students can be selected from a class of 50 students.<br></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="math notranslate nohighlight">\(n = 50,\ r = 3 \dots =\ ^{50}C_3\)</span><div class="sd-summary-down docutils">
@@ -667,7 +669,7 @@ Example</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin {align} 
 n = 50,\ r = 3...\ &amp;=\ ^{50}C_3 \\
-&amp;= \frac{50!}{3! × 47!} \\
+&amp;= \frac{50!}{3!(50 - 3)!} \\
 &amp;= \frac{50 × 49 × 48 × 47!}{3! × 47!} \\
 &amp;= \frac{50 ×49 × 48}{6} \\
 &amp;= 19,600
@@ -829,7 +831,7 @@ Total work &amp;= n * \frac{2^{log_2\ (n)} - 1}{2 - 1} \\
 &amp;= n^2 - n \\
 \end{align}\end{split}\]</div>
 <p class="sd-card-text">Therefore, the time complexity of the recurrence relation is <span class="math notranslate nohighlight">\(O(n^2)\)</span>.</p>
-<p class="sd-card-text">Note that in this example, the unrolling and guessing methods led to a time complexity of <span class="math notranslate nohighlight">\(O(n\ log\ (n))\)</span>, while the recursion tree method resulted in <span class="math notranslate nohighlight">\(O(n^2)\)</span>. The discrepancy arises because the recursion tree method accounts for the exact work done at each level, while the other methods provide upper bounds or estimations.</p>
+<p class="sd-card-text"><em>Note that in this example, the unrolling and guessing methods led to a time complexity of <span class="math notranslate nohighlight">\(O(n\ log\ (n))\)</span>, while the recursion tree method resulted in <span class="math notranslate nohighlight">\(O(n^2)\)</span>. The discrepancy arises because the recursion tree method accounts for the exact work done at each level, while the other methods provide upper bounds or estimations.</em></p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title"><a class="reference external" href="http://homepages.math.uic.edu/~leon/cs-mcs401-s08/handouts/master_theorem.pdf">Master Theorem</a></p>
@@ -845,8 +847,8 @@ Total work &amp;= n * \frac{2^{log_2\ (n)} - 1}{2 - 1} \\
 <span class="math notranslate nohighlight">\(f(n)\)</span> is the time complexity of the remaining work done outside the recursive calls.</p>
 <p class="sd-card-text">The master theorem provides three cases based on the relationship between <span class="math notranslate nohighlight">\(f(n)\)</span> and the subproblem part <span class="math notranslate nohighlight">\(aT(\frac{n}{b})\)</span>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4cf985fb-b94f-4fbf-8620-a9de89acd86f" name="412b404d-2778-452e-88f6-fd102fe6c085" type="radio">
-</input><label class="sd-tab-label" for="4cf985fb-b94f-4fbf-8620-a9de89acd86f">
+<input checked="checked" id="b9699f38-093b-423a-88be-ec2c11277fda" name="5807fe77-1ca8-4f1f-a7c0-d3f132518a2e" type="radio">
+</input><label class="sd-tab-label" for="b9699f38-093b-423a-88be-ec2c11277fda">
 Cases</label><div class="sd-tab-content docutils">
 <dl class="simple myst">
 <dt>Case 1</dt><dd><p class="sd-card-text">If <span class="math notranslate nohighlight">\(f(n) = O(n^c)\)</span> for some constant <span class="math notranslate nohighlight">\(c &lt; log_b(a)\)</span>, then the time complexity is dominated by the subproblem part, and the overall time complexity is given by</p>
@@ -867,8 +869,8 @@ Cases</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = \Theta(f(n))\]</div>
 </div>
-<input id="c91dfc3c-444a-4b45-9318-abfc3096bc2e" name="412b404d-2778-452e-88f6-fd102fe6c085" type="radio">
-</input><label class="sd-tab-label" for="c91dfc3c-444a-4b45-9318-abfc3096bc2e">
+<input id="4ea8a6ce-6abb-4fee-be20-bc7adbbec49a" name="5807fe77-1ca8-4f1f-a7c0-d3f132518a2e" type="radio">
+</input><label class="sd-tab-label" for="4ea8a6ce-6abb-4fee-be20-bc7adbbec49a">
 Case 1 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 4T \bigg(\frac{n}{2} \bigg) + n\]</div>
@@ -909,8 +911,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 <p class="sd-card-text">So, the overall time complexity of the algorithm in this example is <span class="math notranslate nohighlight">\(\Theta(n^2)\)</span>, which means the algorithm’s running time grows quadratically with the input size <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 </details></div>
-<input id="f818a2dd-3f05-4369-af19-f6b3fc0ea611" name="412b404d-2778-452e-88f6-fd102fe6c085" type="radio">
-</input><label class="sd-tab-label" for="f818a2dd-3f05-4369-af19-f6b3fc0ea611">
+<input id="796837aa-bfda-4ec7-b70c-050dfccb5f35" name="5807fe77-1ca8-4f1f-a7c0-d3f132518a2e" type="radio">
+</input><label class="sd-tab-label" for="796837aa-bfda-4ec7-b70c-050dfccb5f35">
 Case 2 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 9T \bigg(\frac{n}{3} \bigg) + n^2\]</div>
@@ -951,8 +953,8 @@ Step 3 : Determine the overall time complexity<div class="sd-summary-down docuti
 \[T(n) = Θ(n^2 \ log(n))\]</div>
 </div>
 </details></div>
-<input id="33fb929f-5239-41ce-b9ee-74df4fd18382" name="412b404d-2778-452e-88f6-fd102fe6c085" type="radio">
-</input><label class="sd-tab-label" for="33fb929f-5239-41ce-b9ee-74df4fd18382">
+<input id="b250c100-a213-4aa5-a422-d5a93419a9fe" name="5807fe77-1ca8-4f1f-a7c0-d3f132518a2e" type="radio">
+</input><label class="sd-tab-label" for="b250c100-a213-4aa5-a422-d5a93419a9fe">
 Case 3 Ex</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[T(n) = 2T \bigg(\frac{n}{2} \bigg) + n^3\]</div>
@@ -1004,12 +1006,12 @@ Step 4 : Determine the overall time complexity.<div class="sd-summary-down docut
 </div>
 </details></div>
 </div>
-<p class="sd-card-text">In our example, the recurrence relation is <span class="math notranslate nohighlight">\(T(n) = 2T(\frac{n}{2}) + n\)</span>, where <span class="math notranslate nohighlight">\(a = 2\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, and <span class="math notranslate nohighlight">\(f(n) = n\)</span>.</p>
+<p class="sd-card-text">In our example, the recurrence relation is <span class="math notranslate nohighlight">\(T(n) = 2T(\frac{n}{2}) + n\)</span>, where <span class="math notranslate nohighlight">\(a = 4\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, and <span class="math notranslate nohighlight">\(f(n) = n\)</span>.</p>
 <p class="sd-card-text">Now, let’s compare the function <span class="math notranslate nohighlight">\(f(n)\)</span> with <span class="math notranslate nohighlight">\(n^{log_b\ (a)}\)</span>:</p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(f(n) = n\)</span>, which is asymptotically smaller than <span class="math notranslate nohighlight">\(n^{log_2\ (2)} = n\)</span>.</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(f(n) = n\)</span>, which is asymptotically smaller than <span class="math notranslate nohighlight">\(n^{log_2\ (4)} = n\)</span>.</p>
 <p class="sd-card-text"><em>According to the Master Theorem:</em></p>
 <p class="sd-card-text">If <span class="math notranslate nohighlight">\(f(n) = O(n^c)\)</span> where <span class="math notranslate nohighlight">\(c &lt; log_b\ (a)\)</span>, then <span class="math notranslate nohighlight">\(T(n) = \Theta(n^{log_b\ (a)})\)</span>.
-In our case, <span class="math notranslate nohighlight">\(f(n) = O(n^1)\)</span>, and <span class="math notranslate nohighlight">\(c = 1 &lt; log_2\ (2) = 1\)</span>. Since the condition is met, the time complexity of the recurrence relation is <span class="math notranslate nohighlight">\(Θ(n^{log_2\ (2)}) = \Theta(n)\)</span>.</p>
+In our case, <span class="math notranslate nohighlight">\(f(n) = O(n^1)\)</span>, and <span class="math notranslate nohighlight">\(c = 1 &lt; log_2\ (4) = 1\)</span>. Since the condition is met, the time complexity of the recurrence relation is <span class="math notranslate nohighlight">\(Θ(n^{log_2\ (4)}) = \Theta(n)\)</span>.</p>
 <p class="sd-card-text">Therefore, according to the Master Theorem, the time complexity of the binary search recurrence relation <span class="math notranslate nohighlight">\(T(n) = 2T(\frac{n}{2}) + n\)</span> is <span class="math notranslate nohighlight">\(\Theta(n)\)</span>, which aligns with the result obtained from the unrolling and guessing methods.</p>
 <p class="sd-card-text">It’s important to note that the Master Theorem is applicable in specific cases, and not all recurrence relations can be solved using this theorem. However, for recurrence relations that follow the prescribed form, it provides a convenient way to determine the time complexity.</p>
 </div>
@@ -1061,11 +1063,15 @@ $$
 
 ````````
 `````````` -->
-</section>
 <section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h4>
 <div class="full-width docutils">
-<!-- ````````` {card} -->
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="7cde7d27-494c-4bb9-8c6b-c4a9e55b63f2" name="9b751a66-1e64-42a3-8388-38965868277d" type="radio">
+</input><label class="sd-tab-label" for="7cde7d27-494c-4bb9-8c6b-c4a9e55b63f2">
+Dividing Function</label><div class="sd-tab-content docutils">
 <div class="admonition-recurrence-relation-dividing-function-https-youtu-be-8gt0d0iqu5w admonition">
 <p class="admonition-title"><a class="reference external" href="https://youtu.be/8gt0D0IqU5w">Recurrence Relation: Dividing Function</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="c1">// = T(n)</span>
@@ -1181,6 +1187,10 @@ In our case, <span class="math notranslate nohighlight">\(f(n) = \Theta(1)\)</sp
 <p class="sd-card-text">All four methods provide consistent solutions, indicating that the time complexity of the recurrence relation <span class="math notranslate nohighlight">\(T(n) = T(\frac{n}{2}) + 1\)</span> is <span class="math notranslate nohighlight">\(O(log\ (n))\)</span>.</p>
 </div>
 </details></div>
+</div>
+<input id="9e65ce1a-c345-4174-bdef-5fbc1d4bd96f" name="9b751a66-1e64-42a3-8388-38965868277d" type="radio">
+</input><label class="sd-tab-label" for="9e65ce1a-c345-4174-bdef-5fbc1d4bd96f">
+Linear</label><div class="sd-tab-content docutils">
 <div class="admonition-recurrence-relation-linear-https-youtu-be-4v30r3i1vli admonition">
 <p class="admonition-title"><a class="reference external" href="https://youtu.be/4V30R3I1vLI">Recurrence Relation: Linear</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="c1">// = T(n)</span>
@@ -1327,6 +1337,10 @@ T(n) &= \Theta(n) \\
 
 ```` -->
 </div>
+</div>
+<input id="0e3f64f4-295a-4248-a0f8-705c5ce21c90" name="9b751a66-1e64-42a3-8388-38965868277d" type="radio">
+</input><label class="sd-tab-label" for="0e3f64f4-295a-4248-a0f8-705c5ce21c90">
+Divide &amp; Conquer</label><div class="sd-tab-content docutils">
 <div class="admonition-recurrence-relation-divide-conquer-https-youtu-be-1k9ebqjosvo admonition">
 <p class="admonition-title"><a class="reference external" href="https://youtu.be/1K9ebQJosvo">Recurrence Relation: Divide &amp; Conquer</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">              </span><span class="c1">// = T(n)</span>
@@ -1508,6 +1522,10 @@ T(n) &= 2^kT(1) + kn \\
 
 ````` -->
 </div>
+</div>
+<input id="300275de-f4c0-4885-b980-c877b1ebf25a" name="9b751a66-1e64-42a3-8388-38965868277d" type="radio">
+</input><label class="sd-tab-label" for="300275de-f4c0-4885-b980-c877b1ebf25a">
+Tower of Hanoi</label><div class="sd-tab-content docutils">
 <div class="admonition-recurrence-relation-tower-of-hanoi-https-youtu-be-iawm82bq4ii admonition">
 <p class="admonition-title"><a class="reference external" href="https://youtu.be/IawM82BQ4II">Recurrence Relation: Tower of Hanoi</a> </p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// = T(n)</span>
@@ -1681,9 +1699,13 @@ T(n) & = 2^nT(0) + 1 + 2 + 2^2\ + \dots\ 2^k-1 \\
 ```
 ````
 ````` -->
-<!-- ``````` -->
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -1753,8 +1775,10 @@ T(n) & = 2^nT(0) + 1 + 2 + 2^2\ + \dots\ 2^k-1 \\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-of-n-formula">Factorial of n (formula)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recurrence-relations">Recurrence Relations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-solving-recurrences">Methods of Solving Recurrences</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-solving-recurrences">Methods of Solving Recurrences</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
