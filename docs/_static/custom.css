@@ -11,3 +11,8 @@
 .fa-rocket {display: none;}
 
 .announcement {background-color: #011636;}
+
+iframe {
+	width:100%;
+	height: 70vh;
+}
