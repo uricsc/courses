@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Mergesort &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -595,8 +592,8 @@ Example</div>
 <li><p class="sd-card-text">after both calls are finished, proceed to <em><em>merge</em></em> the solutions</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e0fab13a-092c-4865-9418-5f72d95b6128" name="0786c31c-f22f-47e4-b7f0-d17a3b47602d" type="radio">
-</input><label class="sd-tab-label" for="e0fab13a-092c-4865-9418-5f72d95b6128">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 pseudocode</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">MergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w">  </span><span class="n">hi</span><span class="p">)</span>
 <span class="linenos"> 2</span>
@@ -617,8 +614,8 @@ pseudocode</label><div class="sd-tab-content docutils">
 </div>
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/merge-sort/">Merge Sort: pseudocode</a></p>
 </div>
-<input id="598e92c7-d86f-43db-babe-a9f89853b5ad" name="0786c31c-f22f-47e4-b7f0-d17a3b47602d" type="radio">
-</input><label class="sd-tab-label" for="598e92c7-d86f-43db-babe-a9f89853b5ad">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 mergesort</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">mergesort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">2</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">aux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w">  </span>
@@ -628,8 +625,8 @@ mergesort</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="cf4c6954-1575-4348-b8e5-1167ba9da46e" name="0786c31c-f22f-47e4-b7f0-d17a3b47602d" type="radio">
-</input><label class="sd-tab-label" for="cf4c6954-1575-4348-b8e5-1167ba9da46e">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 r_mergesort</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">r_mergesort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span>
@@ -649,8 +646,8 @@ r_mergesort</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="451ffe4b-9613-4bac-9781-40042ad5d10e" name="0786c31c-f22f-47e4-b7f0-d17a3b47602d" type="radio">
-</input><label class="sd-tab-label" for="451ffe4b-9613-4bac-9781-40042ad5d10e">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 merge</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">merge</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span>
@@ -707,29 +704,29 @@ merge</label><div class="sd-tab-content docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Consider how this breaks out…</strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3690954c-9e01-44bb-a50f-06df98292b0b" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="3690954c-9e01-44bb-a50f-06df98292b0b">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Unsorted</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/mergesort_numbers_300.png"><img alt="https://www.kirupa.com/sorts/images/mergesort_numbers_300.png" src="https://www.kirupa.com/sorts/images/mergesort_numbers_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 98 </span><span class="caption-text">Collection Unsorted</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Collection Unsorted</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="5195e387-698b-4579-b8d4-db0ee485e82f" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="5195e387-698b-4579-b8d4-db0ee485e82f">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Divide</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/mergesort_1st_div_300.png"><img alt="https://www.kirupa.com/sorts/images/mergesort_1st_div_300.png" src="https://www.kirupa.com/sorts/images/mergesort_1st_div_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 99 </span><span class="caption-text">First Division</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 102 </span><span class="caption-text">First Division</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -739,7 +736,7 @@ Divide</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/mergesort_2nd_div_300.png"><img alt="https://www.kirupa.com/sorts/images/mergesort_2nd_div_300.png" src="https://www.kirupa.com/sorts/images/mergesort_2nd_div_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 100 </span><span class="caption-text">Second Division</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 103 </span><span class="caption-text">Second Division</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -749,14 +746,14 @@ Divide</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/mergesort_3rd_div_300.png"><img alt="https://www.kirupa.com/sorts/images/mergesort_3rd_div_300.png" src="https://www.kirupa.com/sorts/images/mergesort_3rd_div_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Third Division</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 104 </span><span class="caption-text">Third Division</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="40ae8889-b58f-46ff-991b-82b3ed056f3c" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="40ae8889-b58f-46ff-991b-82b3ed056f3c">
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Conquer Setup</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -766,15 +763,15 @@ Conquer Setup</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="0988360c-8744-4bdf-833b-b460de0bf1b1" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="0988360c-8744-4bdf-833b-b460de0bf1b1">
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 First Row</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_one_300.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_one_300.png" src="https://www.kirupa.com/sorts/images/merge_step_one_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 102 </span><span class="caption-text">Step 1</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 105 </span><span class="caption-text">Step 1</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -784,7 +781,7 @@ First Row</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id7">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_two_300.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_two_300.png" src="https://www.kirupa.com/sorts/images/merge_step_two_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 103 </span><span class="caption-text">Step 2</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 106 </span><span class="caption-text">Step 2</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -794,35 +791,35 @@ First Row</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_first_row_300.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_first_row_300.png" src="https://www.kirupa.com/sorts/images/merge_step_first_row_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 104 </span><span class="caption-text">Completed First Row</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Completed First Row</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="60e999ff-27dd-438b-bd28-01f9d24bbbe2" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="60e999ff-27dd-438b-bd28-01f9d24bbbe2">
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Second Row</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id9">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_2nd_row_3_300.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_2nd_row_3_300.png" src="https://www.kirupa.com/sorts/images/merge_step_2nd_row_3_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 105 </span><span class="caption-text">Step 3</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Step 3</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="086a2980-c6cc-4972-bd87-f42b4492634a" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="086a2980-c6cc-4972-bd87-f42b4492634a">
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 Third Row</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id10">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_3rd_row_1_300.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_3rd_row_1_300.png" src="https://www.kirupa.com/sorts/images/merge_step_3rd_row_1_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 106 </span><span class="caption-text">Step 1</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 109 </span><span class="caption-text">Step 1</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -832,28 +829,28 @@ Third Row</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id11">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/merge_step_3rd_row_2.png"><img alt="https://www.kirupa.com/sorts/images/merge_step_3rd_row_2.png" src="https://www.kirupa.com/sorts/images/merge_step_3rd_row_2.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Step 2</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 110 </span><span class="caption-text">Step 2</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="7078342b-7f11-4bcf-9d98-dbc8606bb06e" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="7078342b-7f11-4bcf-9d98-dbc8606bb06e">
+<input id="sd-tab-item-10" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 Sorted</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <figure class="align-default" id="id12">
 <a class="reference internal image-reference" href="https://www.kirupa.com/sorts/images/everything_sorted_merge_300.png"><img alt="https://www.kirupa.com/sorts/images/everything_sorted_merge_300.png" src="https://www.kirupa.com/sorts/images/everything_sorted_merge_300.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Sort Complete</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 111 </span><span class="caption-text">Sort Complete</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<input id="d44eecf9-9cf1-4e45-9316-baa7a269c6df" name="f1efe773-8146-49e9-8018-e6e2283f9fd4" type="radio">
-</input><label class="sd-tab-label" for="d44eecf9-9cf1-4e45-9316-baa7a269c6df">
+<input id="sd-tab-item-11" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 Try It!</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -897,12 +894,6 @@ Try It!</label><div class="sd-tab-content docutils">
 <h3><a class="reference external" href="https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/analysis-of-merge-sort">Analysis (recurrence)</a><a class="headerlink" href="#analysis-recurrence" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Worst Case</p></th>
@@ -1173,8 +1164,8 @@ In-place?<div class="sd-summary-down docutils">
 </figure>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e2938f32-0789-4a9e-b782-e47e7831656f" name="b55375e8-37c5-4d0b-95e8-35a63a22e27f" type="radio">
-</input><label class="sd-tab-label" for="e2938f32-0789-4a9e-b782-e47e7831656f">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Stable?</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">Stable?</p>
@@ -1205,8 +1196,8 @@ Stable?<div class="sd-summary-down docutils">
 </div>
 </details></div>
 </div>
-<input id="1be06a4c-b9a8-49cf-9936-c89632973643" name="b55375e8-37c5-4d0b-95e8-35a63a22e27f" type="radio">
-</input><label class="sd-tab-label" for="1be06a4c-b9a8-49cf-9936-c89632973643">
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 Stable?</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">How about now?</p>
@@ -1302,18 +1293,10 @@ Is insertion sort stable?<div class="sd-summary-down docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4025a1d6-f0a8-475e-be80-e952d00735ba" name="b1066695-0d2f-4069-af93-e797ea9f6af9" type="radio">
-</input><label class="sd-tab-label" for="4025a1d6-f0a8-475e-be80-e952d00735ba">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 incomplete</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">Best-Case</p></th>
@@ -1348,18 +1331,10 @@ incomplete</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<input id="5689a166-6631-4c13-8bb4-75724d9598e1" name="b1066695-0d2f-4069-af93-e797ea9f6af9" type="radio">
-</input><label class="sd-tab-label" for="5689a166-6631-4c13-8bb4-75724d9598e1">
+<input id="sd-tab-item-15" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 complete</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">Best-Case</p></th>
@@ -1426,7 +1401,7 @@ complete</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

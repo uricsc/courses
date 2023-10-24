@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Dynamic Arrays &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -637,8 +634,8 @@ Code sample<div class="sd-summary-down docutils">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="70d2b9c6-9625-43bf-8049-3d0c9999b930" name="c33b86af-2470-4e5d-a4fe-9a556ccf615d" type="radio">
-</input><label class="sd-tab-label" for="70d2b9c6-9625-43bf-8049-3d0c9999b930">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Definition</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -664,8 +661,8 @@ Definition</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="d696f9cb-1065-4025-a3fc-6a737ca42a26" name="c33b86af-2470-4e5d-a4fe-9a556ccf615d" type="radio">
-</input><label class="sd-tab-label" for="d696f9cb-1065-4025-a3fc-6a737ca42a26">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -721,8 +718,8 @@ Declaration</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="df48f883-3ee0-4197-8d2d-77e5f942a8ee" name="4a7aec63-7c57-413c-a55c-44c1dc8b0feb" type="radio">
-</input><label class="sd-tab-label" for="df48f883-3ee0-4197-8d2d-77e5f942a8ee">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Layout</label><div class="sd-tab-content docutils">
 <div class="tip admonition">
 <p class="admonition-title">Memory layout of C/C++ programs</p>
@@ -730,8 +727,8 @@ Layout</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/memory-layout-of-c-program/">https://www.geeksforgeeks.org/memory-layout-of-c-program/</a></p>
 </div>
 </div>
-<input id="4da851bd-2b7f-4d86-8064-58adbea5787f" name="4a7aec63-7c57-413c-a55c-44c1dc8b0feb" type="radio">
-</input><label class="sd-tab-label" for="4da851bd-2b7f-4d86-8064-58adbea5787f">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Allocations</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <a class="reference internal image-reference" href="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png"><img alt="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png" src="https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png" style="width: 450px;" /></a>
@@ -771,11 +768,6 @@ Comparison Chart<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Parameter</p></th>
 <th class="head"><p class="sd-card-text">STACK</p></th>
@@ -835,8 +827,8 @@ Comparison Chart<div class="sd-summary-down docutils">
 </table>
 </div>
 </details></div>
-<input id="33340863-1aba-42f2-9ed8-f3eebe207e44" name="4a7aec63-7c57-413c-a55c-44c1dc8b0feb" type="radio">
-</input><label class="sd-tab-label" for="33340863-1aba-42f2-9ed8-f3eebe207e44">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Memory allocation is an essential aspect of data structures and algorithms as it determines how memory is allocated and used to store data. Data structures are designed to efficiently organize and store data in memory, and algorithms use these data structures to perform operations on the data.</p>
 <p class="sd-card-text">In general, there are two types of memory allocation: static and dynamic. Static memory allocation refers to memory allocation that is fixed at compile-time and cannot be changed at runtime. This is typically used for variables that have a fixed size and do not need to be resized during program execution.</p>
@@ -845,13 +837,13 @@ Background</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Another common data structure that uses dynamic memory allocation is the dynamic array. In a dynamic array, the size of the array can be dynamically resized as needed, allowing for efficient memory usage.</p>
 <p class="sd-card-text">Memory allocation is an important consideration when designing and implementing data structures and algorithms. Efficient memory usage can greatly improve the performance of an algorithm, while inefficient memory usage can lead to performance problems or even crashes. Therefore, it is important to carefully consider the memory requirements of a data structure or algorithm and optimize memory usage wherever possible.</p>
 </div>
-<input id="fddb5ab6-1382-4951-a39c-0ff1ed504988" name="4a7aec63-7c57-413c-a55c-44c1dc8b0feb" type="radio">
-</input><label class="sd-tab-label" for="fddb5ab6-1382-4951-a39c-0ff1ed504988">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Visualization</label><div class="sd-tab-content docutils">
 <iframe width="1000" height="600" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=//%20Example%20C%2B%2B%20code%20for%20OPT%0Aint%20main%28%29%20%7B%0A%20%20float%20var1%3B%0A%20%20float%20var2%3B%0A%20%20int%20static_array%5B10%5D%3B%0A%20%20int%20*static_array_heap%20%3D%20new%20int%20%5B10%5D%3B%0A%20%20//%20...%0A%20%20//%20work%20with%20this%20array%0A%20%20//%20...%0A%20%20delete%20%5B%5D%20static_array_heap%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 </div>
-<input id="f4ab06c5-fabd-497f-90e2-ca0dbe912d95" name="4a7aec63-7c57-413c-a55c-44c1dc8b0feb" type="radio">
-</input><label class="sd-tab-label" for="f4ab06c5-fabd-497f-90e2-ca0dbe912d95">
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 What if</label><div class="sd-tab-content docutils">
 <div class="attention admonition">
 <p class="admonition-title">What if…?</p>
@@ -925,8 +917,8 @@ What if</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3e377f5c-4e84-447a-bb00-0c828f53171c" name="7fbf2310-e07c-4115-bf23-a96430b5eeb7" type="radio">
-</input><label class="sd-tab-label" for="3e377f5c-4e84-447a-bb00-0c828f53171c">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Grow by 1</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n\)</span> elements</p>
 <ul class="simple">
@@ -938,11 +930,6 @@ Grow by 1</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
 <th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(append\)</span></p></th>
@@ -1014,8 +1001,8 @@ Grow by 1</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="8ea25d9a-cfe7-460e-9a7a-bc5bb4b95388" name="7fbf2310-e07c-4115-bf23-a96430b5eeb7" type="radio">
-</input><label class="sd-tab-label" for="8ea25d9a-cfe7-460e-9a7a-bc5bb4b95388">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Doubling array</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Count array accesses (reads and writes) of adding first <span class="math notranslate nohighlight">\(n = 2^i\)</span> elements</p>
 <ul class="simple">
@@ -1056,8 +1043,8 @@ Doubling array</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="5fa045db-751a-4af0-a311-c4e89944cd18" name="7fbf2310-e07c-4115-bf23-a96430b5eeb7" type="radio">
-</input><label class="sd-tab-label" for="5fa045db-751a-4af0-a311-c4e89944cd18">
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 Proof</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="../../_images/05_s20.png" src="../../_images/05_s20.png" />
@@ -1139,7 +1126,7 @@ $$\Theta(n)$$
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

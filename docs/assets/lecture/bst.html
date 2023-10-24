@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Binary Search Trees &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -575,25 +572,25 @@ summary:first-of-type {text-align: center;}
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8900d271-4078-4e88-a4e4-66f80a0fa9b7" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="8900d271-4078-4e88-a4e4-66f80a0fa9b7">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 k-ary trees</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id2">
-<img alt="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7TSf_YpdLyF0uIfW0Rm_GgHaHa%26pid%3DApi&amp;f=1&amp;ipt=1187f0ed9de515a480afca769ea805a6e4e566d0faeae559c7cf2c0b42873442&amp;ipo=images" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7TSf_YpdLyF0uIfW0Rm_GgHaHa%26pid%3DApi&amp;f=1&amp;ipt=1187f0ed9de515a480afca769ea805a6e4e566d0faeae559c7cf2c0b42873442&amp;ipo=images" />
+<img alt="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201102101430/Tree2.jpg" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201102101430/Tree2.jpg" />
 <figcaption>
 <p><span class="caption-number">Fig. 21 </span><span class="caption-text">Every node has between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(k\)</span> children</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="88059e8e-a07b-4e25-b459-f7eea3e1aa50" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="88059e8e-a07b-4e25-b459-f7eea3e1aa50">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 types</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CMGFtehu01ZEBgzHG71sMg.png" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CMGFtehu01ZEBgzHG71sMg.png" />
 </figure>
 </div>
-<input id="3db9594d-8915-474d-aad8-3f7fdfada912" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="3db9594d-8915-474d-aad8-3f7fdfada912">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 full</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id3">
 <img alt="https://miro.medium.com/max/1400/1*fh2By4u-SxTlt6u2xHqnCg.png" src="https://miro.medium.com/max/1400/1*fh2By4u-SxTlt6u2xHqnCg.png" />
@@ -603,8 +600,8 @@ full</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="1f581127-4a64-4b90-b142-847297a3caf8" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="1f581127-4a64-4b90-b142-847297a3caf8">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 complete</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id4">
 <img alt="https://miro.medium.com/max/1400/1*M1qfRR59TR9-i4pmI-_Clg.png" src="https://miro.medium.com/max/1400/1*M1qfRR59TR9-i4pmI-_Clg.png" />
@@ -614,8 +611,8 @@ complete</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="61e93a16-7997-4619-aa9c-13780c337f65" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="61e93a16-7997-4619-aa9c-13780c337f65">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 perfect</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id5">
 <img alt="https://miro.medium.com/max/1400/1*EgcvwUHXnmdOpbHQwgCknA.png" src="https://miro.medium.com/max/1400/1*EgcvwUHXnmdOpbHQwgCknA.png" />
@@ -625,8 +622,8 @@ perfect</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="f1b7f080-09f2-4831-9c6b-c2114d3835dc" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="f1b7f080-09f2-4831-9c6b-c2114d3835dc">
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 degenerate</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id6">
 <img alt="https://miro.medium.com/max/1400/1*m5BjLJeSrSGH4US-QXj4aA.png" src="https://miro.medium.com/max/1400/1*m5BjLJeSrSGH4US-QXj4aA.png" />
@@ -636,8 +633,8 @@ degenerate</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="82c133a5-e0e2-422c-8456-3ea807d3cae1" name="5800f0cf-312d-4b90-9947-85a4d35650f9" type="radio">
-</input><label class="sd-tab-label" for="82c133a5-e0e2-422c-8456-3ea807d3cae1">
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 balanced</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id7">
 <img alt="https://miro.medium.com/max/1400/1*jSq-xjEZYytNDIBpZNQC2w.png" src="https://miro.medium.com/max/1400/1*jSq-xjEZYytNDIBpZNQC2w.png" />
@@ -733,16 +730,16 @@ balanced</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="96aa1a2d-1ecf-4dd1-ad9c-b05198268ab1" name="2a86c4e4-ab53-4f61-89f5-8965215e97a5" type="radio">
-</input><label class="sd-tab-label" for="96aa1a2d-1ecf-4dd1-ad9c-b05198268ab1">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Example</label><div class="sd-tab-content docutils">
 <figure class="align-center">
 <img alt="https://i.pinimg.com/originals/4e/5a/00/4e5a00c98d5b46ed4cbf224ac11dc115.png" src="https://i.pinimg.com/originals/4e/5a/00/4e5a00c98d5b46ed4cbf224ac11dc115.png" />
 </figure>
 <p class="sd-card-text">(**) assume that the keys of a BST are pairwise distinct</p>
 </div>
-<input id="0de19cf7-80ae-49f5-b13c-33211ae14b64" name="2a86c4e4-ab53-4f61-89f5-8965215e97a5" type="radio">
-</input><label class="sd-tab-label" for="0de19cf7-80ae-49f5-b13c-33211ae14b64">
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Tree Parts</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1*PWJiwTxRdQy8A_Y0hAv5Eg.png" src="https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1*PWJiwTxRdQy8A_Y0hAv5Eg.png" />
@@ -828,7 +825,7 @@ BSTree</div>
 <div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<ol class="simple">
+<ol class="arabic simple">
 <li><p class="sd-card-text">Start at root node</p></li>
 <li><p class="sd-card-text">If the search key:<br />
 a. matches the current node’s key<br />
@@ -919,20 +916,35 @@ c. If search key is less than current node’s<br />
 <li><p class="sd-card-text">Replace the node with its successor/predecessor and delete the successor/predecessor from its original position.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="93d5f5dc-abd1-4e30-901c-e4cfe1fb7256" name="304d3d3a-3a83-4236-a618-4e74ac8986c8" type="radio">
-</input><label class="sd-tab-label" for="93d5f5dc-abd1-4e30-901c-e4cfe1fb7256">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 leaf</label><div class="sd-tab-content docutils">
-<p class="sd-card-text"><img alt="remove : leaf" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_4.JPG" /></p>
+<figure class="align-default" id="id8">
+<img alt="../../_images/algorithm-binary-tree-search_4.JPG" src="../../_images/algorithm-binary-tree-search_4.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><span class="math notranslate nohighlight">\(remove : leaf\)</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
-<input id="35ae0b3d-c683-493d-ac19-be890dc25a8d" name="304d3d3a-3a83-4236-a618-4e74ac8986c8" type="radio">
-</input><label class="sd-tab-label" for="35ae0b3d-c683-493d-ac19-be890dc25a8d">
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 1 child</label><div class="sd-tab-content docutils">
-<p class="sd-card-text"><img alt="" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_5.JPG" /></p>
+<figure class="align-default" id="id9">
+<img alt="../../_images/algorithm-binary-tree-search_5.JPG" src="../../_images/algorithm-binary-tree-search_5.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><span class="math notranslate nohighlight">\(remove:\ with\ 1\ child\)</span></span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
-<input id="718bb464-5475-4bd5-8c0e-35fc96ddf7e9" name="304d3d3a-3a83-4236-a618-4e74ac8986c8" type="radio">
-</input><label class="sd-tab-label" for="718bb464-5475-4bd5-8c0e-35fc96ddf7e9">
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 2 children</label><div class="sd-tab-content docutils">
-<p class="sd-card-text"><img alt="" src="https://mycloudology.com/algorithm-binary-tree-search/algorithm-binary-tree-search_6.JPG" /></p>
+<figure class="align-default" id="id10">
+<img alt="../../_images/algorithm-binary-tree-search_6.JPG" src="../../_images/algorithm-binary-tree-search_6.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><span class="math notranslate nohighlight">\(remove:\ with\ 2\ children\)</span></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 <div class="dropdown seealso admonition">
@@ -962,8 +974,8 @@ leaf</label><div class="sd-tab-content docutils">
 <img alt="https://www.bogotobogo.com/GoLang/images/BinarySearchTree_BST/print_functions.png" src="https://www.bogotobogo.com/GoLang/images/BinarySearchTree_BST/print_functions.png" />
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6121648d-c44a-4692-b92e-88701862d422" name="fdbab8fa-9c15-49fe-9ad5-e0d1420f9408" type="radio">
-</input><label class="sd-tab-label" for="6121648d-c44a-4692-b92e-88701862d422">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 preorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -983,10 +995,10 @@ preorder</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id11">
 <img alt="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree06.png" src="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree06.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#preorder-traversals">preorder</a></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#preorder-traversals">preorder</a></span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1003,8 +1015,8 @@ preorder</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/GenTreePreTravCON" height="600" width="100%"></iframe>
 </div>
 </div>
-<input id="f446e85b-5320-44cb-afe5-e8e36077dba1" name="fdbab8fa-9c15-49fe-9ad5-e0d1420f9408" type="radio">
-</input><label class="sd-tab-label" for="f446e85b-5320-44cb-afe5-e8e36077dba1">
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 postorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1024,10 +1036,10 @@ postorder</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id12">
 <img alt="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree07.png" src="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree07.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#postorder-traversals">postorder</a></span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#postorder-traversals">postorder</a></span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1044,8 +1056,8 @@ postorder</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/GenTreePostTravCON" height="600" width="100%"></iframe>
 </div>
 </div>
-<input id="811feb35-9a1d-4bdf-b302-c8d84b4ba36e" name="fdbab8fa-9c15-49fe-9ad5-e0d1420f9408" type="radio">
-</input><label class="sd-tab-label" for="811feb35-9a1d-4bdf-b302-c8d84b4ba36e">
+<input id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 inorder</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1064,10 +1076,10 @@ inorder</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
-<figure class="align-default" id="id10">
+<figure class="align-default" id="id13">
 <img alt="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree08.png" src="https://sbme-tutorials.github.io/2020/data-structure-FALL/images/Tree08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#inorder-traversals">inorder</a></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text"><a class="reference external" href="https://sbme-tutorials.github.io/2020/data-structure-FALL/notes/week08.html#inorder-traversals">inorder</a></span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1087,10 +1099,10 @@ inorder</label><div class="sd-tab-content docutils">
 <div class="dropdown danger admonition">
 <p class="admonition-title">Destroy a binary tree</p>
 <p class="sd-card-text"><strong>Post Order</strong></p>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id14">
 <img alt="https://miro.medium.com/v2/resize:fit:1000/1*UGrzA4qtLCaaCiNAKZyj_w.gif" src="https://miro.medium.com/v2/resize:fit:1000/1*UGrzA4qtLCaaCiNAKZyj_w.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><br>Post Order</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text"><br>Post Order</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <dl class="simple myst">
@@ -1118,16 +1130,10 @@ inorder</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e139d088-95ee-4ba8-8cb2-76c82933bcb2" name="781e6555-a416-4f2d-bf1b-04fe068244b4" type="radio">
-</input><label class="sd-tab-label" for="e139d088-95ee-4ba8-8cb2-76c82933bcb2">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 incomplete</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">best-case</p></th>
@@ -1156,16 +1162,10 @@ incomplete</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[Cost\ of\ basic\ operations??\]</div>
 </div>
-<input id="a406822b-f4c4-49a6-949a-32d8ae72da5e" name="781e6555-a416-4f2d-bf1b-04fe068244b4" type="radio">
-</input><label class="sd-tab-label" for="a406822b-f4c4-49a6-949a-32d8ae72da5e">
+<input id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 complete</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">best-case</p></th>
@@ -1219,10 +1219,10 @@ complete</label><div class="sd-tab-content docutils">
 <div class="dropdown tip admonition">
 <p class="admonition-title">inserting n keys in a random order</p>
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(n = 255\)</span></p>
-<figure class="align-default" id="id12">
+<figure class="align-default" id="id15">
 <img alt="https://algs4.cs.princeton.edu/32bst/media/bst-255random.mov" src="https://algs4.cs.princeton.edu/32bst/media/bst-255random.mov" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text"><a class="reference external" href="https://algs4.cs.princeton.edu/32bst/">https://algs4.cs.princeton.edu/32bst/</a></span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text"><a class="reference external" href="https://algs4.cs.princeton.edu/32bst/">https://algs4.cs.princeton.edu/32bst/</a></span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1237,13 +1237,6 @@ complete</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">What?</p></th>
@@ -1310,7 +1303,7 @@ complete</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

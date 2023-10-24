@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>2-3 Trees &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -524,8 +521,8 @@ Additional Resources</div>
 <img alt="https://algorithmtutor.com/images/23TreeExample.png" src="https://algorithmtutor.com/images/23TreeExample.png" />
 </figure>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a4b5794e-1417-4509-890c-ed2e15c03955" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="a4b5794e-1417-4509-890c-ed2e15c03955">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Reasons</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -650,8 +647,8 @@ Spell checkers<div class="sd-summary-down docutils">
 </div>
 </div>
 </div>
-<input id="12b92ebe-f173-44d8-bb00-9dab3d235deb" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="12b92ebe-f173-44d8-bb00-9dab3d235deb">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Components</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -707,28 +704,28 @@ Components</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="9851b0b8-0d92-46f3-bb90-96014e172c0a" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="9851b0b8-0d92-46f3-bb90-96014e172c0a">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Search</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/BSTsearchCON" height="450" width="100%"></iframe>
 </div>
-<input id="09ea43f9-0d68-4b20-9ab8-04a3e6a247a3" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="09ea43f9-0d68-4b20-9ab8-04a3e6a247a3">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Insert</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/simpleInsertCON" height="450" width="100%"></iframe>
 </div>
-<input id="1eb4e32f-abf5-4da4-af4f-326c745295aa" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="1eb4e32f-abf5-4da4-af4f-326c745295aa">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Insert w/ Promotion</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/promoteCON" height="450" width="100%"></iframe>
 </div>
-<input id="8c8de840-48f7-48a9-a3f1-8e52b8e6a4fe" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="8c8de840-48f7-48a9-a3f1-8e52b8e6a4fe">
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Insert w/ Split</label><div class="sd-tab-content docutils">
 <iframe src="https://opendsa-server.cs.vt.edu/embed/splitCON" height="500" width="100%"></iframe>
 </div>
-<input id="25a64bb8-8416-4dce-acf5-71bacd14a214" name="30a28a83-fe1d-4c04-818f-032af57c7299" type="radio">
-</input><label class="sd-tab-label" for="25a64bb8-8416-4dce-acf5-71bacd14a214">
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Consider</label><div class="sd-tab-content docutils">
 <iframe src="https://yongdanielliang.github.io/animation/web/24Tree.html" height="400" width="100%"></iframe>
 <p>Consider : The three sets are identical minus their order… does it matter? Try them and see…</p>
@@ -810,7 +807,7 @@ Another view of each…</div>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://iq.opengenus.org/content/images/2020/06/Insert-Operation.JPG"><img alt="https://iq.opengenus.org/content/images/2020/06/Insert-Operation.JPG" src="https://iq.opengenus.org/content/images/2020/06/Insert-Operation.JPG" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text"><span class="math notranslate nohighlight">\(tree\ = \{9, 5, 8, 3, 2, 4, 7 \}\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text"><span class="math notranslate nohighlight">\(tree\ = \{9, 5, 8, 3, 2, 4, 7 \}\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -824,7 +821,7 @@ To a 3-node whose parent is a 2-node</div>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3b.png"><img alt="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3b.png" src="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3b.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">create a temporary 4-node, remove middle child from 4-node, and add to parent to create 3-node</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">create a temporary 4-node, remove middle child from 4-node, and add to parent to create 3-node</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -838,7 +835,7 @@ Insert into a tree consisting of a single 3-node</div>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3c.png"><img alt="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3c.png" src="https://algs4.cs.princeton.edu/33balanced/images/23tree-insert3c.png" style="width: 25%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">create a 4-node and break it down into three 2-nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">create a 4-node and break it down into three 2-nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -894,7 +891,7 @@ Bottomline<div class="sd-summary-down docutils">
 <figure class="align-center" id="id5">
 <img alt="../../_images/16_summary.png" src="../../_images/16_summary.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">but hidden constant <span class="math notranslate nohighlight">\(c\)</span> is large (depends on implementation)</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">but hidden constant <span class="math notranslate nohighlight">\(c\)</span> is large (depends on implementation)</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -960,7 +957,7 @@ Bottomline<div class="sd-summary-down docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

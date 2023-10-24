@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Recursive Algorithms (Analysis) &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -497,13 +494,13 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="da521600-62f4-4d97-81ed-8260ccb0d2ef" name="de56f433-6675-463e-ac41-9f5d4c75202a" type="radio">
-</input><label class="sd-tab-label" for="da521600-62f4-4d97-81ed-8260ccb0d2ef">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 What Is It?</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/6oDQaB2one8?si=QI3E44Xy-SggB_bD" title="YouTube video player" frameborder="0" ></iframe>
 </div>
-<input id="3099b48f-b259-4afe-8f99-938abd64ab7b" name="de56f433-6675-463e-ac41-9f5d4c75202a" type="radio">
-</input><label class="sd-tab-label" for="3099b48f-b259-4afe-8f99-938abd64ab7b">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Loops v. Recursion</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/HXNhEYqFo0o" title="YouTube video player" frameborder="0"></iframe> 
 </div>
@@ -602,8 +599,8 @@ TL;DR<div class="sd-summary-down docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="419e4f1a-4e55-46aa-8de7-1b4c1df3fdab" name="45785abb-0666-4a03-8d67-e387fa5318ce" type="radio">
-</input><label class="sd-tab-label" for="419e4f1a-4e55-46aa-8de7-1b4c1df3fdab">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Premise</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://cdn.slidesharecdn.com/ss_thumbnails/recursion-130206094649-phpapp01-thumbnail-4.jpg?cb=1360144228" src="https://cdn.slidesharecdn.com/ss_thumbnails/recursion-130206094649-phpapp01-thumbnail-4.jpg?cb=1360144228" />
@@ -617,8 +614,8 @@ Premise</label><div class="sd-tab-content docutils">
 <li><p class="sd-card-text">Technically, a recursive function is one that calls itself</p></li>
 </ul>
 </div>
-<input id="28af6b4c-fb0e-4805-af8e-ee2c8c8e12c5" name="45785abb-0666-4a03-8d67-e387fa5318ce" type="radio">
-</input><label class="sd-tab-label" for="28af6b4c-fb0e-4805-af8e-ee2c8c8e12c5">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 General Form</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">2</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">base_case</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -668,17 +665,17 @@ recursive calls<div class="sd-summary-down docutils">
 </div>
 </div>
 </div>
-<input id="fd84f7ef-4e2d-424b-b656-d80858332541" name="45785abb-0666-4a03-8d67-e387fa5318ce" type="radio">
-</input><label class="sd-tab-label" for="fd84f7ef-4e2d-424b-b656-d80858332541">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Rules</label><div class="sd-tab-content docutils">
-<ol class="simple">
+<ol class="arabic simple">
 <li><p class="sd-card-text">Every recursive definition must have one (or more) base cases.</p></li>
 <li><p class="sd-card-text">The general case must eventually be reduced to a base case.</p></li>
 <li><p class="sd-card-text">The base case stops the recursion.</p></li>
 </ol>
 </div>
-<input id="1f808ea4-5730-4ec3-bf3b-edf17d6b99f1" name="45785abb-0666-4a03-8d67-e387fa5318ce" type="radio">
-</input><label class="sd-tab-label" for="1f808ea4-5730-4ec3-bf3b-edf17d6b99f1">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Why bother?</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -694,7 +691,7 @@ Can we live without it?<div class="sd-summary-down docutils">
 </details><figure class="align-default" id="id1">
 <img alt="../../_images/09_s05.png" src="../../_images/09_s05.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 96 </span><span class="caption-text"><a class="reference external" href="https://courses.cs.washington.edu/courses/cse120/17sp/labs/11/tree.html">https://courses.cs.washington.edu/courses/cse120/17sp/labs/11/tree.html</a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 99 </span><span class="caption-text"><a class="reference external" href="https://courses.cs.washington.edu/courses/cse120/17sp/labs/11/tree.html">https://courses.cs.washington.edu/courses/cse120/17sp/labs/11/tree.html</a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -738,8 +735,8 @@ Considerations?<div class="sd-summary-down docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a5519f25-53eb-4338-868e-4e6b03a55351" name="7a25f6a5-5b79-46ad-a122-405ded36d8bc" type="radio">
-</input><label class="sd-tab-label" for="a5519f25-53eb-4338-868e-4e6b03a55351">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Largest</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">To find the largest element in list[a]…list[b]</p>
 <p class="sd-card-text">a. Find the largest element in <code class="docutils literal notranslate"><span class="pre">list[a</span> <span class="pre">+</span> <span class="pre">1]...list[b]</span></code> and call it <code class="docutils literal notranslate"><span class="pre">max</span></code>
@@ -773,8 +770,8 @@ size\ of\ list\ is\ \gt 1, &amp; \text{// recursive calls}
 </pre></div>
 </div>
 </div>
-<input id="c406ad7a-f901-4099-adfa-d99006ba17c2" name="7a25f6a5-5b79-46ad-a122-405ded36d8bc" type="radio">
-</input><label class="sd-tab-label" for="c406ad7a-f901-4099-adfa-d99006ba17c2">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Sum Array</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -810,8 +807,8 @@ Visualize<div class="sd-summary-down docutils">
 <p class="sd-card-text"><em>May take a moment to load…</em></p>
 </div>
 </details></div>
-<input id="92ce343f-c122-4600-98da-001bd7450b3e" name="7a25f6a5-5b79-46ad-a122-405ded36d8bc" type="radio">
-</input><label class="sd-tab-label" for="92ce343f-c122-4600-98da-001bd7450b3e">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Serpinski</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">drawSierpinski</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -862,8 +859,8 @@ Pyramid<div class="sd-summary-down docutils">
 </figure>
 </div>
 </details></div>
-<input id="1954b83d-4606-4dfc-b5cf-3b3e55bebe82" name="7a25f6a5-5b79-46ad-a122-405ded36d8bc" type="radio">
-</input><label class="sd-tab-label" for="1954b83d-4606-4dfc-b5cf-3b3e55bebe82">
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 Binary Search</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">int</span><span class="w"> </span><span class="nf">bsearch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="c1">//base case</span>
@@ -1089,7 +1086,7 @@ Example<div class="sd-summary-down docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CSC 200 🐍 : Computer Problem Solving for Science &amp; Engineering &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -316,37 +313,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/csc-dsa/su23/master?urlpath=tree/docs/csc200py.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -399,23 +365,6 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/csc200py.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -553,13 +502,6 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Week</p></th>
 <th class="head"><p class="sd-card-text">Dates</p></th>
@@ -573,13 +515,13 @@ document.write(`
 <td><p class="sd-card-text">1/25</p></td>
 <td><p class="sd-card-text"><span class="xref myst"></span></p></td>
 <td><p class="sd-card-text">Overview &amp; Expectations</p></td>
-<td><p class="sd-card-text">IDE Setup</p></td>
+<td><p class="sd-card-text"><a class="reference internal" href="assets/lab/csc200py/setup.html"><span class="doc std std-doc">IDE Setup</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p class="sd-card-text">2</p></td>
 <td><p class="sd-card-text">2/1</p></td>
 <td><p class="sd-card-text"><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter01.02-Python-as-A-Calculator.html">Chapter 1. Python Basics</a></p></td>
 <td><p class="sd-card-text"><a class="reference internal" href="assets/lecture/flowcharts.html"><span class="doc std std-doc">Planning</span></a> &amp; <a class="reference internal" href="assets/lecture/pseudocode.html"><span class="doc std std-doc">Programming</span></a></p></td>
-<td><p class="sd-card-text">Flowcharts &amp; Pseudocode</p></td>
+<td><p class="sd-card-text"><a class="reference internal" href="assets/lab/csc200py/planning.html"><span class="doc std std-doc">Flowcharts &amp; Pseudocode</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p class="sd-card-text">3</p></td>
 <td><p class="sd-card-text">2/8</p></td>
@@ -607,7 +549,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p class="sd-card-text">7</p></td>
 <td><p class="sd-card-text">3/8</p></td>
-<td><p class="sd-card-text">CHAPTER 7. Object Oriented Programming (OOP)<br><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter07.01-Introduction-to-OOP.html">Introduction to OOP</a><br><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter07.02-Class-and-Object.html">Class and Object</a></p></td>
+<td><p class="sd-card-text">CHAPTER 7. Object Oriented Programming (OOP)<br><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter07.01-Introduction-to-OOP.html#">Introduction to OOP</a><br><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter07.02-Class-and-Object.html">Class and Object</a></p></td>
 <td><p class="sd-card-text">Classes:<br><a class="reference internal" href="assets/lecture/class.html"><span class="doc std std-doc">Structure</span></a></p></td>
 <td><p class="sd-card-text">Object-Oriented Programming</p></td>
 </tr>
@@ -637,7 +579,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p class="sd-card-text">12</p></td>
 <td><p class="sd-card-text">4/12</p></td>
-<td><p class="sd-card-text"><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter12.00-Visualization-and-Plotting.html">Chapter 12. Visualization and Plotting</a></p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://pythonnumericalmethods.berkeley.edu/notebooks/chapter12.00-Visualization-and-Plotting.html#">Chapter 12. Visualization and Plotting</a></p></td>
 <td><p class="sd-card-text"><span class="xref myst">Visualize</span></p></td>
 <td><p class="sd-card-text">Plotting</p></td>
 </tr>
@@ -686,10 +628,6 @@ document.write(`
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><strong>Professor</strong></p>
 <table class="table">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p class="sd-card-text">Professor</p></td>
 <td><p class="sd-card-text">Jonathan Schrader</p></td>
@@ -711,11 +649,6 @@ document.write(`
 <p class="sd-card-text"><strong>Teaching Assistants</strong></p>
 <div class="full-width docutils">
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p class="sd-card-text">TA’s</p></td>
 <td><!-- TODO : GRAD TA -->
@@ -816,11 +749,6 @@ Final Exam</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Item</p></th>
 <th class="head"><p class="sd-card-text">Quantity</p></th>
@@ -849,20 +777,6 @@ Final Exam</div>
 <p class="sd-card-text"><em>Note: These weights are subject to change.</em></p>
 <p class="sd-card-text">These are the letter grades you can expect to receive based on your calculated final score using the above weights.</p>
 <table class="table">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p class="sd-card-text">A</p></td>
 <td><p class="sd-card-text">A-</p></td>
@@ -965,7 +879,7 @@ Academic Enhancement Center</div>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

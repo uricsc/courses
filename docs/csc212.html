@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CSC 212: Data Structures &amp; Algorithms &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -473,13 +470,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-staff">Course Staff</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#office-hours">Office Hours</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-tools-and-technology">Support Tools and Technology</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-learning-outcomes">Student Learning Outcomes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended Textbooks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-components">Course Components</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance-submission">Attendance &amp; Submission</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-submissions-extensions">Late Submissions &amp; Extensions</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#administrative">Administrative</a></li>
@@ -509,7 +504,7 @@ document.write(`
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="#fall-location-s" id="id1">Fall Location(s)</a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="#fall-schedule" id="id2">Fall Schedule</a></p></li>
@@ -518,21 +513,19 @@ document.write(`
 <li><p class="sd-card-text"><a class="reference internal" href="#course-description" id="id4">Course Description</a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="#course-staff" id="id5">Course Staff</a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="#office-hours" id="id6">Office Hours</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#support-tools-and-technology" id="id7">Support Tools and Technology</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#student-learning-outcomes" id="id8">Student Learning Outcomes</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#recommended-textbooks" id="id9">Recommended Textbooks</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#course-components" id="id10">Course Components</a></p>
+<li><p class="sd-card-text"><a class="reference internal" href="#student-learning-outcomes" id="id7">Student Learning Outcomes</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#recommended-textbooks" id="id8">Recommended Textbooks</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#course-components" id="id9">Course Components</a></p>
 <ul>
-<li><p class="sd-card-text"><a class="reference internal" href="#grading" id="id11">Grading</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#attendance-submission" id="id12">Attendance &amp; Submission</a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="#late-submissions-extensions" id="id13">Late Submissions &amp; Extensions</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#grading" id="id10">Grading</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#attendance-submission" id="id11">Attendance &amp; Submission</a></p></li>
 </ul>
 </li>
-<li><p class="sd-card-text"><a class="reference internal" href="#administrative" id="id14">Administrative</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#administrative" id="id12">Administrative</a></p></li>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 </div>
 </details></div>
 <!-- ## Summer Calendar
@@ -630,15 +623,9 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 ````
 ````` -->
 <section id="fall-location-s">
-<h2><a class="toc-backref" href="#id1">Fall Location(s)</a><a class="headerlink" href="#fall-location-s" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Fall Location(s)</a><a class="headerlink" href="#fall-location-s" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Lecture</p></td>
 <td></td>
@@ -655,16 +642,9 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 </div>
 </section>
 <section id="fall-schedule">
-<h2><a class="toc-backref" href="#id2">Fall Schedule</a><a class="headerlink" href="#fall-schedule" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Fall Schedule</a><a class="headerlink" href="#fall-schedule" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Tuesday</p></th>
@@ -677,31 +657,31 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 <tr class="row-even"><td><p>Week 01</p></td>
 <td><p><span class="xref myst"></span></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Analysis</span><br><a class="reference internal" href="assets/lecture/overview.html"><span class="doc std std-doc">Introduction</span></a></p></td>
-<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%201%20C++%20Crash%20Course">C++ Crash Course</a></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2001%20C%2B%2B%20Crash%20Course">C++ Crash Course</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a2">A2 : Practical I</a><br><a class="reference external" href="https://ijchen.github.io/uri-csc212-mazeviz/">Maze Visualizer</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Week 02</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Analysis</span><br><a class="reference internal" href="assets/lecture/analysis.html"><span class="doc std std-doc">Analysis of Algorithms</span></a></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Analysis</span><br><a class="reference internal" href="assets/lecture/cost.html"><span class="doc std std-doc">Computational Cost</span></a></p></td>
-<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%202%20Runtime%20Clocking">Runtime Clocking</a></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2002%20Runtime%20Clocking">Runtime Clocking</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a2">A2 : Practical I</a><br><a class="reference external" href="https://ijchen.github.io/uri-csc212-mazeviz/">Maze Visualizer</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Week 03</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Linear</span> <br> <a class="reference internal" href="assets/lecture/dyn_arr.html"><span class="doc std std-doc">Dynamic Arrays</span></a></p></td>
 <td><p><a class="reference internal" href="assets/lecture/admin_day.html"><span class="doc std std-doc">Admin Day</span></a><br><a class="reference external" href="https://github.com/uricsc/212-Deliverables/blob/main/Term%20Project.md">Term Project</a></p></td>
-<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%203%20Dynamic%20Arrays">Dynamic Arrays</a></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2003%20Dynamic%20Arrays">Dynamic Arrays</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a2">A2 : Practical I</a><br><a class="reference external" href="https://ijchen.github.io/uri-csc212-mazeviz/">Maze Visualizer</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Week 04</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Linear</span> <br> <a class="reference internal" href="assets/lecture/ll.html"><span class="doc std std-doc">Linked Lists</span></a></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Analysis</span><br><a class="reference internal" href="assets/lecture/big_o.html"><span class="doc std std-doc">Big-O</span></a></p></td>
-<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%204%20Linked%20Lists">Linked Lists</a></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2004%20Linked%20Lists">Linked Lists</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/blob/main/Assignments/a3/assignment_3.pdf">A3 : Conceptual I</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Week 05</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Linear</span> <br> <a class="reference internal" href="assets/lecture/stacks.html"><span class="doc std std-doc">Stacks</span></a> <br> <a class="reference internal" href="assets/lecture/queues.html"><span class="doc std std-doc">Queues</span></a></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Linear</span> <br> <a class="reference internal" href="assets/lecture/pq.html"><span class="doc std std-doc">Priority Queues</span></a> <br> <a class="reference internal" href="assets/lecture/rec_algo.html"><span class="doc std std-doc">Recursive Algorithms</span></a></p></td>
-<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%205%20Priority%20Queues">Priority Queues</a></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2005%20Priority%20Queues">Priority Queues</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/blob/main/Assignments/a3/assignment_3.pdf">A3 : Conceptual I</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Week 06</p></td>
@@ -712,27 +692,27 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 </tr>
 <tr class="row-even"><td><p>Week 07</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Search &amp; Sort</span> <br> <a class="reference internal" href="assets/lecture/recur.html"><span class="doc std std-doc">Recurrences</span></a></p></td>
-<td><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Search &amp; Sort</span> <br> <a class="reference internal" href="assets/lecture/qs.html"><span class="doc std std-doc">Quicksort</span></a> <br> <a class="reference internal" href="assets/lecture/merge.html"><span class="doc std std-doc">Mergesort</span></a></p></td>
+<td><p>Sick Day <!-- - {bdg-warning}`Search & Sort` <br> [Quicksort](/assets/lecture/qs.md) <br> [Mergesort](/assets/lecture/merge.md) --></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2007%20Backtracking">Backtracking</a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/blob/main/Assignments/a3/assignment_3.pdf">A3 : Conceptual I</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Week 08</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/bst.html"><span class="doc std std-doc">Binary Search Trees</span></a> <br> <a class="reference internal" href="assets/lecture/heaps.html"><span class="doc std std-doc">Heaps</span></a></p></td>
-<td><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Search &amp; Sort</span> <br> <a class="reference internal" href="assets/lecture/heapsort.html"><span class="doc std std-doc">Heapsort</span></a> <br> <a class="reference internal" href="assets/lecture/introsort.html"><span class="doc std std-doc">Introsort</span></a></p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Search &amp; Sort</span> <br> <a class="reference internal" href="assets/lecture/qs.html"><span class="doc std std-doc">Quicksort</span></a> <br> <a class="reference internal" href="assets/lecture/merge.html"><span class="doc std std-doc">Mergesort</span></a> <!-- - {bdg-warning}`Search & Sort` <br> [Heapsort](/assets/lecture/heapsort.md) <br> [Introsort](/assets/lecture/introsort.md) --></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2008%20Binary%20Search%20Trees">Binary Search Trees</a></p></td>
-<td><p><span class="xref myst">A4 : Practical II</span></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a4">A4 : Practical II</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Week 09</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/set.html"><span class="doc std std-doc">Sets</span></a> <br> <a class="reference internal" href="assets/lecture/map.html"><span class="doc std std-doc">Maps</span></a></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/2_3.html"><span class="doc std std-doc">2-3 Trees</span></a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2009%20Sets%20%26%20Maps">Sets &amp; Maps</a></p></td>
-<td><p><span class="xref myst">A4 : Practical II</span></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a4">A4 : Practical II</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Week 10</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/llrbt.html"><span class="doc std std-doc">Left-leaning Red Black Trees</span></a></p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/greedy.html"><span class="doc std std-doc">Greedy Algorithms</span></a></p></td>
 <td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Labs/Lab%2011%20Balancing%20Act">Balancing Act</a></p></td>
-<td><p><span class="xref myst">A4 : Practical II</span></p></td>
+<td><p><a class="reference external" href="https://github.com/uricsc/212-Deliverables/tree/main/Assignments/a4">A4 : Practical II</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Week 11</p></td>
 <td><p><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Non-Linear</span> <br> <a class="reference internal" href="assets/lecture/hash_tables.html"><span class="doc std std-doc">Hash Tables</span></a></p></td>
@@ -763,9 +743,9 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 </div>
 </section>
 <section id="syllabus">
-<h2><a class="toc-backref" href="#id3">Syllabus</a><a class="headerlink" href="#syllabus" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Syllabus</a><a class="headerlink" href="#syllabus" title="Permalink to this heading">#</a></h2>
 <section id="course-description">
-<h3><a class="toc-backref" href="#id4">Course Description</a><a class="headerlink" href="#course-description" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Course Description</a><a class="headerlink" href="#course-description" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -776,7 +756,7 @@ The course will be formally taught remotely via zoom. Classrooms listed below ma
 </div>
 </section>
 <section id="course-staff">
-<h3><a class="toc-backref" href="#id5">Course Staff</a><a class="headerlink" href="#course-staff" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Course Staff</a><a class="headerlink" href="#course-staff" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -804,21 +784,11 @@ Office Hours scheduled and by appointment <em>[via EdStem]</em></p>
 </div>
 </section>
 <section id="office-hours">
-<h3><a class="toc-backref" href="#id6">Office Hours</a><a class="headerlink" href="#office-hours" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Office Hours</a><a class="headerlink" href="#office-hours" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p class="sd-card-text">Monday</p></th>
@@ -944,10 +914,7 @@ Office Hours scheduled and by appointment <em>[via EdStem]</em></p>
 <p class="sd-card-text">Unless otherwise stated, OH are held on the ground floor of Tyler Hall in the lounge area outside 053/055…</p>
 </div>
 </div>
-</div>
-</section>
-<section id="support-tools-and-technology">
-<h3><a class="toc-backref" href="#id7">Support Tools and Technology</a><a class="headerlink" href="#support-tools-and-technology" title="Permalink to this heading">#</a></h3>
+<p class="rubric">Support Tools and Technology</p>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -973,9 +940,10 @@ Technology</div>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="student-learning-outcomes">
-<h3><a class="toc-backref" href="#id8">Student Learning Outcomes</a><a class="headerlink" href="#student-learning-outcomes" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Student Learning Outcomes</a><a class="headerlink" href="#student-learning-outcomes" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -994,7 +962,7 @@ Technology</div>
 </div>
 </section>
 <section id="recommended-textbooks">
-<h3><a class="toc-backref" href="#id9">Recommended Textbooks</a><a class="headerlink" href="#recommended-textbooks" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Recommended Textbooks</a><a class="headerlink" href="#recommended-textbooks" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1010,7 +978,7 @@ Technology</div>
 </div>
 </section>
 <section id="course-components">
-<h3><a class="toc-backref" href="#id10">Course Components</a><a class="headerlink" href="#course-components" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Course Components</a><a class="headerlink" href="#course-components" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1049,18 +1017,12 @@ Exam</div>
 </div>
 </div>
 <section id="grading">
-<h4><a class="toc-backref" href="#id11">Grading</a><a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h4>
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">Grading</a><a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h4>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <!-- TODO : SUMMER SCHEDULE -->
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Task</p></th>
 <th class="head"><p class="sd-card-text">Quantity</p></th>
@@ -1132,19 +1094,6 @@ Exam</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">A</p></th>
 <th class="head"><p class="sd-card-text">A-</p></th>
@@ -1202,7 +1151,7 @@ No further consideration with granted for extension.
 <!-- TODO : REGULAR TERM -->
 </section>
 <section id="attendance-submission">
-<h4><a class="toc-backref" href="#id12">Attendance &amp; Submission</a><a class="headerlink" href="#attendance-submission" title="Permalink to this heading">#</a></h4>
+<h4><a class="toc-backref" href="#id11" role="doc-backlink">Attendance &amp; Submission</a><a class="headerlink" href="#attendance-submission" title="Permalink to this heading">#</a></h4>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1268,10 +1217,7 @@ No further consideration with granted for extension.
 </div>
 </div>
 </div>
-</div>
-</section>
-<section id="late-submissions-extensions">
-<h4><a class="toc-backref" href="#id13">Late Submissions &amp; Extensions</a><a class="headerlink" href="#late-submissions-extensions" title="Permalink to this heading">#</a></h4>
+<p class="rubric">Late Submissions &amp; Extensions</p>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1306,10 +1252,11 @@ No further consideration with granted for extension.
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="administrative">
-<h3><a class="toc-backref" href="#id14">Administrative</a><a class="headerlink" href="#administrative" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Administrative</a><a class="headerlink" href="#administrative" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1381,7 +1328,7 @@ Religious Holidays</div>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1438,13 +1385,11 @@ Religious Holidays</div>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-staff">Course Staff</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#office-hours">Office Hours</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-tools-and-technology">Support Tools and Technology</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-learning-outcomes">Student Learning Outcomes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended Textbooks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-components">Course Components</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance-submission">Attendance &amp; Submission</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-submissions-extensions">Late Submissions &amp; Extensions</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#administrative">Administrative</a></li>

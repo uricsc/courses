@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Operators &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -486,8 +483,8 @@ document.write(`
 </details><div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6480bc85-1c57-4aa6-a79f-7801a17f312b" name="7d4bd888-bb93-4dcc-ad06-29899f3f4302" type="radio">
-</input><label class="sd-tab-label" for="6480bc85-1c57-4aa6-a79f-7801a17f312b">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Arithmetic</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p class="sd-card-text">Arithmetic operators are used to perform mathematical calculations.</p>
@@ -503,8 +500,8 @@ Arithmetic</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0910e6d6-cb0f-41d2-aaa0-77d72dd94a6c" name="7d4bd888-bb93-4dcc-ad06-29899f3f4302" type="radio">
-</input><label class="sd-tab-label" for="0910e6d6-cb0f-41d2-aaa0-77d72dd94a6c">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Logical</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p class="sd-card-text">Logical operators are used to perform logical operations on boolean values.</p>
@@ -519,8 +516,8 @@ Logical</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b6b2c951-de22-4d99-9ab1-7cd33171b135" name="7d4bd888-bb93-4dcc-ad06-29899f3f4302" type="radio">
-</input><label class="sd-tab-label" for="b6b2c951-de22-4d99-9ab1-7cd33171b135">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Bitwise</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p class="sd-card-text">Bitwise operators are used to perform operations on individual bits of integer values.</p>
@@ -538,8 +535,8 @@ Bitwise</label><div class="sd-tab-content docutils">
 </div>
 <p class="sd-card-text">These are just a few examples of the types of operators in C++. It’s important to note that the usage and behavior of operators can vary depending on the data types they are used with.</p>
 </div>
-<input id="4500a22e-6e84-4a38-ac4b-3d1ce24060fb" name="7d4bd888-bb93-4dcc-ad06-29899f3f4302" type="radio">
-</input><label class="sd-tab-label" for="4500a22e-6e84-4a38-ac4b-3d1ce24060fb">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Relational</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p class="sd-card-text">Relational operators are used to compare values and return a boolean result (true or false).</p>
@@ -556,8 +553,8 @@ Relational</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c2b7d90d-aa9b-4eaf-b98c-281f50a9a3ae" name="7d4bd888-bb93-4dcc-ad06-29899f3f4302" type="radio">
-</input><label class="sd-tab-label" for="c2b7d90d-aa9b-4eaf-b98c-281f50a9a3ae">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Assignment</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p class="sd-card-text">Assignment operators are used to assign values to variables.</p>
@@ -591,7 +588,7 @@ Assignment</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

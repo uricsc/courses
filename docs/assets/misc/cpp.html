@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>C++ &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -466,7 +463,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-process">Installation Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mingw">Install MinGW</a></li>
 </ul>
             </nav>
         </div>
@@ -501,7 +497,7 @@ document.write(`
 <p>GCC, which stands for the “GNU Compiler Collection,” is a suite of compilers and related tools that provide the means to compile and build software written in various programming languages. It is one of the most widely used compiler collections in the software development community and plays a crucial role in translating human-readable source code into machine-executable binaries.</p>
 <p>Initially developed by the Free Software Foundation (FSF), GCC is released under the GNU General Public License (GPL) and is open source. It supports a diverse range of programming languages, including C, C++, Fortran, Ada, and others. This versatility aligns well with your role as a Computer Science professor, as it allows you to explore multiple languages and demonstrate their unique features to your students.</p>
 <p>GCC consists of several components, including:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><strong>Frontends</strong>: These components are responsible for parsing the source code written in different programming languages and converting it into an intermediate representation known as “GCC intermediate representation” (GIMPLE). This representation simplifies the subsequent stages of optimization.</p></li>
 <li><p><strong>Middleend</strong>: The middleend of GCC performs optimizations on the GIMPLE representation. These optimizations aim to improve the performance and efficiency of the compiled code, making it execute faster and use resources more effectively.</p></li>
 <li><p><strong>Backends</strong>: Backends take the optimized GIMPLE representation and generate target-specific assembly code or machine code. This step is crucial for producing executable binaries that can run on specific hardware architectures.</p></li>
@@ -516,10 +512,14 @@ document.write(`
 <li><p>Open a terminal and enter the following: <code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code>, then click <kbd>return</kbd></p></li>
 </ul>
 <p><strong>WindowsOS</strong></p>
-<ul class="simple">
-<li></li>
-<li><p>Update the Path Environment</p>
 <ul>
+<li><p class="rubric">Install MinGW</p>
+<ul class="simple">
+<li><p>(<em>Note: Remember/record the location you have installed to locally, you’ll need it in he step…</em>)</p></li>
+</ul>
+</li>
+<li><p>Update the Path Environment</p>
+<ul class="simple">
 <li><p>Open <kbd>System Properties</kbd> -&gt; <kbd>Advanced</kbd> -&gt; <kbd>Environment Variables</kbd></p></li>
 <li><p>Under <kbd>System Variables</kbd>, scroll down and find <kbd>Path Variable</kbd> and press <kbd>Edit</kbd></p>
 <ul>
@@ -535,7 +535,7 @@ document.write(`
 <p class="admonition-title">What is it?</p>
 <p>An Integrated Development Environment (IDE) in the field of Computer Science is a software application that provides a comprehensive platform for software development. It encompasses a collection of tools, features, and functionalities that facilitate the entire software development lifecycle, from writing and editing code to testing and debugging, and finally to building and deploying applications.</p>
 <p>IDEs are designed to enhance a programmer’s efficiency and productivity by offering a centralized workspace where various development tasks can be performed seamlessly. Some common features of IDEs include:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><strong>Code Editor</strong>: A code editor is a fundamental component of an IDE, offering features like syntax highlighting, code completion, and code navigation to help developers write code more efficiently.</p></li>
 <li><p><strong>Debugger</strong>: IDEs include debugging tools that enable programmers to identify and rectify errors within their code by providing step-by-step execution, breakpoints, and variable inspection.</p></li>
 <li><p><strong>Compiler/Interpreter Integration</strong>: Many IDEs come with built-in compilers or interpreters that allow developers to compile and run their code without needing to switch between different applications.</p></li>
@@ -570,12 +570,6 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="install-mingw">
-<h2>Install MinGW<a class="headerlink" href="#install-mingw" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>(<em>Note: Remember/record the location you have installed to locally, you’ll need it in he step…</em>)</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -590,7 +584,7 @@ document.write(`
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/misc"
         },
         predefinedOutput: true
@@ -642,7 +636,6 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-process">Installation Process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mingw">Install MinGW</a></li>
 </ul>
   </nav></div>
 

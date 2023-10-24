@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Searching &amp; Sorting &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -506,7 +503,7 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">Searching is the process of finding a specific value in a collection of data. Common searching algorithms include:</p>
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-Linear-search">Linear search<a class="headerlink" href="#term-Linear-search" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">A simple algorithm that sequentially checks each element of the collection until the target value is found. This algorithm has a time complexity of <span class="math notranslate nohighlight">\(O(n)\)</span> in the worst case.</p>
 </dd>
 <dt id="term-Binary-search">Binary search<a class="headerlink" href="#term-Binary-search" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">A more efficient algorithm that divides the collection in half and compares the target value to the middle element. This process is repeated until the target value is found or the collection is exhausted. This algorithm has a time complexity of <span class="math notranslate nohighlight">\(O(log\ n)\)</span> in the worst case, making it much faster than linear search for large collections.</p>
@@ -520,7 +517,7 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">Sorting is the process of arranging elements in a specific order, such as ascending or descending order. Common sorting algorithms include:</p>
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-Insertion-sort">Insertion sort<a class="headerlink" href="#term-Insertion-sort" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">An algorithm that builds the sorted collection one element at a time, by comparing each element with the previous elements and inserting it into the correct position. This algorithm has a time complexity of <span class="math notranslate nohighlight">\(O(n^2)\)</span> in the worst case.</p>
 </dd>
 <dt id="term-Merge-sort">Merge sort<a class="headerlink" href="#term-Merge-sort" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">A divide-and-conquer algorithm that recursively divides the collection in half, sorts each half, and then merges the sorted halves back together. This algorithm has a time complexity of <span class="math notranslate nohighlight">\(O(n\ log\ n)\)</span> in the worst case, making it much faster than bubble and insertion sort for large collections.</p>
@@ -559,7 +556,7 @@ document.write(`
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/module"
         },
         predefinedOutput: true

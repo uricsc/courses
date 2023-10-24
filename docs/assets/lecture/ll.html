@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Linked Lists &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -565,7 +562,7 @@ Additional Resources</div>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-Sequence-Containers">Sequence Containers<a class="headerlink" href="#term-Sequence-Containers" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">Maintain the ordering of inserted elements that you specify.</p>
 </dd>
 </dl>
@@ -574,18 +571,18 @@ Additional Resources</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="25e219b5-859b-49cf-84da-b52eba8c8d97" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="25e219b5-859b-49cf-84da-b52eba8c8d97">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Sequence Containers</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <a class="reference internal image-reference" href="https://hackingcpp.com/cpp/std/sequence_containers.png"><img alt="https://hackingcpp.com/cpp/std/sequence_containers.png" src="https://hackingcpp.com/cpp/std/sequence_containers.png" style="height: 600px;" /></a>
 </figure>
 </div>
-<input id="dda0cd8e-5c83-425a-aaf4-2c8de5a8b281" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="dda0cd8e-5c83-425a-aaf4-2c8de5a8b281">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Containers</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">Arrays, vectors, forward lists, and lists are all data structures used in computer science and programming to store collections of data. Each of these data structures has its own strengths and weaknesses, and understanding the differences between them can help you choose the best one for your particular application.</p>
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-Array">Array<a class="headerlink" href="#term-Array" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">a data structure that stores a fixed-size sequential collection of elements of the same type. The elements of an array are stored in contiguous memory locations, making it easy to access them using an index. Arrays are efficient when you know the size of the data in advance, and you need to access the elements randomly.</p>
 </dd>
 <dt id="term-Vector">Vector<a class="headerlink" href="#term-Vector" title="Permalink to this term">#</a></dt><dd><p class="sd-card-text">a dynamic array that can grow or shrink as needed. It is similar to an array, but it can change its size dynamically during runtime. The elements of a vector are stored in contiguous memory locations, making it easy to access them using an index. Vectors are useful when you don’t know the size of the data in advance, or when you need to insert or delete elements from the middle of the collection.</p>
@@ -597,8 +594,8 @@ Containers</label><div class="sd-tab-content docutils">
 </dl>
 <p class="sd-card-text">In summary, arrays and vectors are best for situations where you need random access to elements and the size of the collection is known in advance. Forward lists and lists are better for situations where you need to insert or delete elements from the beginning, middle, or end of the collection, or when you need to maintain a sorted collection.</p>
 </div>
-<input id="7aabe862-f85c-4ef1-bcdd-9e87a50bb28e" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="7aabe862-f85c-4ef1-bcdd-9e87a50bb28e">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Array Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -637,8 +634,8 @@ Array Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="ecb1c11b-bc80-4ee1-89fc-acae2206940a" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="ecb1c11b-bc80-4ee1-89fc-acae2206940a">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Array Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-array-https-en-cppreference-com-w-cpp-container-array admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/array">array</a></p>
@@ -712,8 +709,8 @@ Array Functions</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/array">link: cppreference</a></p>
 </div>
 </div>
-<input id="7ad43534-826b-4829-834c-09ace8267d40" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="7ad43534-826b-4829-834c-09ace8267d40">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Vector Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -768,8 +765,8 @@ Vector Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="2270096c-3a9e-4b07-b09b-0cfac822b103" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="2270096c-3a9e-4b07-b09b-0cfac822b103">
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Vector Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-vector-https-en-cppreference-com-w-cpp-container-vector admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">vector</a></p>
@@ -836,8 +833,8 @@ Vector Functions</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">link: cppreference</a></p>
 </div>
 </div>
-<input id="2fae4eda-814a-4246-8f61-eae5dcc44d5a" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="2fae4eda-814a-4246-8f61-eae5dcc44d5a">
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Forward-list Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -891,8 +888,8 @@ Forward-list Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="d26dd8d2-a755-456b-aba7-ee8ea603bc4b" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="d26dd8d2-a755-456b-aba7-ee8ea603bc4b">
+<input id="sd-tab-item-7" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Forward-list Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-forward-list-https-en-cppreference-com-w-cpp-container-forward-list admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/forward_list">forward-list</a></p>
@@ -940,8 +937,8 @@ Forward-list Functions</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/forward_list">link: cppreference</a></p>
 </div>
 </div>
-<input id="e110ab9a-c4c9-4957-909f-d5eaa689b417" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="e110ab9a-c4c9-4957-909f-d5eaa689b417">
+<input id="sd-tab-item-8" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 List Allocation</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -994,8 +991,8 @@ List Allocation</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="bca9aba2-91d0-4d33-87ec-930e56490b68" name="3d1e54c3-dbe2-4581-ab5a-267a25d00f31" type="radio">
-</input><label class="sd-tab-label" for="bca9aba2-91d0-4d33-87ec-930e56490b68">
+<input id="sd-tab-item-9" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 List Functions</label><div class="sd-tab-content docutils">
 <div class="admonition-list-https-en-cppreference-com-w-cpp-container-list admonition">
 <p class="admonition-title"><a class="reference external" href="https://en.cppreference.com/w/cpp/container/list">list</a></p>
@@ -1259,8 +1256,8 @@ Linked lists in C++</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="60d88921-20a1-413c-a5b8-8d564fa14e17" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="60d88921-20a1-413c-a5b8-8d564fa14e17">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 Insert&#64;Head</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1290,8 +1287,8 @@ Algorithm of insertion at the beginning</div>
 </div>
 </div>
 </div>
-<input id="eb5dafe6-573d-4d76-95ff-abec542fb0bf" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="eb5dafe6-573d-4d76-95ff-abec542fb0bf">
+<input id="sd-tab-item-11" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 Insert&#64;Tail</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1325,8 +1322,8 @@ To insert element in linked list last we would use the following steps to insert
 </div>
 </div>
 </div>
-<input id="3872b28e-5dc0-4b02-a231-6026b41ce0b6" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="3872b28e-5dc0-4b02-a231-6026b41ce0b6">
+<input id="sd-tab-item-12" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Insert&#64;Nth</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1355,8 +1352,8 @@ Insertion at After nth position node</div>
 </div>
 </div>
 </div>
-<input id="a5628d47-8432-4649-a0ff-85754a833f6c" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="a5628d47-8432-4649-a0ff-85754a833f6c">
+<input id="sd-tab-item-13" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 Delete&#64;Tail</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1388,8 +1385,8 @@ Delete an element from end in singly linked list</div>
 </div>
 </div>
 </div>
-<input id="c3a9884f-b9db-4be3-832d-8638e5bef178" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="c3a9884f-b9db-4be3-832d-8638e5bef178">
+<input id="sd-tab-item-14" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 Delete&#64;Head</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1418,8 +1415,8 @@ Insertion at After nth position node</div>
 </div>
 </div>
 </div>
-<input id="b283d4ba-4d4b-4762-b61f-11a7feca7fae" name="d2e08363-b867-4086-a87c-298b95d1a0fc" type="radio">
-</input><label class="sd-tab-label" for="b283d4ba-4d4b-4762-b61f-11a7feca7fae">
+<input id="sd-tab-item-15" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 Delete&#64;Nth</label><div class="sd-tab-content docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -1606,15 +1603,15 @@ For virtual walkthroughs : [https://visualgo.net/en/list](https://visualgo.net/e
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="976fd679-fc51-40de-badf-a143e839ea0c" name="cf46eed5-7001-4417-885f-7b1938ec5e08" type="radio">
-</input><label class="sd-tab-label" for="976fd679-fc51-40de-badf-a143e839ea0c">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 Visualize</label><div class="sd-tab-content docutils">
 <figure class="align-default">
 <img alt="https://i1.faceprep.in/Companies-1/types-of-linked-list.png" src="https://i1.faceprep.in/Companies-1/types-of-linked-list.png" />
 </figure>
 </div>
-<input id="f495b273-a1d4-4d6b-9f21-af3561e60f09" name="cf46eed5-7001-4417-885f-7b1938ec5e08" type="radio">
-</input><label class="sd-tab-label" for="f495b273-a1d4-4d6b-9f21-af3561e60f09">
+<input id="sd-tab-item-17" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 Circular Singly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/circular-singly-linked-list-insertion/">Circular Singly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -1663,8 +1660,8 @@ Circular Singly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp">https://www.geeksforgeeks.org/circular-linked-list/?ref=lbp</a></p>
 </div>
 </div>
-<input id="38cbf751-ca63-414e-9a20-d0a2a226a837" name="cf46eed5-7001-4417-885f-7b1938ec5e08" type="radio">
-</input><label class="sd-tab-label" for="38cbf751-ca63-414e-9a20-d0a2a226a837">
+<input id="sd-tab-item-18" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 Doubly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/doubly-linked-list-tutorial/">Doubly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -1688,8 +1685,8 @@ Doubly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.geeksforgeeks.org/doubly-linked-list/?ref=lbp">https://www.geeksforgeeks.org/doubly-linked-list/?ref=lbp</a></p>
 </div>
 </div>
-<input id="6ef6019b-d6ca-4f74-a72c-fda6157fc52a" name="cf46eed5-7001-4417-885f-7b1938ec5e08" type="radio">
-</input><label class="sd-tab-label" for="6ef6019b-d6ca-4f74-a72c-fda6157fc52a">
+<input id="sd-tab-item-19" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 Circular Doubly Linked</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><a class="reference external" href="https://www.javatpoint.com/circular-doubly-linked-list">Circular Doubly Linked List</a></p>
 <div class="admonition-pseudocode admonition">
@@ -1741,17 +1738,10 @@ Circular Doubly Linked</label><div class="sd-tab-content docutils">
 <div class="admonition-array-v-linked-list admonition">
 <p class="admonition-title">array v. linked list</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="143cad05-ba51-44fb-93f2-41bb86414f9c" name="cb142902-abf4-4258-a5ac-d6f28ddf2df2" type="radio">
-</input><label class="sd-tab-label" for="143cad05-ba51-44fb-93f2-41bb86414f9c">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 Best-case</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>access</p></th>
@@ -1782,17 +1772,10 @@ Best-case</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<input id="d71c5aa0-80de-495f-b22a-b58a65e980df" name="cb142902-abf4-4258-a5ac-d6f28ddf2df2" type="radio">
-</input><label class="sd-tab-label" for="d71c5aa0-80de-495f-b22a-b58a65e980df">
+<input id="sd-tab-item-21" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 Worst-case</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>access</p></th>
@@ -1823,17 +1806,10 @@ Worst-case</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<input id="e3c4ce39-3bd2-4a7f-b158-224305de951d" name="cb142902-abf4-4258-a5ac-d6f28ddf2df2" type="radio">
-</input><label class="sd-tab-label" for="e3c4ce39-3bd2-4a7f-b158-224305de951d">
+<input id="sd-tab-item-22" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 Average-case</label><div class="sd-tab-content docutils">
 <table class="table">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>access</p></th>
@@ -1882,7 +1858,7 @@ Average-case</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

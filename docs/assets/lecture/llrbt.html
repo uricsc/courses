@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Left-Leaning Red-Black Trees &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -581,8 +578,8 @@ $b\ is\ the\ larger\ root\ key$
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c121e596-b79f-47cc-aafe-174140cab4e1" name="c003ba3c-7c3a-4bbc-900d-4e0cedad516b" type="radio">
-</input><label class="sd-tab-label" for="c121e596-b79f-47cc-aafe-174140cab4e1">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Applications</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -598,8 +595,8 @@ Applications</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">– Geeks For Geeks</p>
 </div></blockquote>
 </div>
-<input id="ae76d619-e6a5-4f09-a3d7-44e588cb185e" name="c003ba3c-7c3a-4bbc-900d-4e0cedad516b" type="radio">
-</input><label class="sd-tab-label" for="ae76d619-e6a5-4f09-a3d7-44e588cb185e">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Advantages</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -611,8 +608,8 @@ Advantages</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">– Geeks For Geeks</p>
 </div></blockquote>
 </div>
-<input id="8296cc41-c52b-4c78-a12c-97c963fa998e" name="c003ba3c-7c3a-4bbc-900d-4e0cedad516b" type="radio">
-</input><label class="sd-tab-label" for="8296cc41-c52b-4c78-a12c-97c963fa998e">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Disadvantages</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><ul class="simple">
@@ -634,16 +631,16 @@ Disadvantages</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b2a1c4ae-0af5-472e-88b2-2fb1b9e929c9" name="ef0a78d7-da18-44e7-a00a-631496eb2bc7" type="radio">
-</input><label class="sd-tab-label" for="b2a1c4ae-0af5-472e-88b2-2fb1b9e929c9">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Challenge</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><strong>How to represent a 3-node?</strong></p>
 <figure class="align-center">
 <img alt="https://iq.opengenus.org/content/images/2020/06/2-3-Tree-1.png" src="https://iq.opengenus.org/content/images/2020/06/2-3-Tree-1.png" />
 </figure>
 </div>
-<input id="7392edcd-f4e5-4500-b7fb-48e86eecc944" name="ef0a78d7-da18-44e7-a00a-631496eb2bc7" type="radio">
-</input><label class="sd-tab-label" for="7392edcd-f4e5-4500-b7fb-48e86eecc944">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Approach 1</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -661,8 +658,8 @@ Regular BST<div class="sd-summary-down docutils">
 <img alt="../../_images/17_02.png" src="../../_images/17_02.png" />
 </figure>
 </div>
-<input id="930b2a06-d31b-4fce-ac11-1335b228d09f" name="ef0a78d7-da18-44e7-a00a-631496eb2bc7" type="radio">
-</input><label class="sd-tab-label" for="930b2a06-d31b-4fce-ac11-1335b228d09f">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Approach 2</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -680,8 +677,8 @@ Regular BST with red “glue” nodes<div class="sd-summary-down docutils">
 <img alt="../../_images/17_03.png" src="../../_images/17_03.png" />
 </figure>
 </div>
-<input id="04d003a7-c663-484b-b474-8d5bcc5c5934" name="ef0a78d7-da18-44e7-a00a-631496eb2bc7" type="radio">
-</input><label class="sd-tab-label" for="04d003a7-c663-484b-b474-8d5bcc5c5934">
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Approach 3</label><div class="sd-tab-content docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -719,7 +716,7 @@ Key Properties</div>
 <figure class="align-center" id="id1">
 <img alt="../../_images/17_07.png" src="../../_images/17_07.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text"><span class="math notranslate nohighlight">\(2-3\ tree\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text"><span class="math notranslate nohighlight">\(2-3\ tree\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -731,7 +728,7 @@ Key Properties</div>
 <figure class="align-center" id="id2">
 <img alt="../../_images/17_09.png" src="../../_images/17_09.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text"><span class="math notranslate nohighlight">\(horizontal\ red\ links\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text"><span class="math notranslate nohighlight">\(horizontal\ red\ links\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -743,7 +740,7 @@ Key Properties</div>
 <figure class="align-center" id="id3">
 <img alt="../../_images/17_08.png" src="../../_images/17_08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -774,7 +771,7 @@ A BST such that</div>
 <figure class="align-center" id="id4">
 <img alt="../../_images/17_08.png" src="../../_images/17_08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -813,7 +810,7 @@ A BST such that</div>
 <figure class="align-center" id="id5">
 <img alt="../../_images/17_08.png" src="../../_images/17_08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text"><span class="math notranslate nohighlight">\(red-black\ tree\)</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -897,53 +894,53 @@ A BST such that</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9871b584-6578-4b47-a46f-7d23d5270d1b" name="b2cce7c8-f7d5-4d68-b5ca-82ea1e194e95" type="radio">
-</input><label class="sd-tab-label" for="9871b584-6578-4b47-a46f-7d23d5270d1b">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/17_11.png"><img alt="../../_images/17_11.png" src="../../_images/17_11.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">BSTs can get imbalanced</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">BSTs can get imbalanced</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="9aa9969e-89d2-4348-adf3-160832d6e0dc" name="b2cce7c8-f7d5-4d68-b5ca-82ea1e194e95" type="radio">
-</input><label class="sd-tab-label" for="9aa9969e-89d2-4348-adf3-160832d6e0dc">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id7">
 <img alt="../../_images/17_07.png" src="../../_images/17_07.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">2-3 trees (balanced but awkward to implement)</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">2-3 trees (balanced but awkward to implement)</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="28a44716-64ec-49f5-ab40-f9e3e922e346" name="b2cce7c8-f7d5-4d68-b5ca-82ea1e194e95" type="radio">
-</input><label class="sd-tab-label" for="28a44716-64ec-49f5-ab40-f9e3e922e346">
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id8">
 <img alt="../../_images/17_09.png" src="../../_images/17_09.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">3-nodes “glued” together with red links</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">3-nodes “glued” together with red links</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="048db4ee-5043-4459-b5d0-ae8246a7f265" name="b2cce7c8-f7d5-4d68-b5ca-82ea1e194e95" type="radio">
-</input><label class="sd-tab-label" for="048db4ee-5043-4459-b5d0-ae8246a7f265">
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id9">
 <img alt="../../_images/17_08.png" src="../../_images/17_08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">LLRB trees (color in links)</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">LLRB trees (color in links)</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="f010c99f-dac5-443e-a1ed-9599a9b394b0" name="b2cce7c8-f7d5-4d68-b5ca-82ea1e194e95" type="radio">
-</input><label class="sd-tab-label" for="f010c99f-dac5-443e-a1ed-9599a9b394b0">
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id10">
 <img alt="../../_images/17_12.png" src="../../_images/17_12.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 45 </span><span class="caption-text">implementing LLRB trees (color in nodes)</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">implementing LLRB trees (color in nodes)</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -959,8 +956,8 @@ A BST such that</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="83dcbef1-67bf-4cd6-a475-135fdfc604c2" name="30aeff47-364d-45e0-b4a8-41e60dcd7b35" type="radio">
-</input><label class="sd-tab-label" for="83dcbef1-67bf-4cd6-a475-135fdfc604c2">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Overview</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -986,8 +983,8 @@ During internal operations, maintain</div>
 </div>
 </div>
 </div>
-<input id="50f0642f-9edc-4a09-830d-ac501dfa3495" name="30aeff47-364d-45e0-b4a8-41e60dcd7b35" type="radio">
-</input><label class="sd-tab-label" for="50f0642f-9edc-4a09-830d-ac501dfa3495">
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 Left rotation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1004,7 +1001,7 @@ Rotate E left</div>
 <figure class="align-center" id="id11">
 <img alt="../../_images/17_17.png" src="../../_images/17_17.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 46 </span><span class="caption-text">before…</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">before…</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1037,7 +1034,7 @@ Rotate E left</div>
 <figure class="align-center" id="id12">
 <img alt="../../_images/17_18.png" src="../../_images/17_18.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 47 </span><span class="caption-text">after…</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">after…</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1051,8 +1048,8 @@ Rotate E left</div>
 </div>
 </div>
 </div>
-<input id="e335713c-cf51-4d4b-9e00-09305fb52e6f" name="30aeff47-364d-45e0-b4a8-41e60dcd7b35" type="radio">
-</input><label class="sd-tab-label" for="e335713c-cf51-4d4b-9e00-09305fb52e6f">
+<input id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 Right rotation</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1069,7 +1066,7 @@ Rotate E right</div>
 <figure class="align-center" id="id13">
 <img alt="../../_images/17_18.png" src="../../_images/17_18.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 48 </span><span class="caption-text">before…</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">before…</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1102,7 +1099,7 @@ Rotate E right</div>
 <figure class="align-center" id="id14">
 <img alt="../../_images/17_17.png" src="../../_images/17_17.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 49 </span><span class="caption-text">after…</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">after…</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1116,8 +1113,8 @@ Rotate E right</div>
 </div>
 </div>
 </div>
-<input id="a360843a-a709-4719-afb7-b2efc17a90b8" name="30aeff47-364d-45e0-b4a8-41e60dcd7b35" type="radio">
-</input><label class="sd-tab-label" for="a360843a-a709-4719-afb7-b2efc17a90b8">
+<input id="sd-tab-item-15" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 Color flip</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -1134,7 +1131,7 @@ Color flip</div>
 <figure class="align-center" id="id15">
 <img alt="../../_images/17_19.png" src="../../_images/17_19.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 50 </span><span class="caption-text">before…</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">before…</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1166,7 +1163,7 @@ Color flip</div>
 <figure class="align-center" id="id16">
 <img alt="../../_images/17_20.png" src="../../_images/17_20.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 51 </span><span class="caption-text">after…</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">after…</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1218,53 +1215,53 @@ Repeat up the tree until color invariants restored</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Inserting H</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5d45e29b-b5f2-4e50-b595-f6f3569ec3ed" name="9aa77680-a276-4c95-8ade-614fc5d7186a" type="radio">
-</input><label class="sd-tab-label" for="5d45e29b-b5f2-4e50-b595-f6f3569ec3ed">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id17">
 <img alt="../../_images/17_21.png" src="../../_images/17_21.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 52 </span><span class="caption-text">[R]: add new node here</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">[R]: add new node here</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="c407f5cf-35bc-414f-a9fb-af95fe8b8e6b" name="9aa77680-a276-4c95-8ade-614fc5d7186a" type="radio">
-</input><label class="sd-tab-label" for="c407f5cf-35bc-414f-a9fb-af95fe8b8e6b">
+<input id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id18">
 <img alt="../../_images/17_22.png" src="../../_images/17_22.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 53 </span><span class="caption-text">[S]: two lefts in a row, rotate right</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">[S]: two lefts in a row, rotate right</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="59723b52-423e-4799-9613-75fbfb6f59f0" name="9aa77680-a276-4c95-8ade-614fc5d7186a" type="radio">
-</input><label class="sd-tab-label" for="59723b52-423e-4799-9613-75fbfb6f59f0">
+<input id="sd-tab-item-18" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id19">
 <img alt="../../_images/17_23.png" src="../../_images/17_23.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 54 </span><span class="caption-text">[R]: both children red, flip colors</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 57 </span><span class="caption-text">[R]: both children red, flip colors</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="cf232849-9814-4a72-92ff-4b2387def29a" name="9aa77680-a276-4c95-8ade-614fc5d7186a" type="radio">
-</input><label class="sd-tab-label" for="cf232849-9814-4a72-92ff-4b2387def29a">
+<input id="sd-tab-item-19" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id20">
 <img alt="../../_images/17_24.png" src="../../_images/17_24.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 55 </span><span class="caption-text">[E]: right link, so rotate left</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">[E]: right link, so rotate left</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="70c043ca-a65b-4f91-a89e-3a4ca854d33b" name="9aa77680-a276-4c95-8ade-614fc5d7186a" type="radio">
-</input><label class="sd-tab-label" for="70c043ca-a65b-4f91-a89e-3a4ca854d33b">
+<input id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id21">
 <img alt="../../_images/17_25.png" src="../../_images/17_25.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 56 </span><span class="caption-text">complete</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">complete</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1278,63 +1275,63 @@ Inserting H</div>
 <div class="sd-card-title sd-font-weight-bold docutils">
 Inserting P</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1d3e0ed8-2712-4e95-a3e0-fa40dce00ef5" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="1d3e0ed8-2712-4e95-a3e0-fa40dce00ef5">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 1</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id22">
 <img alt="../../_images/17_26.png" src="../../_images/17_26.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 57 </span><span class="caption-text">[M]: add new node here</span><a class="headerlink" href="#id22" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">[M]: add new node here</span><a class="headerlink" href="#id22" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="2cdb4a1c-d07c-4e94-8220-95baa02fbc1d" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="2cdb4a1c-d07c-4e94-8220-95baa02fbc1d">
+<input id="sd-tab-item-22" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 2</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id23">
 <img alt="../../_images/17_27.png" src="../../_images/17_27.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 58 </span><span class="caption-text">[M]: both children red, flip colors</span><a class="headerlink" href="#id23" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">[M]: both children red, flip colors</span><a class="headerlink" href="#id23" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="b97fd1d1-2189-447e-9126-8c13c17b344a" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="b97fd1d1-2189-447e-9126-8c13c17b344a">
+<input id="sd-tab-item-23" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
 3</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id24">
 <img alt="../../_images/17_28.png" src="../../_images/17_28.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 59 </span><span class="caption-text">right link red, rotate left</span><a class="headerlink" href="#id24" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">right link red, rotate left</span><a class="headerlink" href="#id24" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="1e1632f4-282b-48e8-b19e-ca964600d55a" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="1e1632f4-282b-48e8-b19e-ca964600d55a">
+<input id="sd-tab-item-24" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-24">
 4</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id25">
 <img alt="../../_images/17_29.png" src="../../_images/17_29.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 60 </span><span class="caption-text">two lefts in a row, rotate right</span><a class="headerlink" href="#id25" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">two lefts in a row, rotate right</span><a class="headerlink" href="#id25" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="48a0f22e-7eb1-446b-bdbf-b294c88c996c" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="48a0f22e-7eb1-446b-bdbf-b294c88c996c">
+<input id="sd-tab-item-25" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-25">
 5</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id26">
 <img alt="../../_images/17_30.png" src="../../_images/17_30.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 61 </span><span class="caption-text">both children red, flip colors</span><a class="headerlink" href="#id26" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">both children red, flip colors</span><a class="headerlink" href="#id26" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="55e56c51-97e7-45b3-928c-e2f9777890e8" name="27a44918-2cc6-4bd2-87bf-e85d2e5e06f1" type="radio">
-</input><label class="sd-tab-label" for="55e56c51-97e7-45b3-928c-e2f9777890e8">
+<input id="sd-tab-item-26" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-26">
 6</label><div class="sd-tab-content docutils">
 <figure class="align-center" id="id27">
 <img alt="../../_images/17_31.png" src="../../_images/17_31.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 62 </span><span class="caption-text">complete</span><a class="headerlink" href="#id27" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">complete</span><a class="headerlink" href="#id27" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1410,39 +1407,39 @@ Repeat up the tree until color invariants restored</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cc796288-1d9d-4b00-a06a-72666702279c" name="4d6fa3bf-89f3-466d-baf0-84b956f9bec3" type="radio">
-</input><label class="sd-tab-label" for="cc796288-1d9d-4b00-a06a-72666702279c">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-27">
 Random order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 9\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.3\)</span></p>
 <figure class="align-center" id="id28">
 <img alt="../../_images/17_32.png" src="../../_images/17_32.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 63 </span><span class="caption-text">random</span><a class="headerlink" href="#id28" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">random</span><a class="headerlink" href="#id28" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="5f73b025-07d1-4663-92b9-682b889ea620" name="4d6fa3bf-89f3-466d-baf0-84b956f9bec3" type="radio">
-</input><label class="sd-tab-label" for="5f73b025-07d1-4663-92b9-682b889ea620">
+<input id="sd-tab-item-28" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-28">
 Ascending order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 7\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.0\)</span></p>
 <figure class="align-center" id="id29">
 <img alt="../../_images/17_33.png" src="../../_images/17_33.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 64 </span><span class="caption-text">ascending</span><a class="headerlink" href="#id29" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">ascending</span><a class="headerlink" href="#id29" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<input id="f0572367-8e81-4836-ae13-2afbfe11f430" name="4d6fa3bf-89f3-466d-baf0-84b956f9bec3" type="radio">
-</input><label class="sd-tab-label" for="f0572367-8e81-4836-ae13-2afbfe11f430">
+<input id="sd-tab-item-29" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-29">
 Descending order</label><div class="sd-tab-content docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(height = 13\)</span><br />
 <span class="math notranslate nohighlight">\(average\ depth = 6.5\)</span></p>
 <figure class="align-center" id="id30">
 <img alt="../../_images/17_34.png" src="../../_images/17_34.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 65 </span><span class="caption-text">descending</span><a class="headerlink" href="#id30" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">descending</span><a class="headerlink" href="#id30" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1479,7 +1476,7 @@ Proof</div>
 <figure class="align-center" id="id31">
 <img alt="../../_images/17_35.png" src="../../_images/17_35.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 66 </span><span class="caption-text"><span class="math notranslate nohighlight">\(height\ \le 2\ log_2\ n\)</span></span><a class="headerlink" href="#id31" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text"><span class="math notranslate nohighlight">\(height\ \le 2\ log_2\ n\)</span></span><a class="headerlink" href="#id31" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1494,7 +1491,7 @@ Proof</div>
 <figure class="align-center" id="id32">
 <img alt="../../_images/17_table.png" src="../../_images/17_table.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 67 </span><span class="caption-text">hidden constant <span class="math notranslate nohighlight">\(c\)</span> is small for r-b BST<br> (at most <span class="math notranslate nohighlight">\(2\ log_2\ n\)</span> compares)</span><a class="headerlink" href="#id32" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 70 </span><span class="caption-text">hidden constant <span class="math notranslate nohighlight">\(c\)</span> is small for r-b BST<br> (at most <span class="math notranslate nohighlight">\(2\ log_2\ n\)</span> compares)</span><a class="headerlink" href="#id32" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1515,7 +1512,7 @@ Proof</div>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true

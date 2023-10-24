@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Inheritance &#8212; URI CSC &lt;br&gt; Core Course Modules</title>
   
@@ -33,12 +33,10 @@
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
@@ -50,16 +48,15 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -617,8 +614,8 @@ Fragile Base Class Problem<div class="sd-summary-down docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2b42d66a-0d3f-4cd1-92eb-a635f271b91a" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="2b42d66a-0d3f-4cd1-92eb-a635f271b91a">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Pseudocode</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/XHjuHPn8QKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>class Animal:
@@ -636,8 +633,8 @@ class Cat extends Animal:
 </pre></div>
 </div>
 </div>
-<input id="7d0f4b73-1e99-4baf-aee2-50110926a7a5" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="7d0f4b73-1e99-4baf-aee2-50110926a7a5">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 C++</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/X8nYM8wdNRE?si=c14qkCqIhzO7uyAV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -679,8 +676,8 @@ C++</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="eac4edab-1673-410d-8025-f73834a4f154" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="eac4edab-1673-410d-8025-f73834a4f154">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Python</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/6c6NYPjO_rI?si=ToU063_8pQcvUNED" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
@@ -705,8 +702,8 @@ Python</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="f34a889d-35a3-4b42-aad5-b73f8d83997f" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="f34a889d-35a3-4b42-aad5-b73f8d83997f">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Java</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/Zs342ePFvRI?si=DEXHT00J4iR5CxdZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
@@ -741,8 +738,8 @@ Java</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="75c0ed09-933d-49b8-87d1-33ff30009500" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="75c0ed09-933d-49b8-87d1-33ff30009500">
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Rust</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/UGDa0P2PXrY?si=T0rZ2DH7q2xgDeQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="k">trait</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
@@ -775,8 +772,8 @@ Rust</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2f93be6b-3a94-412a-ad4d-2d3ac008ff02" name="77ee20d7-ac4e-4a5c-95c9-547612964793" type="radio">
-</input><label class="sd-tab-label" for="2f93be6b-3a94-412a-ad4d-2d3ac008ff02">
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Golang</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/I0Ei70cZtf8?si=81DcyWUzBbYrvfP_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-golang notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
@@ -845,12 +842,6 @@ Meow!
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">Language</p></th>
 <th class="head"><p class="sd-card-text">Inheritance Syntax</p></th>
@@ -905,7 +896,7 @@ Meow!
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./assets/lecture"
         },
         predefinedOutput: true
