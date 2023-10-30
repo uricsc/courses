@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving &amp; Programming</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
@@ -175,9 +175,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Operators</a></li>
 </ul>
 </li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -208,11 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
 
@@ -439,7 +436,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -455,6 +454,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -471,6 +481,8 @@ document.write(`
 <img alt="https://i.ytimg.com/vi/1mbgeb4w3wc/maxresdefault.jpg" src="https://i.ytimg.com/vi/1mbgeb4w3wc/maxresdefault.jpg" />
 </figure>
 </div>
+<section id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -574,6 +586,148 @@ Assignment</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+<section id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key 1" for="sd-tab-item-5">
+Pseudocode</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/p98cayTo1Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>input length, width
+area = length * width
+print area
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key 2" for="sd-tab-item-6">
+C++</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/7zlRqvbuCGU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos"> 5</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+</span><span class="linenos"> 6</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter length: &quot;</span><span class="p">;</span>
+<span class="hll"><span class="linenos"> 7</span><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+</span><span class="linenos"> 8</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter width: &quot;</span><span class="p">;</span>
+<span class="hll"><span class="linenos"> 9</span><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+</span><span class="linenos">10</span>
+<span class="linenos">11</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Area of the rectangle: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key 3" for="sd-tab-item-7">
+Python</label><div class="sd-tab-content docutils">
+<iframe src="https://www.youtube.com/embed/v5MR5JnKcZI?si=8F2e9wQ4Q1xR6Kx_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="n">length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter length: &quot;</span><span class="p">))</span>
+</span><span class="hll"><span class="linenos">2</span><span class="n">width</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter width: &quot;</span><span class="p">))</span>
+</span><span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area of the rectangle:&quot;</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Java</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QSsjB1tMPhA?si=OJ2C7Utu6a5Ar-Cn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="hll"><span class="linenos"> 3</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos"> 4</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos"> 5</span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span class="linenos"> 6</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter length: &quot;</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="hll"><span class="linenos"> 9</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter width: &quot;</span><span class="p">);</span>
+</span><span class="linenos">10</span><span class="w">        </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Area of the rectangle: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key 4" for="sd-tab-item-9">
+Rust</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Uwa3P9dBHdA?si=Mu7Qizjayv7S-C04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos"> 2</span>
+</span><span class="hll"><span class="linenos"> 3</span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 4</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter length: &quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">length</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Please enter a valid number&quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos"> 8</span>
+</span><span class="linenos"> 9</span><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="linenos">10</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter width: &quot;</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">width</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Please enter a valid number&quot;</span><span class="p">);</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Area of the rectangle: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+<span class="linenos">16</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key 5" for="sd-tab-item-10">
+Golang</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VSCZmSqaVDQ?si=XZiHSclDE6F8S9Di" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="highlight-golang notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="hll"><span class="linenos"> 5</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 6</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 8</span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="kt">float64</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter length: &quot;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">length</span><span class="p">)</span>
+<span class="hll"><span class="linenos">12</span>
+</span><span class="linenos">13</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter width: &quot;</span><span class="p">)</span>
+<span class="linenos">14</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">width</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nx">area</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">width</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Area of the rectangle:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">area</span><span class="p">)</span>
+<span class="linenos">18</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important dropdown admonition">
+<p class="admonition-title">Output</p>
+<blockquote>
+<div><p class="sd-card-text">The code samples above calculate the <code class="docutils literal notranslate"><span class="pre">area</span></code> of a rectangle given its length and width. The user enters the <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code>, and the program performs the necessary calculations.</p>
+<p class="sd-card-text">Assume the user enters <code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">=</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">=</span> <span class="pre">7</span></code> for all the examples.</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>C++ / Rust / Golang</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Area<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>rectangle:<span class="w"> </span><span class="m">35</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Python / Java</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Area<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>rectangle:<span class="w"> </span><span class="m">35</span>.0
+</pre></div>
+</div>
+<p class="sd-card-text"><em>Note: the difference in each output is due directly to the nature of integer division within each given language.</em></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -630,6 +784,23 @@ Assignment</label><div class="sd-tab-content docutils">
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

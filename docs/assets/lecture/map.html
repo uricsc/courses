@@ -64,11 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'assets/lecture/map';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sets" href="set.html" />
-    <link rel="prev" title="Priority Queues" href="pq.html" />
+    <link rel="next" title="Trees" href="tree.html" />
+    <link rel="prev" title="Sets" href="set.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving &amp; Programming</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
@@ -175,9 +177,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
 </ul>
 </li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -202,17 +201,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Structures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m03.html">Linear Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m03.html">Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dyn_arr.html">Dynamic Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ll.html">Linked Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
 
@@ -439,7 +438,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -455,6 +456,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-disadvantages">Advantages &amp; Disadvantages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-time-complexity">Average-Time Complexity</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -466,6 +483,290 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="maps">
 <h1>Maps<a class="headerlink" href="#maps" title="Permalink to this heading">#</a></h1>
+<style>
+iframe {width:100%;height:70vh;}
+</style>
+<div class="full-width docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<iframe src="https://www.youtube.com/embed/aEgG4pidcKU?si=w1p_dnzb7in9TzNH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://icrontic.com/uploads/features/tech/2011/09/nothing_to_see_here.jpg" src="https://icrontic.com/uploads/features/tech/2011/09/nothing_to_see_here.jpg" />
+</figure>
+</div>
+</details></div>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<blockquote>
+<div><p>A set is a fundamental data structure in computer science that stores a collection of unique elements. It ensures that no duplicates are allowed, and it doesn’t impose a specific order on the elements.</p>
+</div></blockquote>
+</div>
+<section id="use-cases">
+<h3>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Databases</div>
+<figure class="align-default">
+<img alt="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Teaser/object-storage-t.jpg" src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Teaser/object-storage-t.jpg" />
+</figure>
+<p class="sd-card-text">Maps are used in database indexing to swiftly retrieve records based on unique keys, such as primary keys.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Symbol Tables</div>
+<figure class="align-default">
+<img alt="https://3.bp.blogspot.com/-BEk7U63kwxo/W72GP7DhO5I/AAAAAAAAF14/cUsEL7AyBuoDNUdSf3h_NbvCYUr4xe6AQCLcBGAs/s1600/Symbol%2BTable%2B%25281%2529.png" src="https://3.bp.blogspot.com/-BEk7U63kwxo/W72GP7DhO5I/AAAAAAAAF14/cUsEL7AyBuoDNUdSf3h_NbvCYUr4xe6AQCLcBGAs/s1600/Symbol%2BTable%2B%25281%2529.png" />
+</figure>
+<p class="sd-card-text">Compilers and interpreters employ maps to store identifiers (e.g., variable names) and associated attributes (e.g., data types).</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Caches</div>
+<figure class="align-default">
+<img alt="https://i.ytimg.com/vi/qsG7PsiEOcg/maxresdefault.jpg" src="https://i.ytimg.com/vi/qsG7PsiEOcg/maxresdefault.jpg" />
+</figure>
+<p class="sd-card-text">Maps are used in caching mechanisms to quickly access cached data. Keys typically represent URLs, file paths, or query results.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Network Routing</div>
+<figure class="align-default">
+<img alt="https://www.tenforums.com/attachments/network-sharing/84486d1485968022t-network-routing-tables-route.png" src="https://www.tenforums.com/attachments/network-sharing/84486d1485968022t-network-routing-tables-route.png" />
+</figure>
+<p class="sd-card-text">In networking, maps are utilized to map destination addresses to routes for efficient packet forwarding.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="advantages-disadvantages">
+<h3>Advantages &amp; Disadvantages<a class="headerlink" href="#advantages-disadvantages" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Advantages</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Efficient Retrieval<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Maps provide fast access to values based on their keys.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Versatility<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">They can store various data types as values.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Customization<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You have control over the data structure, allowing for customization.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Enforces Uniqueness<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Maps ensure that keys are unique.</p>
+</div>
+</details></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Disadvantages</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Memory Overhead<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hash tables used to implement maps may consume more memory due to internal data structures.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Hash Collisions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Handling multiple keys mapping to the same index can lead to performance issues.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Not Ideal for Range Queries<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Maps are not designed for range-based searches, which could be inefficient.</p>
+</div>
+</details></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Pseudo-implementation</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">Map</span> <span class="n">class</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Initialize</span> <span class="n">an</span> <span class="n">array</span> <span class="k">for</span> <span class="n">storing</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">pairs</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Define</span> <span class="n">a</span> <span class="nb">hash</span> <span class="n">function</span> <span class="n">to</span> <span class="nb">map</span> <span class="n">keys</span> <span class="n">to</span> <span class="n">array</span> <span class="n">indices</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">Implement</span> <span class="n">functions</span> <span class="k">for</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">operations</span><span class="p">:</span>
+   <span class="o">-</span> <span class="n">Insert</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">store</span> <span class="n">the</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="n">pair</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">Get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="k">return</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">value</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">Remove</span><span class="p">(</span><span class="n">key</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">remove</span> <span class="n">the</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="n">pair</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Code-implementation</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text">We define a <code class="docutils literal notranslate"><span class="pre">Map</span></code> class with an array to store key-value pairs.
+The <code class="docutils literal notranslate"><span class="pre">Hash</span></code> function calculates the index in the array for a given key using a simple hashing algorithm.
+<code class="docutils literal notranslate"><span class="pre">Insert</span></code> adds a key-value pair to the map, <code class="docutils literal notranslate"><span class="pre">Get</span></code> retrieves a value by key, and <code class="docutils literal notranslate"><span class="pre">Remove</span></code> deletes a key-value pair.
+The main function demonstrates usage.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arraySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Choose an appropriate size</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">class</span><span class="w"> </span><span class="nc">Map</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">mapArray</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">arraySize</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">        </span><span class="n">mapArray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Get</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mapArray</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Remove</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">23</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="linenos">24</span><span class="w">        </span><span class="n">mapArray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">25</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mapArray</span><span class="p">;</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">Hash</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">32</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">33</span><span class="w">            </span><span class="n">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">hash</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">arraySize</span><span class="p">;</span>
+<span class="linenos">34</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">35</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">hash</span><span class="p">;</span>
+<span class="linenos">36</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">37</span><span class="p">};</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">40</span><span class="w">    </span><span class="n">Map</span><span class="w"> </span><span class="n">map</span><span class="p">;</span>
+<span class="linenos">41</span><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Value of &#39;apple&#39;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">48</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Value of `apple`: 5 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="average-time-complexity">
+<h3>Average-Time Complexity<a class="headerlink" href="#average-time-complexity" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p class="sd-card-text">Insertion<br><code class="docutils literal notranslate"><span class="pre">insert</span></code></p></td>
+<td><p class="sd-card-text">Deletion<br><code class="docutils literal notranslate"><span class="pre">remove</span></code></p></td>
+<td><p class="sd-card-text">Retrieval<br><code class="docutils literal notranslate"><span class="pre">get</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">map</span></code></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text"><em><em>Note: assume a well-designed hash function and minimal collisions. In practice, worst-case scenarios should also be considered, leading to amortized <span class="math notranslate nohighlight">\(O(1)\)</span> performance for many operations</em></em></p>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -499,20 +800,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pq.html"
+       href="set.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Priority Queues</p>
+        <p class="prev-next-title">Sets</p>
       </div>
     </a>
     <a class="right-next"
-       href="set.html"
+       href="tree.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sets</p>
+        <p class="prev-next-title">Trees</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -522,6 +823,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-disadvantages">Advantages &amp; Disadvantages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-time-complexity">Average-Time Complexity</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

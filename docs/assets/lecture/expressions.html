@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Solving &amp; Programming</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../module/basics.html">Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="prob_solv.html"><span class="xref myst">Problem Solving</span></a></li>
@@ -175,9 +175,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
 </ul>
 </li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../module/main.html">Main &amp; CLAs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/functions.html">Functions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/controls.html">Controls</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -208,11 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="stacks.html">Stacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pq.html">Priority Queues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module/m05.html">Non-Linear Structures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tree.html">Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="heaps.html">Heaps</a></li>
 
@@ -464,7 +461,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview"><span class="xref myst">Overview</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-syntax">Expression Syntax</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-contrast">Compare &amp; Contrast</a></li>
 </ul>
 </li>
 </ul>
@@ -593,17 +589,12 @@ Evaluation<div class="sd-summary-down docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Pseudocode</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/LV8tCxAxm7E?si=1VNjVwjhMQEz7u_6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>BEGIN
-    TRY
-        Read userInput
-        Convert userInput to integer
-        PRINT &quot;You entered:&quot;, userInput
-    CATCH InvalidInputException
-        PRINT &quot;Invalid input! Please enter a valid integer.&quot;
-    CATCH Exception
-        PRINT &quot;An unexpected error occurred.&quot;
-    END TRY
-END
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Input</span> <span class="n">a</span>
+<span class="mf">2.</span> <span class="n">Input</span> <span class="n">b</span>
+<span class="mf">3.</span> <span class="n">Input</span> <span class="n">c</span>
+<span class="mf">4.</span> <span class="n">Input</span> <span class="n">d</span>
+<span class="mf">5.</span> <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+<span class="mf">6.</span> <span class="n">Output</span> <span class="n">result</span>
 
 </pre></div>
 </div>
@@ -613,22 +604,25 @@ END
 C++</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/cqi060vJuoI?si=3arMfZBg53XC39_i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="linenos"> 2</span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 6</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">userInput</span><span class="p">;</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">userInput</span><span class="p">;</span>
-<span class="linenos"> 8</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="linenos"> 9</span><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;Invalid input! Please enter a valid integer.&quot;</span><span class="p">);</span>
-</span><span class="linenos">10</span><span class="w">        </span><span class="p">}</span>
-<span class="hll"><span class="linenos">11</span><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;You entered: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">userInput</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</span><span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
-<span class="hll"><span class="linenos">13</span><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">exception</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos">14</span><span class="w">        </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">16</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">17</span><span class="p">}</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter the value of a: &quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter the value of b: &quot;</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter the value of c: &quot;</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter the value of d: &quot;</span><span class="p">;</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">    </span>
+<span class="linenos">15</span><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="linenos">16</span><span class="w">    </span>
+<span class="linenos">17</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">18</span><span class="w">    </span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">20</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -636,18 +630,14 @@ C++</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Python</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/LZFpLUKpo1I?si=PKqdIITkrwLN9NWj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span class="hll"><span class="linenos"> 2</span>    <span class="k">try</span><span class="p">:</span>
-</span><span class="linenos"> 3</span>        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an integer: &quot;</span><span class="p">))</span>
-<span class="linenos"> 4</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered:&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">)</span>
-<span class="linenos"> 5</span>    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="hll"><span class="linenos"> 6</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input! Please enter a valid integer.&quot;</span><span class="p">)</span>
-</span><span class="linenos"> 7</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="linenos"> 8</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An unexpected error occurred.&quot;</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<span class="linenos">12</span>    <span class="n">main</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the value of a: &quot;</span><span class="p">))</span>
+<span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the value of b: &quot;</span><span class="p">))</span>
+<span class="linenos">3</span><span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the value of c: &quot;</span><span class="p">))</span>
+<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the value of d: &quot;</span><span class="p">))</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -657,19 +647,24 @@ Java</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/RA7wkTV6z4k?si=RJxuhbqBgLm3R3cC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
 <span class="linenos"> 2</span>
-<span class="hll"><span class="linenos"> 3</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ErrorHandlingDemo</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos"> 4</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos"> 6</span><span class="w">            </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="linenos"> 7</span><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="linenos"> 8</span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You entered: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userInput</span><span class="p">);</span>
-<span class="hll"><span class="linenos"> 9</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">InputMismatchException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos">10</span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Invalid input! Please enter a valid integer.&quot;</span><span class="p">);</span>
-<span class="linenos">11</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">12</span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;An unexpected error occurred.&quot;</span><span class="p">);</span>
-<span class="linenos">13</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">14</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">15</span><span class="p">}</span>
+<span class="linenos"> 3</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="w">        </span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter the value of a: &quot;</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter the value of b: &quot;</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="linenos">11</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter the value of c: &quot;</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter the value of d: &quot;</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">        </span>
+<span class="linenos">16</span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="linenos">17</span><span class="w">        </span>
+<span class="linenos">18</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Result: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">20</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -677,16 +672,37 @@ Java</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-4">
 Rust</label><div class="sd-tab-content docutils">
 <iframe src="https://www.youtube.com/embed/LxBgtAIOf4M?si=xNqBapeMW8aea1-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span>
-</span><span class="hll"><span class="linenos"> 2</span>
-</span><span class="hll"><span class="linenos"> 3</span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="linenos"> 4</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">user_input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">user_input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read input&quot;</span><span class="p">);</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">user_input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;You entered: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">),</span>
-<span class="hll"><span class="linenos"> 8</span><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Invalid input! Please enter a valid integer.&quot;</span><span class="p">),</span>
-</span><span class="linenos"> 9</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">10</span><span class="p">}</span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter the value of a: &quot;</span><span class="p">);</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Invalid input&quot;</span><span class="p">);</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter the value of b: &quot;</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Invalid input&quot;</span><span class="p">);</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter the value of c: &quot;</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos">20</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">c</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Invalid input&quot;</span><span class="p">);</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter the value of d: &quot;</span><span class="p">);</span>
+<span class="linenos">25</span><span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">input</span><span class="p">).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Failed to read line&quot;</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">d</span>: <span class="kt">f64</span> <span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Invalid input&quot;</span><span class="p">);</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Result: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="linenos">31</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -698,21 +714,25 @@ Golang</label><div class="sd-tab-content docutils">
 <div class="highlight-golang notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="linenos"> 4</span><span class="w">	</span><span class="s">&quot;fmt&quot;</span>
-<span class="hll"><span class="linenos"> 5</span><span class="w">	</span><span class="s">&quot;strconv&quot;</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 7</span>
-</span><span class="linenos"> 8</span><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 9</span><span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="kt">string</span>
-<span class="linenos">10</span><span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">)</span>
-<span class="linenos">11</span><span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">userInput</span><span class="p">)</span>
-<span class="hll"><span class="linenos">12</span><span class="w">	</span><span class="nx">num</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Atoi</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span>
-</span><span class="linenos">13</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">14</span><span class="w">		</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You entered:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="p">)</span>
-<span class="linenos">15</span><span class="w">	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">16</span><span class="w">		</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Invalid input! Please enter a valid integer.&quot;</span><span class="p">)</span>
-<span class="linenos">17</span><span class="w">	</span><span class="p">}</span>
-<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="linenos"> 5</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="kt">float64</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter the value of a: &quot;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">a</span><span class="p">)</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter the value of b: &quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">b</span><span class="p">)</span>
+<span class="linenos">14</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter the value of c: &quot;</span><span class="p">)</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">c</span><span class="p">)</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Enter the value of d: &quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">d</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">d</span><span class="p">)</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Result: %f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)</span>
+<span class="linenos">22</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -720,128 +740,20 @@ Golang</label><div class="sd-tab-content docutils">
 <div class="important dropdown admonition">
 <p class="admonition-title">Output</p>
 <blockquote>
-<div><p class="sd-card-text">In each, a user-entered value is validated through error / exception handling. The exception [error] is thrown when the validation fails.</p>
-<p class="sd-card-text"><em>Note: Various means of evaluation are available per language with a range of validation abilities</em></p>
+<div><p class="sd-card-text">In each example, the user inputs four values to be stored in variables <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, and <code class="docutils literal notranslate"><span class="pre">d</span></code>
+the sum of variables <code class="docutils literal notranslate"><span class="pre">a</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">b</span></code> is found
+the difference of variables <code class="docutils literal notranslate"><span class="pre">c</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">d</span></code> is found
+the product of the prior sum &amp; difference is found</p>
 </div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Outcomes<span class="w"> </span>will<span class="w"> </span>vary<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>exception<span class="w"> </span>throw<span class="w"> </span>and<span class="w"> </span>or<span class="w"> </span>error<span class="w"> </span>caught...
+<p class="sd-card-text">Assuming user inputs (in order) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="compare-contrast">
-<h3>Compare &amp; Contrast<a class="headerlink" href="#compare-contrast" title="Permalink to this heading">#</a></h3>
-<div class="full-width docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p class="sd-card-text">Language</p></th>
-<th class="head"><p class="sd-card-text">Methodology</p></th>
-<th class="head"><p class="sd-card-text">Comments/Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p class="sd-card-text">C++</p></td>
-<td><p class="sd-card-text">Exception-based with <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code> blocks</p></td>
-<td><p class="sd-card-text">Utilizes standard exceptions for error handling.</p></td>
-</tr>
-<tr class="row-odd"><td><p class="sd-card-text">Python</p></td>
-<td><p class="sd-card-text">Exception-based using <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> clauses</p></td>
-<td><p class="sd-card-text">Python’s concise syntax simplifies error handling.</p></td>
-</tr>
-<tr class="row-even"><td><p class="sd-card-text">Java</p></td>
-<td><p class="sd-card-text">Exception-based with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">catch</span></code>, and <code class="docutils literal notranslate"><span class="pre">throw</span></code></p></td>
-<td><p class="sd-card-text">Strongly typed exceptions offer clear error identification.</p></td>
-</tr>
-<tr class="row-odd"><td><p class="sd-card-text">Rust</p></td>
-<td><p class="sd-card-text">Result-based approach with <code class="docutils literal notranslate"><span class="pre">Result</span></code> and <code class="docutils literal notranslate"><span class="pre">match</span></code></p></td>
-<td><p class="sd-card-text">Forces explicit handling of success or error cases.</p></td>
-</tr>
-<tr class="row-even"><td><p class="sd-card-text">Go</p></td>
-<td><p class="sd-card-text">Return value-based with error returns and <code class="docutils literal notranslate"><span class="pre">if</span></code> checks</p></td>
-<td><p class="sd-card-text">Simplicity in error handling with multiple return values.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="full-width docutils">
-<blockquote>
-<div><p>An expression is a combination of variables, constants, operators, and function calls that can be evaluated to produce a value. It can be as simple as a single variable or as complex as a series of nested function calls and operators. Expressions are commonly used in C++ to perform calculations, assign values to variables, and make decisions.</p>
-</div></blockquote>
-<p>Now, let’s provide an example of a simple C++ expression using pseudocode and C++ code, along with the output and an explanation.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row docutils">
-<!-- ```````   {grid-item-card}
-:columns: 12
-``` {figure} https://www.simplilearn.com/ice9/free_resources_article_thumb/Vaibhav-Arrays%20Article/Arrays_in_ds-what-is-array-img1.PNG
-
-expression structure
-```
-``````` -->
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Pseudocode</span>
-<span class="c1">// Calculate the sum of two numbers </span>
-<span class="c1">//    and store the result in a variable.</span>
-
-<span class="mf">1.</span><span class="w"> </span><span class="n">Declare</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">variables</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="n">num1</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">num2</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">assign</span><span class="w"> </span><span class="n">them</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="w">  </span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">Calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span>
-<span class="w">  </span><span class="n">and</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">called</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Result:<span class="w"> </span>-3
 </pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example</span>
-
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Step 1: Declare and assign values to</span>
-<span class="w">    </span><span class="c1">//   num1 and num2</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Step 2: Calculate the sum and store it in the </span>
-<span class="w">    </span><span class="c1">//   sum variable</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Output the result</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The sum of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and &quot;</span><span class="w"> </span>
-<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<!-- TODO: UPDATE EXAMPLE OUTPUT -->
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//<span class="w"> </span>Output
-
-The<span class="w"> </span>sum<span class="w"> </span>of<span class="w"> </span><span class="m">5</span><span class="w"> </span>and<span class="w"> </span><span class="m">3</span><span class="w"> </span>is:<span class="w"> </span><span class="m">8</span>
-</pre></div>
-</div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Explanation</div>
-<ol class="arabic simple">
-<li><p class="sd-card-text">We declare two integer variables, <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code>, and assign them the values <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>, respectively.</p></li>
-<li><p class="sd-card-text">We calculate the sum of <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> using the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) and store the result in the <code class="docutils literal notranslate"><span class="pre">sum</span></code> variable.</p></li>
-<li><p class="sd-card-text">Finally, we output the result using <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>. The values of <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> are displayed alongside the calculated <code class="docutils literal notranslate"><span class="pre">sum</span></code>, which is <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p></li>
-</ol>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -916,7 +828,6 @@ Explanation</div>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview"><span class="xref myst">Overview</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-syntax">Expression Syntax</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-contrast">Compare &amp; Contrast</a></li>
 </ul>
 </li>
 </ul>
