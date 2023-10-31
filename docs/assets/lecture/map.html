@@ -164,7 +164,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Needful Things</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../csc212.html">CSC 212: Data Structures &amp; Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabi/csc200cpp_fa23.html">CSC 200 C++ : Computer Problem Solving for Science &amp; Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabi/csc200py_fa23.html">CSC 200 🐍 : Computer Problem Solving for Science &amp; Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabi/csc212_fa23.html">CSC 212: Data Structures &amp; Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips for Success</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQs</a></li>
 </ul>
@@ -461,13 +463,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define">Define</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map"><code class="docutils literal notranslate"><span class="pre">map</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-map"><code class="docutils literal notranslate"><span class="pre">unordered_map</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-disadvantages">Advantages &amp; Disadvantages</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-time-complexity">Average-Time Complexity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare">Compare</a></li>
 </ul>
 </li>
 </ul>
@@ -499,15 +505,20 @@ iframe {width:100%;height:70vh;}
 </figure>
 </div>
 </details></div>
-<section id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<section id="define">
+<h2>Define<a class="headerlink" href="#define" title="Permalink to this heading">#</a></h2>
 <div class="full-width docutils">
 <blockquote>
-<div><p>A map is a data structure that associates unique keys with values. It enables efficient storage and retrieval of data, where each key is mapped to a corresponding value.</p>
+<div><p>A <code class="docutils literal notranslate"><span class="pre">map</span></code> is a data structure that associates unique keys with values. It enables efficient storage and retrieval of data, where each key is mapped to a corresponding value.</p>
+</div></blockquote>
+<blockquote>
+<div><p>An <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> is a data structure in C++ that is part of the Standard Template Library (STL). It is an associative container that provides an unordered collection of key-value pairs. The keys in an <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> are unique, and it allows for efficient storage and retrieval of data, similar to a dictionary. Unlike a map, it does not store elements in a specific order, making it more efficient for some operations.</p>
 </div></blockquote>
 </div>
 <section id="use-cases">
 <h3>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this heading">#</a></h3>
+<section id="map">
+<h4><code class="docutils literal notranslate"><span class="pre">map</span></code><a class="headerlink" href="#map" title="Permalink to this heading">#</a></h4>
 <div class="full-width docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -563,6 +574,64 @@ Network Routing</div>
 </div>
 </div>
 </section>
+<section id="unordered-map">
+<h4><code class="docutils literal notranslate"><span class="pre">unordered_map</span></code><a class="headerlink" href="#unordered-map" title="Permalink to this heading">#</a></h4>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Caching</div>
+<figure class="align-default">
+<img alt="https://i.ytimg.com/vi/qsG7PsiEOcg/maxresdefault.jpg" src="https://i.ytimg.com/vi/qsG7PsiEOcg/maxresdefault.jpg" />
+</figure>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> can be used in caching mechanisms where keys represent queries or frequently accessed data, and values are the cached results.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Frequency Counting</div>
+<figure class="align-default">
+<img alt="https://micvog.files.wordpress.com/2015/06/step_2_lossy_counting.png?w=1364&amp;h=614" src="https://micvog.files.wordpress.com/2015/06/step_2_lossy_counting.png?w=1364&amp;h=614" />
+</figure>
+<p class="sd-card-text">It is helpful in counting the frequency of elements in a dataset, for example, counting word occurrences in a text corpus.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Configuration Settings</div>
+<figure class="align-default">
+<img alt="https://lh6.googleusercontent.com/--wg44mQka3c/VC4mkvm1VZI/AAAAAAAAAAs/wWX1a4H9U9U/s1600/Kernel%2BConfiguration.png" src="https://lh6.googleusercontent.com/--wg44mQka3c/VC4mkvm1VZI/AAAAAAAAAAs/wWX1a4H9U9U/s1600/Kernel%2BConfiguration.png" />
+</figure>
+<p class="sd-card-text">Storing configuration parameters in an <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> is common, where keys represent setting names and values store corresponding values.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Graph Algorithms</div>
+<figure class="align-default">
+<img alt="https://raw.githubusercontent.com/kdn251/interviews/master/images/dijkstra.gif" src="https://raw.githubusercontent.com/kdn251/interviews/master/images/dijkstra.gif" />
+</figure>
+<p class="sd-card-text">In graph algorithms like Dijkstra’s algorithm, an <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> can be used to track the shortest distance to each vertex.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="advantages-disadvantages">
 <h3>Advantages &amp; Disadvantages<a class="headerlink" href="#advantages-disadvantages" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
@@ -575,7 +644,7 @@ Network Routing</div>
 Advantages</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Efficient Retrieval<div class="sd-summary-down docutils">
+Efficient Retrieval {both}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -584,16 +653,7 @@ Efficient Retrieval<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Versatility<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">They can store various data types as values.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Customization<div class="sd-summary-down docutils">
+Customization {both}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -602,12 +662,39 @@ Customization<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Enforces Uniqueness<div class="sd-summary-down docutils">
+Versatility {map}<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">They can store various data types as values.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Enforces Uniqueness {map}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Maps ensure that keys are unique.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Hash-based {unordered_map}<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">It is implemented as a hash table, making it highly efficient for most operations.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dynamic Sizing {unordered_map}<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">It automatically resizes when needed, which can be more memory-efficient.</p>
 </div>
 </details></div>
 </div>
@@ -619,7 +706,7 @@ Enforces Uniqueness<div class="sd-summary-down docutils">
 Disadvantages</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Memory Overhead<div class="sd-summary-down docutils">
+Memory Overhead {both}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -628,7 +715,7 @@ Memory Overhead<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Hash Collisions<div class="sd-summary-down docutils">
+Hash Collisions {map}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -637,12 +724,30 @@ Hash Collisions<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Not Ideal for Range Queries<div class="sd-summary-down docutils">
+Not Ideal for Range Queries {map}<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Maps are not designed for range-based searches, which could be inefficient.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Complexity for Custom Objects {unordered_map}<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Defining a hash function for custom objects can be complex.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Unordered {unordered_map}<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As the name implies, it does not maintain any specific order of elements.</p>
 </div>
 </details></div>
 </div>
@@ -660,7 +765,12 @@ Not Ideal for Range Queries<div class="sd-summary-down docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
-Pseudo-implementation</label><div class="sd-tab-content docutils">
+CppRef: map</label><div class="sd-tab-content docutils">
+<iframe src="https://en.cppreference.com/w/cpp/container/map"></iframe>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Pseudo- map</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">Map</span> <span class="n">class</span><span class="o">.</span>
 <span class="mf">2.</span> <span class="n">Initialize</span> <span class="n">an</span> <span class="n">array</span> <span class="k">for</span> <span class="n">storing</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">pairs</span><span class="o">.</span>
 <span class="mf">3.</span> <span class="n">Define</span> <span class="n">a</span> <span class="nb">hash</span> <span class="n">function</span> <span class="n">to</span> <span class="nb">map</span> <span class="n">keys</span> <span class="n">to</span> <span class="n">array</span> <span class="n">indices</span><span class="o">.</span>
@@ -671,15 +781,15 @@ Pseudo-implementation</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Code-implementation</label><div class="sd-tab-content docutils">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Code- map</label><div class="sd-tab-content docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <blockquote>
-<div><p class="sd-card-text">We define a <code class="docutils literal notranslate"><span class="pre">Map</span></code> class with an array to store key-value pairs.
-The <code class="docutils literal notranslate"><span class="pre">Hash</span></code> function calculates the index in the array for a given key using a simple hashing algorithm.
-<code class="docutils literal notranslate"><span class="pre">Insert</span></code> adds a key-value pair to the map, <code class="docutils literal notranslate"><span class="pre">Get</span></code> retrieves a value by key, and <code class="docutils literal notranslate"><span class="pre">Remove</span></code> deletes a key-value pair.
+<div><p class="sd-card-text">Define a <code class="docutils literal notranslate"><span class="pre">Map</span></code> class with an array to store key-value pairs.<br />
+The <code class="docutils literal notranslate"><span class="pre">Hash</span></code> function calculates the index in the array for a given key using a simple hashing algorithm.<br />
+<code class="docutils literal notranslate"><span class="pre">Insert</span></code> adds a key-value pair to the map, <code class="docutils literal notranslate"><span class="pre">Get</span></code> retrieves a value by key, and <code class="docutils literal notranslate"><span class="pre">Remove</span></code> deletes a key-value pair.<br />
 The main function demonstrates usage.</p>
 </div></blockquote>
 </div>
@@ -738,30 +848,112 @@ The main function demonstrates usage.</p>
 </pre></div>
 </div>
 </div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+CppRef: unordered_map</label><div class="sd-tab-content docutils">
+<iframe src="https://en.cppreference.com/w/cpp/container/unordered_map"></iframe>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Pseudo- unordered_map</label><div class="sd-tab-content docutils">
+<p class="sd-card-text"><em><em>Note: Creating a pseudocode for unordered_map can be challenging due to the internal complexity of a hash table. However, here’s a simplified version</em></em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">UnorderedMap</span> <span class="n">class</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Initialize</span> <span class="n">a</span> <span class="nb">hash</span> <span class="n">table</span> <span class="k">with</span> <span class="n">empty</span> <span class="n">buckets</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Implement</span> <span class="n">a</span> <span class="nb">hash</span> <span class="n">function</span> <span class="n">to</span> <span class="nb">map</span> <span class="n">keys</span> <span class="n">to</span> <span class="n">buckets</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">Implement</span> <span class="n">functions</span> <span class="k">for</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">operations</span><span class="p">:</span>
+   <span class="o">-</span> <span class="n">Insert</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">store</span> <span class="n">the</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">bucket</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">Get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">retrieve</span> <span class="n">the</span> <span class="n">value</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">corresponding</span> <span class="n">bucket</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">Remove</span><span class="p">(</span><span class="n">key</span><span class="p">):</span> <span class="n">Calculate</span> <span class="n">the</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">remove</span> <span class="n">the</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="n">pair</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">corresponding</span> <span class="n">bucket</span><span class="o">.</span>
+
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Code- unordered_map</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><p class="sd-card-text">Include the <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> header to use the <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> data structure.<br />
+Create an <code class="docutils literal notranslate"><span class="pre">unordered_map</span></code> called frequency_map with keys as strings and values as integers.
+Insert key-value pairs, access values by keys, and remove a key-value pair.</p>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frequency_map</span><span class="p">;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="c1">// Insert key-value pairs</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">frequency_map</span><span class="p">[</span><span class="s">&quot;apple&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">frequency_map</span><span class="p">[</span><span class="s">&quot;banana&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="c1">// Access values by key</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Frequency of &#39;apple&#39;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frequency_map</span><span class="p">[</span><span class="s">&quot;apple&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="w">    </span><span class="c1">// Remove a key-value pair</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">frequency_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">19</span><span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>
 </div>
-<section id="average-time-complexity">
-<h3>Average-Time Complexity<a class="headerlink" href="#average-time-complexity" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<section id="compare">
+<h3>Compare<a class="headerlink" href="#compare" title="Permalink to this heading">#</a></h3>
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <table class="table">
-<tbody>
-<tr class="row-odd"><td></td>
-<td><p class="sd-card-text">Insertion<br><code class="docutils literal notranslate"><span class="pre">insert</span></code></p></td>
-<td><p class="sd-card-text">Deletion<br><code class="docutils literal notranslate"><span class="pre">remove</span></code></p></td>
-<td><p class="sd-card-text">Retrieval<br><code class="docutils literal notranslate"><span class="pre">get</span></code></p></td>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">std::map</span></code></p></th>
+<th class="head"><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">std::unordered_map</span></code></p></th>
 </tr>
-<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">map</span></code></p></td>
-<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
-<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
-<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span></p></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">Data Structure</p></td>
+<td><p class="sd-card-text">Red-Black Tree</p></td>
+<td><p class="sd-card-text">Hash Table</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Order of Elements</p></td>
+<td><p class="sd-card-text">Sorted (based on keys)</p></td>
+<td><p class="sd-card-text">Unordered (no specific order)</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">get</span></code></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(log\ n)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span> average, <span class="math notranslate nohighlight">\(O(n)\)</span> worst-case</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">insert</span></code></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(log\ n)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span> average, <span class="math notranslate nohighlight">\(O(n)\)</span> worst-case</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">remove</span></code></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(log\ n)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(O(1)\)</span> average, <span class="math notranslate nohighlight">\(O(n)\)</span> worst-case</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Memory Usage</p></td>
+<td><p class="sd-card-text">Higher memory consumption</p></td>
+<td><p class="sd-card-text">Lower memory consumption</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Custom Key Types</p></td>
+<td><p class="sd-card-text">Requires operator&lt; for keys</p></td>
+<td><p class="sd-card-text">Requires a hash function</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">Range Iteration</p></td>
+<td><p class="sd-card-text">Efficient</p></td>
+<td><p class="sd-card-text">Less efficient</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">Use Cases</p></td>
+<td><p class="sd-card-text">When elements need to be sorted or ordered</p></td>
+<td><p class="sd-card-text">When fast access times are critical, order doesn’t matter</p></td>
 </tr>
 </tbody>
 </table>
-<p class="sd-card-text"><em><em>Note: assume a well-designed hash function and minimal collisions. In practice, worst-case scenarios should also be considered, leading to amortized <span class="math notranslate nohighlight">\(O(1)\)</span> performance for many operations</em></em></p>
+<p class="sd-card-text"><em><em>Note: assume a well-designed/distributed hash function and minimal collisions. In practice, worst-case scenarios should also be considered, leading to amortized <span class="math notranslate nohighlight">\(O(1)\)</span> performance for many operations</em></em></p>
 </div>
 </div>
 </div>
@@ -832,13 +1024,17 @@ The main function demonstrates usage.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define">Define</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map"><code class="docutils literal notranslate"><span class="pre">map</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-map"><code class="docutils literal notranslate"><span class="pre">unordered_map</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-disadvantages">Advantages &amp; Disadvantages</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-time-complexity">Average-Time Complexity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare">Compare</a></li>
 </ul>
 </li>
 </ul>
