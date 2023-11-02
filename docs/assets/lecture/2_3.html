@@ -675,15 +675,34 @@ Memory management<div class="sd-summary-down docutils">
 <div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><b class="blue">Allow 1 or 2 keys per node</b></p>
-<ul class="simple">
-<li><p class="sd-card-text">2-node: one key, two children</p></li>
-<li><p class="sd-card-text">3-node: two keys, three children</p></li>
-</ul>
+<dl class="simple myst">
+<dt>2-node</dt><dd><p class="sd-card-text">has one data element and if it is an internal node, then it has two child nodes.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<dl class="simple myst">
+<dt>3-node</dt><dd><p class="sd-card-text">has two data elements and if this is an internal node, it has three child nodes.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<dl class="simple myst">
+<dt>4-node</dt><dd><p class="sd-card-text">has three data elements and if it is an internal node, it has four child nodes.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><b class="blue">Symmetric order</b></p>
@@ -693,7 +712,7 @@ Memory management<div class="sd-summary-down docutils">
 </div>
 </div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><b class="blue">Perfect Balance</b></p>
@@ -1127,8 +1146,6 @@ Bottomline<div class="sd-summary-down docutils">
 <div class="full-width docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Direct implementation is complicated, because</div>
 <ul class="simple">
@@ -1147,8 +1164,6 @@ Direct implementation is complicated, because</div>
 <span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">is3Node</span><span class="p">())</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">make4Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span>
 <span class="p">}</span>
 </pre></div>
-</div>
-</div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
